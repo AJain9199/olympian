@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- SCROLL VIDEO -->
+<div>
+    <video class="scrollVid w-full">
+        <source
+            src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4">
+    </video>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+    let $video = document.querySelector('.scrollVid');
+    let scrolll = 0;
+    $(window).scroll(() => {
+        let x = 300;
+        scrolll = $(this).scrollTop() / x;
+        $video.currentTime = scrolll;
+    });    
+</script>
+
+{% endblock %}
