@@ -3,8 +3,15 @@
 {% block content %}
 
 <!-- SCROLL VIDEO -->
-<div>
-    <video class="scrollVid w-full">
+<div style="height: fit-content;">
+    <video class="scrollVid w-full" bottom="10000" top="0">
+        <source
+            src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4">
+    </video>
+</div>
+<br class="bg-white">
+<div style="height: fit-content;">
+    <video class="scrollVid w-full" bottom="20000" top="10000">
         <source
             src="https://www.apple.com/media/us/mac-pro/2013/16C1b6b5-1d91-4fef-891e-ff2fc1c1bb58/videos/macpro_main_desktop.mp4">
     </video>
@@ -16,14 +23,39 @@
     integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
 
-<script type="text/javascript">
-    let $video = document.querySelector('.scrollVid');
-    let scrolll = 0;
+<!-- AUTOMATIC STICKY DYNAMIC FOR ALL SCROLL VIDS ON PAGE-->
+<script>
     $(window).scroll(() => {
-        let x = 300;
-        scrolll = $(this).scrollTop() / x;
-        $video.currentTime = scrolll;
-    });    
+
+        let vids = document.querySelectorAll('.scrollVid');
+        vids.forEach(video => {
+            console.log(video.getAttribute('bottom'));
+            console.log(video.getAttribute('top'));
+            if ($(window).scrollTop() < video.getAttribute('bottom')) {
+                $(".scrollVid").css({ "position": "relative" })
+            }
+            if ($(window).scrollTop() > video.getAttribute('top')) {
+                $(".scrollVid").css({ "position": "relative" })
+            }
+            else $(".scrollVid").css({ "top": ($(window).scrollTop()) + "px" });
+        });
+
+    });
+</script>
+
+
+<script type="text/javascript">
+
+    let vids = document.querySelectorAll('.scrollVid');
+    $(window).scroll(() => {
+        vids.forEach(vid => {
+            if ($(window).scrollTop() > vid.getAttribute('top')) {
+                let x = 300;
+                let scrolll = ($(this).scrollTop()-vid.getAttribute('top')) / x;
+                vid.currentTime = scrolll;
+        }});
+    });
+
 </script>
 
 {% endblock %}
