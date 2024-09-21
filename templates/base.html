@@ -8,16 +8,19 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="{% static 'src/styles.css' %}">
-  
-
   {% block head %}{% endblock %}
   <title>{% block title %}{% endblock %}</title>
-
 </head>
 
-<body>
+<body class="bg-drk" style="background-image: linear-gradient(to right, #434343 0%, black 100%);background: linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
+ background-blend-mode: multiply;/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=121212&c2=010101&gt=r&gd=dtt
+*/
+background: #121212;
+background: radial-gradient(at center top, #202020, #010101);">
 
-  <nav class="bg-drk fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+  <nav style="background-color: rgba(16, 16, 16, 0.8); backdrop-filter: blur(100px);" class="fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo">
@@ -49,14 +52,6 @@
             <a href="#"
               class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
           </li>
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-          </li>
-          <li>
-            <a href="#"
-              class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -69,6 +64,7 @@
     {% endblock %}
   </main>
   <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+
 </body>
 
 </html>

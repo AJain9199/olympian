@@ -1,0 +1,13 @@
+<div style="height: 350vh;"></div>
+    <div id="scrolly-video"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+  <script type="text/javascript">
+    new ScrollyVideo({
+      scrollyVideoContainer: "scrolly-video",
+      src: "{% static 'header.mp4' %}",
+      useWebCodecs: true,
+      transitionSpeed: 6
+    });
+  </script>
