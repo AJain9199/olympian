@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <style>
+    .permanent-marker-regular {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    .parallax-mirror {
+        min-height: 100%; !important;
+        z-index: 1 !important;
+    }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'src/parallax.min.js' %}"></script>
+{% endblock head %}
+
+{% block content %}
+
+
+
+    <div class="flex flex-col justify-center align-center">
+        <div style="background-image: url({% static 'olympics.jpg' %}); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat: no-repeat; background-size:  cover;" >
+            <h1 class="permanent-marker-regular text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white"> Hall of <br> Fame </h1>
+        </div>
+{#        <div class="relative text-center bg-fixed bg-center bg-cover min-w-full min-h-full" style="background-image: url({% static 'olympics.jpg' %})">#}
+{#            <h1 class="permanent-marker-regular text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> Hall of <br> Fame </h1>#}
+{#        </div>#}
+        <div class="grid p-4 mt-5 rounded-lg grid-cols-2 md:grid-cols-5 gap-4 mx-5 md:mx-10">
+            {% for chunk in athletes %}
+                <div class="grid gap-4">
+                    {% for athlete in chunk %}
+                        <div>
+                            <img class="h-auto max-w-full rounded-lg" src="{{ athlete.image }}" alt="">
+                        </div>
+                    {% endfor %}
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
