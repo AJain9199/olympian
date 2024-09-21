@@ -2,23 +2,24 @@
 {% load static %}
 
 {% block head %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
-<style>
-  .gilda{
-  font-family: "Gilda Display", serif;
-  font-weight: 700;
-  color: rgba(256, 256, 256, 0.8);
-  font-style: bold;
-  font-size: 15rem;
-  position: absolute;
-  text-shadow: 0px 0px 20px rgba(0,0,0,1), 0px 0px 500px rgba(0,0,0,1), 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
-}
-</style>
+    <style>
+        .gilda {
+            font-family: "Gilda Display", serif;
+            font-weight: 700;
+            color: rgba(256, 256, 256, 0.8);
+            font-style: bold;
+            font-size: 15rem;
+            position: absolute;
+            text-shadow: 0px 0px 20px rgba(0, 0, 0, 1), 0px 0px 500px rgba(0, 0, 0, 1), 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
+        }
+    </style>
 
 {% endblock %}
 
@@ -26,25 +27,25 @@
 
 {% block content %}
 
-<div class="mx-auto container w-full" id="head-cont" style="margin-top: 5rem; margin-bottom: 2rem;">
-  <img class="w-50 mx-auto" src="{% static 'rings.svg' %}" style="height: 40rem;">
-  <h1 class="gilda subpixel-antialiased block mx-auto w-100" style="margin-top: -32rem;">OLYMPICS</h1>
-</div>
+    {#<div class="mx-auto container w-full" id="head-cont" style="margin-top: 5rem; margin-bottom: 2rem;">#}
+    {#  <img class="w-50 mx-auto" src="{% static 'rings.svg' %}" style="height: 40rem;">#}
+    {#  <h1 class="gilda subpixel-antialiased block mx-auto w-100" style="margin-top: -32rem;">OLYMPICS</h1>#}
+    {#</div>#}
+    {##}
+    {#<div style="background: rgb(2,0,36);#}
+    {#background: linear-gradient(0deg, rgba(53, 56, 58, 0) 0%, rgba(53, 56, 58, 0.489) 40%, rgb(53, 56, 58) 100%); margin-bottom: -100px; position: relative; z-index: 10; height: 100px;"></div>#}
 
-<div style="background: rgb(2,0,36);
-background: linear-gradient(0deg, rgba(53, 56, 58, 0) 0%, rgba(53, 56, 58, 0.489) 40%, rgb(53, 56, 58) 100%); margin-bottom: -100px; position: relative; z-index: 10; height: 100px;"></div>
+    <div style="height: 350vh;">
+        <div id="scrolly-video"></div>
+    </div>
 
-<div style="height: 350vh;">
-    <div id="scrolly-video"></div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
-  <script type="text/javascript">
-    new ScrollyVideo({
-      scrollyVideoContainer: "scrolly-video",
-      src: "{% static 'header.mp4' %}",
-      useWebCodecs: true
-    });
-  </script>
+    <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+    <script type="text/javascript">
+        new ScrollyVideo({
+            scrollyVideoContainer: "scrolly-video",
+            src: "{% static 'header.mp4' %}",
+            useWebCodecs: true
+        });
+    </script>
 
 {% endblock %}
