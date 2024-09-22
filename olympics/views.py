@@ -15,5 +15,8 @@ def hall_of_fame(request):
     data = Athlete.objects.all()
     return render(request, 'hall_of_fame.html', {'athletes': [data[i * 3:(i + 1) * 3] for i in range((len(data) + 2) // 3 )]})
 
+def leaderboard(request):
+    return render(request, 'leaderboard.html')
+
 def history(request):
     return render(request, 'history.html')

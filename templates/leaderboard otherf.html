@@ -1,0 +1,373 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
+<style>
+  .table-wrapper {
+
+    height: fit-content;
+    max-height: 66.4vh;
+    margin: 15px;
+    padding-bottom: 20px;
+
+  }
+
+  table {
+    min-width: max-content;
+    border-collapse: separate;
+  }
+
+  .table-filter {
+    border-radius: 5px;
+  }
+
+  table th {
+    sports: sticky;
+    top: 0px;
+
+    background-color: #133b5c;
+    color: rgb(241, 245, 179);
+
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+    outline: 0.7px solid black;
+    border: 1.5px solid black;
+
+  }
+
+
+
+  table th,
+  table td {
+    padding: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  }
+
+  table td {
+    text-align: left;
+
+    font-size: 15px;
+    border: 1px solid rgb(177, 177, 177);
+    padding-left: 20px;
+
+  }
+
+  td>img {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    font-size: 13px;
+  }
+
+  aside {
+    padding: 0 1em;
+  }
+
+  aside div {
+    margin: .25em 0;
+  }
+
+  input {
+    margin-right: 5px;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 30px;
+    margin-bottom: 5em;
+  }
+
+  .player {
+    margin: 2em 0;
+  }
+
+  .player h3 {
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+</style>
+{% endblock head %}
+{% block title %}Leaderboard | Olympics{% endblock %}
+
+{% block content %}
+
+</div>
+<div class="table-wrapper">
+  <table id="emp-table">
+    <thead>
+      <th col-index=1>Athlete</th>
+      <th col-index=2>Photo</th>
+
+      <th onclick="sortTable(0)" col-index=3>Sport
+        <select class="table-filter" onchange="filter_rows()">
+          <option value="all"></option>
+        </select>
+      </th>
+      <th onclick="sortTable(1)" col-index=4>Country
+        <select class="table-filter" onchange="filter_rows()">
+          <option value="all"></option>
+        </select>
+      </th>
+      <th onclick="sortTable(2)" col-index=5>Medals
+        <select class="table-filter" onchange="filter_rows()">
+          <option value="all"></option>
+        </select>
+      </th>
+
+    </thead>
+    <tbody>
+      {% for athelete in athelete_list %}
+      <tr>
+        <td>{{ athelete.name }}</td>
+        <td><img src="{{ athelete.img }}" alt=""></td>
+        <td>{{ athelete.sport }}</td>
+        <td>{{ athelete.country }}</td>
+        <td>{{ athelete.medals }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td>Manu Bhakar</td>
+        <td><img src="https://im.indiatimes.in/content/2021/Oct/2_6159482f1e548.JPG" alt=""></td>
+        <td>Shit</td>
+        <td>India</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Kanu Bhakar</td>
+        <td><img
+            src="https://images.thequint.com/thequint/2021-08/03052b26-fd71-45ae-8811-88ae22f6e005/thumbnail_07081_ap08_07_2021_000204b.jpg?auto=format%2Ccompress&fmt=webp"
+            alt=""></td>
+        <td>Shoot</td>
+        <td>Pakistan</td>
+        <td>1</td>
+      </tr>
+
+      <tr>
+        <td>Kanu Bhakar</td>
+        <td><img
+            src="https://images.thequint.com/thequint/2021-08/03052b26-fd71-45ae-8811-88ae22f6e005/thumbnail_07081_ap08_07_2021_000204b.jpg?auto=format%2Ccompress&fmt=webp"
+            alt=""></td>
+        <td>Shoot</td>
+        <td>Pakistan</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <script src="{% static 'filter.js' %}"></script>
+    <script>
+        window.onload = () => {
+            console.log(document.querySelector("#emp-table > tbody > tr:nth-child(1) > td:nth-child(2) ").innerHTML);
+        };
+
+        getUniqueValuesFromColumn()
+        
+    </script>
+    <script>
+        function sortTable(columnIndex) {
+          const table = document.getElementById("emp-table");
+          const tbody = table.querySelector("tbody");
+          const rows = Array.from(tbody.rows);
+          let ascending = table.dataset.sortOrder === 'asc';
+          
+
+          rows.sort((rowA, rowB) => {
+            const cellA = rowA.cells[columnIndex + 2].innerText.toLowerCase();
+            const cellB = rowB.cells[columnIndex + 2].innerText.toLowerCase();
+        
+            if (!isNaN(cellA) && !isNaN(cellB)) {
+              return ascending ? cellA - cellB : cellB - cellA;
+            } else {
+              return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+            }
+          });
+        
+          table.dataset.sortOrder = ascending ? 'desc' : 'asc';
+          tbody.append(...rows);
+        }
+        </script> -->
+
+
+  <div class="container">
+    <aside>
+
+
+      <button id="dropdownSearchButton" data-dropdown-toggle="dropdownSearch" data-dropdown-placement="bottom"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        type="button">Sports<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 1 4 4 4-4" />
+        </svg>
+      </button>
+      <!-- Dropdown menu -->
+      <div id="dropdownSearch" class="z-10 hidden bg-white rounded-lg shadow w-60 dark:bg-gray-700">
+        <div class="p-3">
+          <label for="input-group-search" class="sr-only">Search</label>
+          <div class="relative">
+            <div class="absolute inset-y-0 rtl:inset-r-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+              </svg>
+            </div>
+            <input type="text" id="input-group-search"
+              class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Search Sport">
+          </div>
+        </div>
+        <ul class="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
+          aria-labelledby="dropdownSearchButton">
+          <li>
+            <div class="flex items-center ps-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input type="checkbox" name="sports" value="forward" id="forward"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              <label for="forward"
+                class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
+            </div>
+          </li>
+          <li>
+            <div class="flex items-center ps-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
+              <input id="checkbox-item-17" type="checkbox" value="Shooter"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              <label for="checkbox-item-17"
+                class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Shooter</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+
+
+      <h3>sports</h3>
+      <div>
+        <div><input type="checkbox" name="sports" value="guard" id="guard"><label for="guard">Guard</label></div>
+        <div><input type="checkbox" name="sports" value="forward" id="forward"><label for="forward">Forward</label>
+        </div>
+        <div><input type="checkbox" name="sports" value="center" id="center"><label for="center">Center</label></div>
+      </div>
+      <h3>Conference</h3>
+      <div>
+        <div><input type="checkbox" name="conference" value="east" id="east"><label for="east">Eastern</label></div>
+        <div><input type="checkbox" name="conference" value="west" id="west"><label for="west">Western</label></div>
+      </div>
+      <h3>Country</h3>
+      <div>
+        <div><input type="checkbox" name="country" value="bos" id="bos"><label for="bos">Boston Celtics</label></div>
+        <div><input type="checkbox" name="country" value="cle" id="cle"><label for="cle">Cleveland Cavaliers</label>
+        </div>
+        <div><input type="checkbox" name="country" value="cha" id="cha"><label for="cha">Charlotte Hornets</label></div>
+      </div>
+    </aside>
+    
+    <main>
+      <section>
+        <div class="player forward gsw west starting lebron">
+          <img src="https://im.indiatimes.in/content/2021/Oct/2_6159482f1e548.JPG">
+          <h3>Manu Bhakar</h3>
+          <p>Shooter</p>
+          <p>India</p>
+          <p>Age</p>
+          <p>height</p>
+          <p>Weight</p>
+          <p>Gold: 10</p>
+          <p>Silver: 20</p>
+          <p>Bronze: 20</p>
+          <p>5/4/2001</p>
+          <p>Nine-time All-Star | 2014 Kia NBA MVP | 2017 Finals MVP</p>
+        </div>
+        <div class="player guard bos east starting lebron">
+          <img src="//ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/202681.png">
+          <h3>Kyrie Irving</h3>
+          <p>#11 | Guard</p>
+          <p>24.6 PPG 5 APG 3.6 RPG</p>
+          <p>[Boston Celtics]</p>
+          <p>Five-time All-Star | 2014 Kia All-Star Game MVP</p>
+        </div>
+        <div class="player guard forward cle east starting lebron">
+          <img src="//ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/2544.png">
+          <h3>LeBron James</h3>
+          <p>#23 | Forward-Guard</p>
+          <p>26.5 PPG 8.9 APG 8.1 RPG</p>
+          <p>[Cleveland Cavaliers]</p>
+          <p>CAPTAIN | 14-time All-Star | Four-time Kia NBA MVP</p>
+        </div>
+        <div class="player forward sas west reserves lebron">
+          <img src="//ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/200746.png">
+          <h3>LaMarcus Aldridge</h3>
+          <p>#12 | Forward</p>
+          <p>22.4 PPG 2 APG 8.4 RPG</p>
+          <p>[San Antonio Spurs]</p>
+          <p>Six-time All-Star | 2014-15 Second Team All-NBA</p>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script src="
+https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js
+"></script>
+<script>
+  // not exactly vanilla as there is one lodash function
+
+  var allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+  var allPlayers = Array.from(document.querySelectorAll('.player'));
+  var checked = {};
+
+  getChecked('startingReserves');
+  getChecked('injured');
+  getChecked('sports');
+  getChecked('country');
+  getChecked('conference');
+
+  Array.prototype.forEach.call(allCheckboxes, function (el) {
+    el.addEventListener('change', toggleCheckbox);
+  });
+
+  function toggleCheckbox(e) {
+    getChecked(e.target.name);
+    setVisibility();
+  }
+
+  function getChecked(name) {
+    checked[name] = Array.from(document.querySelectorAll('input[name=' + name + ']:checked')).map(function (el) {
+      return el.value;
+    });
+  }
+
+  function setVisibility() {
+    allPlayers.map(function (el) {
+      var startingReserves = checked.startingReserves.length ? _.intersection(Array.from(el.classList), checked.startingReserves).length : true;
+      var injured = checked.injured.length ? _.intersection(Array.from(el.classList), checked.injured).length : true;
+      var sports = checked.sports.length ? _.intersection(Array.from(el.classList), checked.sports).length : true;
+      var country = checked.country.length ? _.intersection(Array.from(el.classList), checked.country).length : true;
+      var conference = checked.conference.length ? _.intersection(Array.from(el.classList), checked.conference).length : true;
+      if (startingReserves && injured && sports && country && conference) {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
+    });
+  }
+</script>
+{% endblock content %}
