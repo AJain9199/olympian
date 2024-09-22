@@ -37,9 +37,10 @@ The website is a work in progress, and here are some of the exciting features co
 
 This website is being built using the following technologies:
 
-- **Backend**: Django (Python)
+- **Backend**: The Django Framework (Python)
 - **Frontend**: HTML, CSS, JavaScript
-- **Styling**: Tailwind CSS & Flowbite components
+- **Database**: SQLite
+- **Styling**: Tailwind CSS & Flowbite components. NodeJS for package management.
 - **Version Control**: Git & GitHub for managing code
 - **Additional**: Using Vanilla JavaScript for frontend logic
 
