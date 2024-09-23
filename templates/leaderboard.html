@@ -3,13 +3,16 @@
 {% block head %}
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 {% endblock head %}
 {% block title %}Leaderboard | Olympics{% endblock %}
 
 {% block content %}
-<section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5" style="margin-top: 200px">
+<!-- <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5" style="margin-top: 200px">
     <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
-        <!-- Start coding here -->
         <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg" style="height: 800px;">
             <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                 <div class="w-full md:w-1/2">
@@ -129,7 +132,7 @@
             <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
                 <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-3 lg:grid-cols-4">
                     <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
+                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
                         <img class="rounded-t-lg aspect-square"
                             src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"/>
                         <div class="p-5">
@@ -151,7 +154,7 @@
                         </div>
                     </div>
                     <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg"
                                 src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
@@ -176,247 +179,323 @@
                         </div>
                     </div>
                     <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg"
                                 src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
                                 alt="" />
                         </a>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021</h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Read more
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <img class="rounded-t-lg aspect-square"
-                            src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"
-                            alt="" />
-                        <div class="p-5">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                            </h5>
-                            <div class="grid grid-cols-2">
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                            </div>
 
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <img class="rounded-t-lg aspect-square"
-                            src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"
-                            alt="" />
-                        <div class="p-5">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                            </h5>
-                            <div class="grid grid-cols-2">
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <img class="rounded-t-lg aspect-square"
-                            src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"
-                            alt="" />
-                        <div class="p-5">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                            </h5>
-                            <div class="grid grid-cols-2">
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                            </div>
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
-<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+<div class="flex flex-col justify-center align-center">
+    <div style="background-image: url(https://images.yourstory.com/cs/2/96eabe90392211eb93f18319e8c07a74/olympicdayy-1687461367442.png); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;">
+        <h1 class="permanent-marker-regular text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+            LEADERBOARD
+    </div>
+</div>
+<div class="grid sm:flex">
 
+    <!-- COUNTRY PICKERS -->
+    <div class="basis-1/6 max-sm:basis-1 grid gap-4 h-10" id="countryPicker">
+        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="player">All Countries</div>
+        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="india">India</div>
+        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="pakistan">Pakistan</div>
+        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="newzealand">New Zealand</div>
+        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="usa">USA</div>
+    </div>
+
+    <!-- PLAYERS -->
+    <div class="basis-5/6 max-sm:basis-1 grid bg-neutral-500 p-4 rounded-lg grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5">
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="bg-white border row-span-2 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player newzealand">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                </div>
+                <div class="relative overflow-x-auto">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <td class="px-6 py-4">
+                                    Gold
+                                </td>
+                                <td class="px-6 py-4">
+                                    Bronze
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <td class="px-6 py-4">
+                                    10 Medals
+                                </td>
+                                <td class="px-6 py-4">
+                                    20 medals
+                                </td>
+                            </tr>
+                            <tr class="bg-white dark:bg-gray-800">
+                                <td class="px-6 py-4">
+                                    Accessories
+                                </td>
+                                <td class="px-6 py-4">
+                                    $99
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-3 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player usa">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+        <div
+            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
+            <img class="rounded-t-lg aspect-square"
+                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
+            <div class="p-5">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                </h5>
+                <div class="grid grid-cols-2">
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                    </p>
+                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script>
+    let players = document.querySelectorAll('.player');
+    const number1 = Math.floor(Math.random() * players.length);
+    const number2 = Math.floor(Math.random() * players.length);
+    const number3 = Math.floor(Math.random() * players.length);
+    players[number1].after('wow')
+    players[number2].after('wow')
+    players[number3].after('wow')
+</script> -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // not exactly vanilla as there is one lodash function
-    var allCheckboxes = document.querySelectorAll('input[type=checkbox]');
-    console.log(allCheckboxes)
-    var allPlayers = Array.from(document.querySelectorAll('.player'));
-    console.log(allPlayers)
-    var checked = {};
-
-    getChecked('startingReserves');
-    getChecked('medal');
-    getChecked('sports');
-    getChecked('country');
-    getChecked('conference');
-
-    Array.prototype.forEach.call(allCheckboxes, function (el) {
-        el.addEventListener('change', toggleCheckbox);
+    $('#countryPicker div').click(function () {
+        let country = $(this).attr('id');
+        console.log(country);
+        $('.player').hide("slow");
+        $('.' + country).show();
+    })
+    players = document.querySelectorAll('.player');
+    players.forEach(player => {
+        player.dataset.aos = 'fade-up';
     });
-
-    function toggleCheckbox(e) {
-        getChecked(e.target.name);
-        setVisibility();
-    }
-
-    function getChecked(name) {
-        checked[name] = Array.from(document.querySelectorAll('input[name=' + name + ']:checked')).map(function (el) {
-            return el.value;
-        });
-    }
-
-    function setVisibility() {
-        allPlayers.map(function (el) {
-            var startingReserves = checked.startingReserves.length ? _.intersection(Array.from(el.classList), checked.startingReserves).length : true;
-            var medal = checked.medal.length ? _.intersection(Array.from(el.classList), checked.medal).length : true;
-            var sports = checked.sports.length ? _.intersection(Array.from(el.classList), checked.sports).length : true;
-            var country = checked.country.length ? _.intersection(Array.from(el.classList), checked.country).length : true;
-            var conference = checked.conference.length ? _.intersection(Array.from(el.classList), checked.conference).length : true;
-            if (startingReserves && medal && sports && country && conference) {
-                el.style.display = 'block';
-            } else {
-                el.style.display = 'none';
-            }
-        });
-    }
+    AOS.init({
+        mirror: true,
+    });
 </script>
-
-
-<!-- </div>
-<div class="table-wrapper">
-  <table id="emp-table">
-    <thead>
-      <th col-index=1>Athlete</th>
-      <th col-index=2>Photo</th>
-
-      <th onclick="sortTable(0)" col-index=3>Sport
-        <select class="table-filter" onchange="filter_rows()">
-          <option value="all"></option>
-        </select>
-      </th>
-      <th onclick="sortTable(1)" col-index=4>Country
-        <select class="table-filter" onchange="filter_rows()">
-          <option value="all"></option>
-        </select>
-      </th>
-      <th onclick="sortTable(2)" col-index=5>Medals
-        <select class="table-filter" onchange="filter_rows()">
-          <option value="all"></option>
-        </select>
-      </th>
-
-    </thead>
-    <tbody>
-      {% for athelete in athelete_list %}
-      <tr>
-        <td>{{ athelete.name }}</td>
-        <td><img src="{{ athelete.img }}" alt=""></td>
-        <td>{{ athelete.sport }}</td>
-        <td>{{ athelete.country }}</td>
-        <td>{{ athelete.medals }}</td>
-      </tr>
-      {% endfor %}
-      <tr>
-        <td>Manu Bhakar</td>
-        <td><img src="https://im.indiatimes.in/content/2021/Oct/2_6159482f1e548.JPG" alt=""></td>
-        <td>Shit</td>
-        <td>India</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>Kanu Bhakar</td>
-        <td><img
-            src="https://images.thequint.com/thequint/2021-08/03052b26-fd71-45ae-8811-88ae22f6e005/thumbnail_07081_ap08_07_2021_000204b.jpg?auto=format%2Ccompress&fmt=webp"
-            alt=""></td>
-        <td>Shoot</td>
-        <td>Pakistan</td>
-        <td>1</td>
-      </tr>
-
-      <tr>
-        <td>Kanu Bhakar</td>
-        <td><img
-            src="https://images.thequint.com/thequint/2021-08/03052b26-fd71-45ae-8811-88ae22f6e005/thumbnail_07081_ap08_07_2021_000204b.jpg?auto=format%2Ccompress&fmt=webp"
-            alt=""></td>
-        <td>Shoot</td>
-        <td>Pakistan</td>
-        <td>1</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <script src="{% static 'filter.js' %}"></script>
-    <script>
-        window.onload = () => {
-            console.log(document.querySelector("#emp-table > tbody > tr:nth-child(1) > td:nth-child(2) ").innerHTML);
-        };
-
-        getUniqueValuesFromColumn()
-        
-    </script>
-    <script>
-        function sortTable(columnIndex) {
-          const table = document.getElementById("emp-table");
-          const tbody = table.querySelector("tbody");
-          const rows = Array.from(tbody.rows);
-          let ascending = table.dataset.sortOrder === 'asc';
-          
-
-          rows.sort((rowA, rowB) => {
-            const cellA = rowA.cells[columnIndex + 2].innerText.toLowerCase();
-            const cellB = rowB.cells[columnIndex + 2].innerText.toLowerCase();
-        
-            if (!isNaN(cellA) && !isNaN(cellB)) {
-              return ascending ? cellA - cellB : cellB - cellA;
-            } else {
-              return ascending ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
-            }
-          });
-        
-          table.dataset.sortOrder = ascending ? 'desc' : 'asc';
-          tbody.append(...rows);
-        }
-        </script>
-! -->
 {% endblock content %}
