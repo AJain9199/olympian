@@ -58,6 +58,8 @@ def athlete_list(request):
 def leaderboard(request):
     return render(request, 'leaderboard.html')
 
+def athlete(request):
+    return render(request, 'athlete.html')
 
 def history(request):
     return render(request, 'history.html')
