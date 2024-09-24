@@ -1,264 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manu Bhaker - Olympic Athlete Profile</title>
-    <link rel="stylesheet" href="stylesap.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2Pfamily=Poppins:wght@200;490;700&display=swap');
+{% load static %}
+{% block head %}
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
 
-        body {
-            background-color: #131316;
-            color: #ffff;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 2000px;
-        }
+{% endblock head %}
 
-        /* main  */
-        .content {
-            text-align: center;
-            padding: 50px 20px;
-        }
+{% block content %}
+<!-- <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5" style="margin-top: 200px">
+    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg" style="height: 800px;">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+                <div class="w-full md:w-1/2">
+                    <form class="flex items-center">
+                        <label for="simple-search" class="sr-only">Search</label>
+                        <div class="relative w-full">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
+                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="text" id="simple-search"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                placeholder="Search" required="">
+                        </div>
+                    </form>
+                </div>
+                <div
+                    class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
+                    <div class="flex items-center space-x-3 w-full md:w-auto">
+                        <button id="sportDropdownButton" data-dropdown-toggle="sportDropdown"
+                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            Sport
+                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path>
+                            </svg>
+                        </button>
+                        <div id="sportDropdown"
+                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
+                                <li class="flex items-center">
+                                    <input type="checkbox" name="sports" value="forward" id="forward"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="forward"
+                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input type="checkbox" name="sports" value="Shooter" id="Shooter"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="Shooter"
+                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Shooter</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <button id="countryDropdownButton" data-dropdown-toggle="countryDropdown"
+                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            Country
+                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path clip-rule="evenodd" fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+                            </svg>
+                        </button>
+                        <div id="countryDropdown"
+                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
+                            <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
+                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
+                                <li class="flex items-center">
+                                    <input type="checkbox" name="sports" value="forward" id="forward"
+                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="forward"
+                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="fitbit" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="fitbit"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft
+                                        (16)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="razor" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="razor"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor
+                                        (49)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="nikon" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="nikon"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Nikon
+                                        (12)</label>
+                                </li>
+                                <li class="flex items-center">
+                                    <input id="benq" type="checkbox" value=""
+                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+                                    <label for="benq"
+                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">BenQ
+                                        (74)</label>
+                                </li>
+                            </ul>
+                        </div>
 
-        .heading {
-            font-size: 3rem;
-            margin: 0;
-        }
+                    </div>
+                </div>
+            </div>
+            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+                <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-3 lg:grid-cols-4">
+                    <div
+                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
+                        <img class="rounded-t-lg aspect-square"
+                            src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"/>
+                        <div class="p-5">
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
+                            </h5>
+                            <div class="grid grid-cols-2">
+                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
+                                <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
+                                <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
+                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
+                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
+                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
+                                </p>
+                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
+                                </p>
+                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
+                            </div>
 
-        .nationality,
-        .sport {
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg"
+                                src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
+                                alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    Noteworthy technology acquisitions 2021</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
+                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                            <a href="#"
+                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Read more
+                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg"
+                                src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
+                                alt="" />
+                        </a>
 
-        /* side  
-.content-side {
-    background-color: #ffff;
-    color: #131316;
-    padding: 20px;
-    width: 400px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    transition: width 0.5s ease-in-out;
-    overflow: hidden;
-}
-*/
-        .content-side h2,
-        .content-side p,
-        .content-side h3 {
-            margin: 20px 0;
-        }
-
-        .gallery img {
-            width: 100px;
-            height: 100px;
-            margin: 5px;
-            border-radius: 10px;
-        }
-
-        #expandButton {
-            background-color: red;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-        }
-
-        #expandButton:hover {
-            background-color: whitesmoke;
-            color: #131316;
-        }
-
-        /* expand */
-        .expand {
-            width: 50vw;
-        }
-
-        /*
-.content-main {
-    display: none;
-    margin: 100px auto;
-    padding: 20px;
-    max-width: 800px;
-    background-color: #ffff;
-    color: #131316;
-    border-radius: 10px;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.content-main.visible {
-    display: block;
-    opacity: 1;
-}
-*/
-
-
-        .scroll-watcher {
-            height: 7px;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-            background-color: white;
-            width: 100%;
-            scale: 0 1;
-            animation: scroll-watcher linear;
-            animation-timeline: scroll();
-            transform-origin: right;
-        }
-
-        @keyframes scroll-watcher {
-            to {
-                scale: 1 1;
-            }
-        }
-
-        .sideimg {
-            height: 300px;
-            width: 300px;
-            border-radius: 50%;
-            margin-bottom: 0%;
-
-        }
-
-
-
-
-        .content-main {
-            background-color: #ffff;
-            color: #131316;
-            padding: 20px;
-            width: 500px;
-            position: fixed;
-            right: 0;
-            top: 0;
-            height: 100vh;
-            transition: width 0.5s ease-in-out;
-            overflow: hidden;
-
-        }
-
-
-        #more {
-            background-color: #131316;
-            color: #fff;
-            padding: 20px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-            border-radius: 100px;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        #more:hover {
-            background-color: whitesmoke;
-            color: #131316;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="scroll-watcher"></div>
-    <!-- main Content-->
-    <div class="content">
-        <h1 class="heading">Manu Bhaker</h1>
-        <p class="nationality">🇮🇳 India</p>
-        <p class="sport">Shooting - 10m Air Pistol</p>
-    </div>
-
-    <!-- side content-->
-    <div class="content-side">
-        <div class="brief">
-            <img class="sideimg" src="manub.png">
-            <h2>Achievements</h2>
-            <p><strong>Medals Won:</strong> 5 Gold, 2 Silver</p>
-            <p><strong>Olympic Games:</strong> 2 (2018, 2021)</p>
-
-        </div>
-
-        <button id="expandButton">See Full Profile</button>
-
-        <div class="gallery">
-            <h3>Image Gallery</h3>
-            <img src="manu1.jpg" alt="Manu Bhaker Image 1">
-            <img src="manu2.jpg" alt="Manu Bhaker Image 2">
+                </div>
+            </div>
         </div>
     </div>
-
-    <!--hidden contentn-->
-    <div class="content-main hidden">
-        <div class="profile-full">
-            <h2>Full Athlete Profile</h2>
-            <p>
-                Biography
-                With a bronze medal at the Paris 2024 Olympics, gold medals at the World Championships, Asian Games,
-                Commonwealth Games and Youth Olympic Games, Manu Bhaker has become the most successful Indian woman
-                shooter in history at a very young age.
-
-                Manu Bhaker became the first Indian woman to win an Olympic medal in shooting with a bronze at Paris
-                2024 in the women’s 10m air pistol event. It came a day after she became the first female shooter to
-                reach an Olympic final in an individual event in 20 years. <br><br><br>A pistol malfunction had denied
-                Manu Bhaker a shot at a medal at the Tokyo 2020 Olympics in the same event.
-
-                Days later, she became the first athlete from independent India to win two medals at the same edition of
-                the Olympics after she claimed another bronze in the 10m air pistol mixed team event with Sarabjot
-                Singh.
-
-                Even as a teenager, Manu Bhaker quickly rose through the ranks to become India’s latest shooting star.
-
-                Manu Bhaker was born on February 18, 2002, in Jhajjar, Haryana, a state known for its boxers and
-                wrestlers. She, however, took to sports like tennis, skating and boxing in school and also participated
-                in a form of martial arts called ‘thang ta’, winning medals at the national level.<br><br>
+</section> -->
 
 
+<div class="grid sm:flex sm:h-lvh max-sm:flex-row-reverse">
+    <div class="basis-4/6 max-sm:mt-[-1000px] max-sm:basis-1 grid gap-4 h-10 bg-white h-svh"></div>
+    <img src="https://images.ctfassets.net/1fvlg6xqnm65/4aNxTTOoHJTAhq6yXecYx4/f784b51770d537e1163fdf71a0b565bd/Lewis_Hamilton.png?w=1920&q=75&fm=webp" alt="" style="margin-top: 100px; margin-right: -11vw; position:relative;">
+    <div class="basis-5/6 max-sm:basis-1 grid bg-neutral-500 p-4 rounded-lg grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5 h-svh" id="responsive_headline">WOW</div>
+</div>
 
-                <button id="more"></button>
-            </p>
-            <h3>Image Gallery</h3>
-            <img src="manu.jpeg" alt="Manu Bhaker Image 3">
-            <img src="manu2.png" alt="Manu Bhaker Image 4">
-        </div>
-    </div>
+<script src="https://raw.githubusercontent.com/adactio/FitText.js/refs/heads/master/fittext.js"></script>
+<script>
+    window.fitText( document.getElementById("responsive_headline") );
+  </script>
+<!-- <script>
+    let players = document.querySelectorAll('.player');
+    const number1 = Math.floor(Math.random() * players.length);
+    const number2 = Math.floor(Math.random() * players.length);
+    const number3 = Math.floor(Math.random() * players.length);
+    players[number1].after('wow')
+    players[number2].after('wow')
+    players[number3].after('wow')
+</script> -->
+<!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    $('#countryPicker div').click(function () {
+        let country = $(this).attr('id');
+        console.log(country);
+        $('.player').hide("slow");
+        $('.' + country).show();
+    })
+    players = document.querySelectorAll('.player');
+    players.forEach(player => {
+        player.dataset.aos = 'fade-up';
+    });
+    AOS.init({
+        mirror: true,
+    });
+</script>
+!-->
 
-    <script>
-        // Select elements
-        const contentSide = document.querySelector('.content-side');
-        const contentMain = document.querySelector('.content-main');
-        const expandButton = document.getElementById('expandButton');
-
-        // Function to expand content side and show full profile
-        function expandContent() {
-            contentSide.classList.add('expand');
-            contentMain.classList.add('visible');
-        }
-
-        // Add event listener to button for expansion
-        expandButton.addEventListener('click', expandContent);
-
-        // IntersectionObserver to trigger on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    expandContent();
-                }
-            });
-        });
-
-        // Observe hidden content
-        observer.observe(document.querySelector('.hidden'));
-    </script>
-</body>
-
-</html>
+{% endblock content %}
