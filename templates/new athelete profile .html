@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athlete Profile</title>
+    <style>
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #131316;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1300px;
+    margin: 0;
+}
+
+.scroll-watcher {
+    height: 7px;
+    position: fixed; 
+    top: 0; 
+    z-index: 1000;
+    background-color: white; 
+    width: 100%;
+    scale: 0 1; 
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+    transform-origin: top;
+}
+
+@keyframes scroll-watcher {
+    to { scale:1 1; }
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    border: 2px solid white;
+    background-color: #141414;
+    padding: 20px;
+    padding-bottom: 550px;
+}
+
+.left-section {
+    padding: 20px;
+    flex: 1;
+}
+
+.right-section {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    flex: 0.5;
+    min-width: 300px;
+}
+
+.image {
+    margin-top: 20px;
+    border-radius: 10px;
+ 
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.sportname {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: #d3d3d3;
+}
+
+.info {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1b1b1b;
+    text-align: center;
+}
+
+.content-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+    color: black;
+  
+}
+
+button {
+    background-color: #1b1b1b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+button:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .right-section {
+        width: 100%;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .sportname {
+        font-size: 1rem;
+    }
+
+    .info {
+        font-size: 1.2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="scroll-watcher"></div>
+    <div class="container">
+        <div class="left-section">
+            <h1 class="name">Manu Bhaker</h1>
+            <p class="sportname">Shooting - 10m Air Pistol <br>🇮🇳 India</p>
+        </div>
+        <div class="right-section">
+            <div class="info">
+                <h2>Achievements</h2>
+                <p>Medals Won: 5 Gold, 2 Silver</p>
+                <p>Olympic Games: 2 (2018, 2021)</p>
+            </div>
+
+            <!-- Content section for writing -->
+            <div class="content-section">
+                <p id="extra-content" class="hidden">
+                    Manu Bhaker is one of the youngest Indian athletes to make a significant impact in international sports, especially in shooting. Her focus, determination, and precision have led her to victory in multiple competitions, inspiring the youth of India and making the nation proud.
+                </p>
+                <button id="read-more-btn" onclick="toggleContent()">Read More</button>
+            </div>
+
+            <!-- Athlete Image -->
+            <img class="image" src="manub.png" alt="Manu Bhaker" style="width:398px;height:400px;">
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            var extraContent = document.getElementById("extra-content");
+            var btn = document.getElementById("read-more-btn");
+
+            if (extraContent.classList.contains("hidden")) {
+                extraContent.classList.remove("hidden");
+                btn.textContent = "Read Less";
+            } else {
+                extraContent.classList.add("hidden");
+                btn.textContent = "Read More";
+            }
+        }
+    </script>
+</body>
+</html>
