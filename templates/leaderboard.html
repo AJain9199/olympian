@@ -499,7 +499,7 @@
 
 
 
-<section class="bg-gray-50 dark:bg-gray-900 py-3 sm:py-5">
+<section class="bg-drk py-3 sm:py-5">
     <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
         <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
             <div class="overflow-x-auto">
@@ -523,22 +523,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
-                            <td class="w-4 px-4 py-3">
-                                <div class="flex items-center">
-                                    1&#41;
-                                </div>
-                            </td>
-                            <td scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                <img src="https://gstatic.olympics.com/s1/t_original/static/noc/oly/3x2/180x120/USA.png" alt="iMac Front Image" class="w-auto h-8 mr-3">
-                                United States of America
-                            </td>
-                            <td></td>
-                            <td class="px-4 py-2">40</td>
-                            <td class="px-4 py-2">44</td>
-                            <td class="px-4 py-2">42</td>
-                            <td class="px-4 py-2">126</td>
-                        </tr>
+                        {% for country in countries %}
+                            <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <td class="w-4 px-4 py-3">
+                                    <div class="flex items-center">
+                                        {{ country.0 }}&#41;
+                                    </div>
+                                </td>
+                                <td scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {% if country.2 %}
+                                         <img src="https://flagsapi.com/{{ country.2 }}/flat/64.png" alt="iMac Front Image" class="w-auto h-8 mr-3">
+                                    {% endif %}
+                                    {{ country.1 }}
+                                </td>
+                                <td></td>
+                                <td class="px-4 py-2">{{ country.3 }}</td>
+                                <td class="px-4 py-2">{{ country.4 }}</td>
+                                <td class="px-4 py-2">{{ country.5 }}</td>
+                                <td class="px-4 py-2">{{ country.6 }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
