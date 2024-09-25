@@ -93,7 +93,7 @@
                              class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd"
                                   d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
-                                  clip-rule="evenodd"/>
+                                  clip-rule="evenodd"></path>
                         </svg>
                         Country
                         <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
@@ -125,7 +125,7 @@
         {#        <div class="relative text-center bg-fixed bg-center bg-cover min-w-full min-h-full" style="background-image: url({% static 'olympics.jpg' %})">#}
         {#            <h1 class="permanent-marker-regular text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"> Hall of <br> Fame </h1>#}
         {#        </div>#}
-        <div class="grid p-4 mt-5 rounded-lg grid-cols-2 md:grid-cols-5 gap-4 mx-5 md:mx-10" id="grid">
+        <div class="grid p-4 mt-5 rounded-lg grid-cols-2 md:grid-cols-3 gap-4 mx-5 md:mx-10" id="grid">
 {#            {% for chunk in athletes %}#}
 {#                <div class="grid gap-4">#}
 {#                    {% for athlete in chunk %}#}
@@ -204,9 +204,9 @@
                         div.classList.add('grid', 'gap-4');
                         for (const athlete in rows[row]) {
                             let figure = document.createElement('figure');
-                            figure.classList.add('relative', 'max-w-full', 'hover:shadow-xl');
+                            figure.classList.add('relative', 'max-w-full', 'hover:-translate-y-2', 'hover:shadow-md', 'hover:shadow-white');
                             let img = document.createElement('img');
-                            img.classList.add('h-full', 'max-w-full', 'rounded-lg');
+                            img.classList.add('h-full', 'w-auto', 'object-cover', 'rounded-lg');
                             img.src = rows[row][athlete]['fields']['image'];
                             img.alt = '';
                             let figcaption = document.createElement('figcaption');
@@ -215,8 +215,14 @@
                             p.classList.add('text-2xl');
                             p.innerHTML = rows[row][athlete]['fields']['name'];
                             figcaption.appendChild(p);
+
+                            let country = document.createElement('img');
+                            country.classList.add("absolute", "top-2", "right-3", "h-7", "rounded-full");
+                            country.src = `https://flagsapi.com/${rows[row][athlete]['fields']['country']}/flat/64.png`;
+
                             figure.appendChild(img);
                             figure.appendChild(figcaption);
+                            figure.appendChild(country);
                             div.appendChild(figure);
                         }
                         grid.appendChild(div);
