@@ -7,51 +7,65 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <style>
     @font-face {
-            font-family: UnityFont;
-            src: url("{% static 'heroFont.ttf' %}") format("truetype");
-        }
+        font-family: UnityFont;
+        src: url("{ static 'heroFont.ttf'}") format("truetype");
+    }
+
     .athleteHeading {
-        font-family: "UnityFont", sans-serif;
+        font-family: "UnityFont", sns-serif;
         font-style: normal;
         animation-timeline: scroll();
         animation-duration: 1ms;
         animation-name: scaleDown;
         animation-timing-function: ease-in-out;
-        color: #ffffff; background-image: -webkit-linear-gradient(45deg, #ffffff 21%, #9c9599 50%, #242326 100%); background-clip: text; -webkit-background-clip: text; text-fill-color: transparent; -webkit-text-fill-color: transparent;          
+        color: #ffffff;
+        background-image: -webkit-linear-gradient(45deg, #ffffff 21%, #9c9599 50%, #242326 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
     }
-    .athleteImg{
+
+    .athleteImg {
         animation-timeline: scroll();
         animation-duration: 1ms;
         animation-name: goRightAndShrink;
         animation-timing-function: ease-in-out;
     }
-    .athleteInfo{
+
+    .athleteInfo {
         animation-timeline: scroll();
         animation-duration: 1ms;
         animation-name: scaleUp;
         animation-timing-function: ease-in-out;
     }
+
     @keyframes scaleUp {
         0% {
             transform: translateX(-25%) scale(0.5) translateY(-50%);
         }
+
         100% {
             margin-top: 38vh;
             transform: translateX(0) scale(1);
         }
     }
+
     @keyframes scaleDown {
         0% {
             transform: translateX(0) scale(1);
         }
+
         100% {
             transform: translateX(-25%) scale(0.5) translateY(-50%);
         }
     }
+
     @keyframes goRightAndShrink {
         0% {
             transform: translateX(0) scale(1);
         }
+
         100% {
             transform: translateX(15%) scale(0.8) translateY(10%);
             margin-top: -116vh;
@@ -68,14 +82,14 @@
         font-size: 25vw;
         line-height: 18vw;
         margin-bottom: -72vh;
-        margin-top: 5vh;">Neeraj</h1>
+        margin-top: 5vh;">Neeraj Chopra</h1>
         <div class=" h-[72vh] mt-[82vh] bg-white athleteInfo">
             <span class="font-[100px] block">TEXT AND TABLES GOES HERE
-                
+
             </span>
-            <div class="inline-block relative overflow-x-auto mt-[20px] rounded-lg">
-                <table class="w-[200px] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw]">
+                <table class="w-[30vw] text-sm text-left rtl:text-right">
+                    <thead class="text-xs uppercase">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 Product name
@@ -86,24 +100,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr class="border-b">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                                 GOLD MEDALS
                             </th>
                             <td class="px-6 py-4">
                                 Silver
                             </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr class="border-b">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                                 Microsoft Surface Pro
                             </th>
                             <td class="px-6 py-4">
                                 White
                             </td>
                         </tr>
-                        <tr class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr class="border-b">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrape">
                                 Magic Mouse 2
                             </th>
                             <td class="px-6 py-4">
@@ -113,9 +127,9 @@
                     </tbody>
                 </table>
             </div>
-            <div class="inline-block relative overflow-x-auto mt-[20px] rounded-lg">
-                <table class="w-[200px] text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw]">
+                <table class="w-[30vw] text-sm text-left rtl:text-right">
+                    <thead class="text-xs uppercase">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 Product name
@@ -126,86 +140,54 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr class="border-b">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                                 GOLD MEDALS
                             </th>
-                            <td class="px-6 py-4">
-                                Silver
-                            </td>
                         </tr>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr class="border-b">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
                                 Microsoft Surface Pro
                             </th>
-                            <td class="px-6 py-4">
-                                White
-                            </td>
                         </tr>
-                        <tr class="bg-white dark:bg-gray-800">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr class="border-b">
+                            <th scope="row" class="px-6 py-4 font-medium whitespace-nowrape">
                                 Magic Mouse 2
                             </th>
-                            <td class="px-6 py-4">
-                                Black
-                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-        
 
-        <img class="athleteImg sm:ml-[16vw] mt-[-154vh] static" src="https://images.ctfassets.net/1fvlg6xqnm65/4aNxTTOoHJTAhq6yXecYx4/f784b51770d537e1163fdf71a0b565bd/Lewis_Hamilton.png?w=1920&q=75&fm=webp" alt="" style="z-index: 10;">
+
+        <img class="athleteImg sm:ml-[16vw] mt-[-154vh] static"
+            src="https://images.ctfassets.net/1fvlg6xqnm65/4aNxTTOoHJTAhq6yXecYx4/f784b51770d537e1163fdf71a0b565bd/Lewis_Hamilton.png?w=1920&q=75&fm=webp"
+            alt="" style="z-index: 10;">
     </div>
-    <div class="basis-2/6 max-sm:basis-1 bg-neutral-500 p-4 rounded-lg gap-4 h-svh">
-        <center><span class="mb-[20px] block">COUNTRY:</span></center>
-        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png" class="object-cover">
-    
+    <div class="basis-2/6 max-sm:basis-1 bg-neutral-500 p-4 rounded-lg h-svh">
+        <center><span class="mb-[20px] block">INDIA</span></center>
+        <center><img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png"
+                class="object-cover countryImg w-[200px] rounded-lg"></center>
+        <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
+            <div class="inline-block flex flex-col align-center justify-center">
+                <span class="text-center" style="font-size: 80px; line-height:70px">🥇</span>
+                <span class="text-center" style="font-size: 40px">100</span>
+            </div>
+            <div class="inline-block flex flex-col align-center justify-center">
+                <span class="text-center" style="font-size: 80px; line-height:70px">🥈</span>
+                <span class="text-center" style="font-size: 40px">100</span>
+            </div>
+            <div class="col-span-2 inline-block flex flex-col align-center justify-center" style="margin-top: -100px;">
+                <span class="text-center" style="font-size: 80px; line-height:70px">🥉</span>
+                <span class="text-center" style="font-size: 40px">100</span>
+            </div>
+        </div>
 
-<div class="relative overflow-x-auto mt-[20px] rounded-lg">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-            <tr>
-                <th scope="col" class="px-6 py-3">
-                    Product name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    Color
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    GOLD MEDALS
-                </th>
-                <td class="px-6 py-4">
-                    Silver
-                </td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="px-6 py-4">
-                    White
-                </td>
-            </tr>
-            <tr class="bg-white dark:bg-gray-800">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="px-6 py-4">
-                    Black
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
 
     </div>
-        
+
 </div>
 
 {% endblock content %}
