@@ -1,3 +1,5 @@
+import csv
+
 import pycountry
 from django.core import serializers
 from django.db.models import Q
@@ -56,10 +58,19 @@ def athlete_list(request):
 
 
 def leaderboard(request):
-    return render(request, 'leaderboard.html')
+    countries = []
+    with open("static/olympics2024.csv", "r") as f:
+        reader = csv.reader(f)
+        data = list(reader)
 
-def athlete(request):
-    return render(request, 'athlete.html')
+        for row in data[1:]:
+            if not pycountry.countries.get(alpha_3=row[2]):
+                print(row[1])
+                countries.append((row[0], row[1], None, row[3], row[4], row[5], row[6]))
+            else:
+                countries.append((row[0], row[1], pycountry.countries.get(alpha_3=row[2]).alpha_2, row[3], row[4], row[5], row[6]))
+    return render(request, 'leaderboard.html', {'countries': countries})
+
 
 def history(request):
     return render(request, 'history.html')

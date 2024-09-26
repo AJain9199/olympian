@@ -7,6 +7,6 @@ urlpatterns = [
     path('leader', views.leaderboard, name='leaderboard'),
     path('hof', views.hall_of_fame, name='hall_of_fame'),
     path('athlete_list', views.athlete_list, name='athlete_list'),
-    path('athlete', views.athlete, name='athlete'),
+    path('athlete/<int:athlete_id>', views.athlete, name='athlete'),
 ]
 

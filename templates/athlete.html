@@ -1,232 +1,227 @@
-
+{% extends 'base.html' %}
 {% load static %}
 {% block head %}
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+<style>
+    @font-face {
+        font-family: UnityFont;
+        src: url("{ static 'heroFont.ttf'}") format("truetype");
+    }
 
+    .athleteHeading {
+        font-family: "UnityFont", sns-serif;
+        font-style: normal;
+        animation-timeline: scroll();
+        animation-duration: 1ms;
+        animation-name: scaleDown;
+        animation-timing-function: ease-in-out;
+        color: #ffffff;
+        background-image: -webkit-linear-gradient(45deg, #ffffff 21%, #9c9599 50%, #242326 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-fill-color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
 
+    .athleteImg {
+        animation-timeline: scroll();
+        animation-duration: 1ms;
+        animation-name: goRightAndShrink;
+        animation-timing-function: ease-in-out;
+    }
+
+    .athleteInfo {
+        animation-timeline: scroll();
+        animation-duration: 1ms;
+        animation-name: scaleUp;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes scaleUp {
+        0% {
+            transform: translateX(-25%) scale(0.5) translateY(-50%);
+        }
+
+        100% {
+            margin-top: 38vh;
+            transform: translateX(0) scale(1);
+        }
+    }
+
+    @keyframes scaleDown {
+        0% {
+            transform: translateX(0) scale(1);
+        }
+
+        100% {
+            transform: translateX(-25%) scale(0.5) translateY(-50%);
+        }
+    }
+
+    @keyframes goRightAndShrink {
+        0% {
+            transform: translateX(0) scale(1);
+        }
+
+        100% {
+            transform: translateX(15%) scale(0.8) translateY(10%);
+            margin-top: -116vh;
+        }
+    }
+</style>
 {% endblock head %}
 
 {% block content %}
-<!-- <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5" style="margin-top: 200px">
-    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
-        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg" style="height: 800px;">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
-                <div class="w-full md:w-1/2">
-                    <form class="flex items-center">
-                        <label for="simple-search" class="sr-only">Search</label>
-                        <div class="relative w-full">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <input type="text" id="simple-search"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Search" required="">
-                        </div>
-                    </form>
+
+<div class="grid sm:flex sm:h-lvh max-sm:flex-row-reverse fixed">
+    <div class="basis-5/6 max-sm:basis-1 grid gap-4 h-10 h-svh bg-[#1A1A1A] max-w-[82vw]">
+        <h1 class="sm:text-[10vw] athleteHeading" style="text-align: center;
+        font-size: 25vw;
+        line-height: 18vw;
+        margin-bottom: -72vh;
+        margin-top: 5vh;">{{ athlete_data.name }}</h1>
+        <div class=" h-[72vh] mt-[82vh] bg-white athleteInfo">
+            <div class="grid grid-cols-2">
+                <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw] ml-[10px]">
+                    <p class="my-auto block w-[30vw] text-sm text-left rtl:text-right">Lorem ipsum dolor sit, amet
+                        consectetur adipisicing elit. Unde animi eius, laborum quaerat quisquam fugiat sequi odit
+                        placeat vero corrupti nobis. Dolore nostrum ratione autem iusto quas ipsum voluptas aperiam.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur modi, beatae adipisci omnis
+                        cupiditate repellat quae natus rem reiciendis nostrum esse quibusdam quia hic voluptate
+                        molestiae fugiat dolor iure. Doloremque. Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Deleniti es</p>
                 </div>
-                <div
-                    class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <div class="flex items-center space-x-3 w-full md:w-auto">
-                        <button id="sportDropdownButton" data-dropdown-toggle="sportDropdown"
-                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                            type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            Sport
-                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path>
-                            </svg>
-                        </button>
-                        <div id="sportDropdown"
-                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
-                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
-                                <li class="flex items-center">
-                                    <input type="checkbox" name="sports" value="forward" id="forward"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="forward"
-                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input type="checkbox" name="sports" value="Shooter" id="Shooter"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="Shooter"
-                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Shooter</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <button id="countryDropdownButton" data-dropdown-toggle="countryDropdown"
-                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                            type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Country
-                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                            </svg>
-                        </button>
-                        <div id="countryDropdown"
-                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
-                            <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
-                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
-                                <li class="flex items-center">
-                                    <input type="checkbox" name="sports" value="forward" id="forward"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="forward"
-                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="fitbit" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="fitbit"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft
-                                        (16)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="razor" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="razor"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor
-                                        (49)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="nikon" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="nikon"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Nikon
-                                        (12)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="benq" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="benq"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">BenQ
-                                        (74)</label>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-                <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-3 lg:grid-cols-4">
-                    <div
-                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
-                        <img class="rounded-t-lg aspect-square"
-                            src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"/>
-                        <div class="p-5">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                            </h5>
-                            <div class="grid grid-cols-2">
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
-                                alt="" />
-                        </a>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021</h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Read more
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
-                                alt="" />
-                        </a>
-
+                <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw]">
+                    <table class="w-[10vw] text-sm text-left rtl:text-right">
+                        <thead class="text-xs uppercase">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Information
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    GOLD MEDALS
+                                </th>
+                            </tr>
+                            <tr class="border-b">
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Microsoft Surface Pro
+                                </th>
+                            </tr>
+                            <tr class="border-b">
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrape">
+                                    Magic Mouse 2
+                                </th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+
+
+        <img class="athleteImg sm:ml-[16vw] mt-[-154vh] static" src="{{ athlete_data.without_bg.url }}" alt=""
+            style="z-index: 10;">
     </div>
-</section> -->
+    <div class="basis-2/6 max-sm:basis-1 bg-neutral-500 p-4 rounded-lg h-svh">
+        <center><span class="mb-[20px] block">INDIA</span></center>
+        <center><img
+                src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png"
+                class="object-cover countryImg w-[200px] rounded-lg"></center>
+        <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
+            <div class="inline-block flex flex-col align-center justify-center">
+                <span class="text-center" style="font-size: 80px; line-height:70px">🥇</span>
+                <span class="text-center" style="font-size: 40px">100</span>
+            </div>
+            <div class="inline-block flex flex-col align-center justify-center">
+                <span class="text-center" style="font-size: 80px; line-height:70px">🥈</span>
+                <span class="text-center" style="font-size: 40px">100</span>
+            </div>
+            <div class="col-span-2 inline-block flex flex-col align-center justify-center" style="margin-top: -100px;">
+                <span class="text-center" style="font-size: 80px; line-height:70px">🥉</span>
+                <span class="text-center" style="font-size: 40px">100</span>
+            </div>
+        </div>
 
 
-<div class="grid sm:flex sm:h-lvh max-sm:flex-row-reverse">
-    <div class="basis-4/6 max-sm:mt-[-1000px] max-sm:basis-1 grid gap-4 h-10 bg-white h-svh"></div>
-    <img src="https://images.ctfassets.net/1fvlg6xqnm65/4aNxTTOoHJTAhq6yXecYx4/f784b51770d537e1163fdf71a0b565bd/Lewis_Hamilton.png?w=1920&q=75&fm=webp" alt="" style="margin-top: 100px; margin-right: -11vw; position:relative;">
-    <div class="basis-5/6 max-sm:basis-1 grid bg-neutral-500 p-4 rounded-lg grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5 h-svh" id="responsive_headline">WOW</div>
+    </div>
+
 </div>
 
-<script src="https://raw.githubusercontent.com/adactio/FitText.js/refs/heads/master/fittext.js"></script>
-<script>
-    window.fitText( document.getElementById("responsive_headline") );
-  </script>
-<!-- <script>
-    let players = document.querySelectorAll('.player');
-    const number1 = Math.floor(Math.random() * players.length);
-    const number2 = Math.floor(Math.random() * players.length);
-    const number3 = Math.floor(Math.random() * players.length);
-    players[number1].after('wow')
-    players[number2].after('wow')
-    players[number3].after('wow')
-</script> -->
-<!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    $('#countryPicker div').click(function () {
-        let country = $(this).attr('id');
-        console.log(country);
-        $('.player').hide("slow");
-        $('.' + country).show();
-    })
-    players = document.querySelectorAll('.player');
-    players.forEach(player => {
-        player.dataset.aos = 'fade-up';
-    });
-    AOS.init({
-        mirror: true,
-    });
-</script>
-!-->
 
+<script>
+    const issues = [];
+
+    function checkScrollingAncestor(elem) {
+        if (!elem.parentElement || elem.parentElement.tagName.toLowerCase() === 'body') {
+            return false;
+        }
+
+        const computedStyle = window.getComputedStyle(elem.parentElement);
+
+        if (computedStyle.overflowX == 'auto') {
+            return true;
+        } else {
+            return checkScrollingAncestor(elem.parentElement);
+        }
+    }
+
+    function getSizedAncestor(elem) {
+        if (!elem.parentElement) {
+            return null;
+        }
+
+        if (elem.parentElement.offsetWidth > 0) {
+            return elem.parentElement;
+        } else {
+            return getSizedAncestor(elem.parentElement);
+        }
+    }
+
+    function checkElement(el) {
+        const hasScrollingAncestor = checkScrollingAncestor(el);
+        if (hasScrollingAncestor) {
+            return;
+        }
+
+        const isHidden = (el.offsetParent === null);
+        if (isHidden) {
+            return;
+        }
+
+        // Find elements that overflow the document width
+        if (el.offsetWidth > document.documentElement.offsetWidth) {
+            issues.push(el);
+        }
+
+        const ancestor = getSizedAncestor(el);
+        const info = window.getComputedStyle(el);
+
+        // Find any negative margins (deliberate outflow)
+        const adjustment =
+            (info.marginLeft.startsWith('-') ? parseFloat(info.marginLeft) * -1 : 0)
+            +
+            (info.marginRight.startsWith('-') ? parseFloat(info.marginRight) * -1 : 0);
+
+        if (ancestor && (el.offsetWidth - adjustment) > ancestor.offsetWidth) {
+            if (el.style.fontSize == '25vw') {
+                el.style.fontSize = '20vw'
+            }
+            issues.push(el);
+        }
+    }
+
+    document.querySelectorAll('*').forEach(checkElement);
+
+    issues.length > 0 && issues[0].scrollIntoView();
+    console.log(issues);
+
+</script>
 {% endblock content %}
