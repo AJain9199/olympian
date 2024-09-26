@@ -14,5 +14,6 @@ class Athlete(models.Model):
     silver_medals = models.IntegerField()
     bronze_medals = models.IntegerField()
     image = models.ImageField(upload_to='media/')
+    without_bg = models.ImageField(upload_to='media/', blank=True, null=True, default="")
     date_of_birth = models.DateField()
     history = models.TextField(max_length=3000)

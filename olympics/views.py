@@ -27,6 +27,7 @@ def hall_of_fame(request):
                                  countries],
                    'sports': [x['sport'] for x in sports]})
 
+
 def athlete_list(request):
     if request.method == 'POST':
         print(request.POST)
@@ -69,10 +70,6 @@ def leaderboard(request):
             else:
                 countries.append((row[0], row[1], pycountry.countries.get(alpha_3=row[2]).alpha_2, row[3], row[4], row[5], row[6]))
     return render(request, 'leaderboard.html', {'countries': countries})
-
-
-def athlete(request):
-    return render(request, 'athlete.html')
 
 
 def history(request):
