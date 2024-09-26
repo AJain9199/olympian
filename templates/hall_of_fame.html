@@ -7,15 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 
     <style>
-        .permanent-marker-regular {
-            font-family: "Permanent Marker", cursive;
-            font-weight: 400;
-            font-style: normal;
-        }
 
         .parallax-mirror {
-            min-height: 100%;
-        !important;
+            min-height: 100% !important;
             z-index: 1 !important;
         }
 
@@ -29,9 +23,9 @@
 
 
     <div class="flex flex-col justify-center align-center">
-        <div style="background-image: url({% static 'olympics.jpg' %}); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;">
-            <h1 class="permanent-marker-regular text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
-                Hall of <br> Fame </h1>
+        <div style="background-image: url(/media/olympics.jpg); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;">
+            <h1 style="font-weight: 900; font-style: italic; color: white;" class="text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+                Hall of <br> <a style="color: black;"> Fame </a> </h1>
         </div>
 
         <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
