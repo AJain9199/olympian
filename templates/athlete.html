@@ -78,7 +78,7 @@
 {% block content %}
 
 <div class="grid sm:flex sm:h-lvh max-sm:flex-row-reverse fixed">
-    <div class="basis-5/6 max-sm:basis-1 grid gap-4 h-10 h-svh bg-[#1A1A1A]">
+    <div class="basis-5/6 max-sm:basis-1 grid gap-4 h-10 h-svh bg-[#1A1A1A] max-w-[82vw]">
         <h1 class="sm:text-[10vw] athleteHeading" style="text-align: center;
         font-size: 25vw;
         line-height: 18vw;
@@ -87,7 +87,13 @@
         <div class=" h-[72vh] mt-[82vh] bg-white athleteInfo">
             <div class="grid grid-cols-2">
                 <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw] ml-[10px]">
-                    <p class="my-auto block w-[30vw] text-sm text-left rtl:text-right">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde animi eius, laborum quaerat quisquam fugiat sequi odit placeat vero corrupti nobis. Dolore nostrum ratione autem iusto quas ipsum voluptas aperiam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur modi, beatae adipisci omnis cupiditate repellat quae natus rem reiciendis nostrum esse quibusdam quia hic voluptate molestiae fugiat dolor iure. Doloremque. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti es</p>
+                    <p class="my-auto block w-[30vw] text-sm text-left rtl:text-right">Lorem ipsum dolor sit, amet
+                        consectetur adipisicing elit. Unde animi eius, laborum quaerat quisquam fugiat sequi odit
+                        placeat vero corrupti nobis. Dolore nostrum ratione autem iusto quas ipsum voluptas aperiam.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur modi, beatae adipisci omnis
+                        cupiditate repellat quae natus rem reiciendis nostrum esse quibusdam quia hic voluptate
+                        molestiae fugiat dolor iure. Doloremque. Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Deleniti es</p>
                 </div>
                 <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw]">
                     <table class="w-[10vw] text-sm text-left rtl:text-right">
@@ -121,9 +127,14 @@
         </div>
 
 
+<<<<<<< HEAD
         <img class="athleteImg sm:ml-[16vw] mt-[-154vh] static
             src="{{ athlete_data.without_bg.url }}"
             alt="" style="z-index: 10;">
+=======
+        <img class="athleteImg sm:ml-[16vw] mt-[-154vh] static" src="{{ athlete_data.without_bg.url }}" alt=""
+            style="z-index: 10;">
+>>>>>>> ae0ccbdba42d1d22a3f517ae56941472829c386d
     </div>
     <div style="background-color: whitesmoke;" class="basis-2/6 max-sm:basis-1 p-4 rounded-lg h-svh">
        <center><p style="font-weight: 800;font-size: 52px;">INDIA</p></center>
@@ -151,4 +162,73 @@
 
 </div>
 
+
+<script>
+    const issues = [];
+
+    function checkScrollingAncestor(elem) {
+        if (!elem.parentElement || elem.parentElement.tagName.toLowerCase() === 'body') {
+            return false;
+        }
+
+        const computedStyle = window.getComputedStyle(elem.parentElement);
+
+        if (computedStyle.overflowX == 'auto') {
+            return true;
+        } else {
+            return checkScrollingAncestor(elem.parentElement);
+        }
+    }
+
+    function getSizedAncestor(elem) {
+        if (!elem.parentElement) {
+            return null;
+        }
+
+        if (elem.parentElement.offsetWidth > 0) {
+            return elem.parentElement;
+        } else {
+            return getSizedAncestor(elem.parentElement);
+        }
+    }
+
+    function checkElement(el) {
+        const hasScrollingAncestor = checkScrollingAncestor(el);
+        if (hasScrollingAncestor) {
+            return;
+        }
+
+        const isHidden = (el.offsetParent === null);
+        if (isHidden) {
+            return;
+        }
+
+        // Find elements that overflow the document width
+        if (el.offsetWidth > document.documentElement.offsetWidth) {
+            issues.push(el);
+        }
+
+        const ancestor = getSizedAncestor(el);
+        const info = window.getComputedStyle(el);
+
+        // Find any negative margins (deliberate outflow)
+        const adjustment =
+            (info.marginLeft.startsWith('-') ? parseFloat(info.marginLeft) * -1 : 0)
+            +
+            (info.marginRight.startsWith('-') ? parseFloat(info.marginRight) * -1 : 0);
+
+        if (ancestor && (el.offsetWidth - adjustment) > ancestor.offsetWidth) {
+            if (el.style.fontSize == '25vw') {
+                el.style.fontSize = '20vw'
+            }
+            issues.push(el);
+        }
+    }
+
+    document.querySelectorAll('*').forEach(checkElement);
+
+    issues.length > 0 && issues[0].scrollIntoView();
+    console.log(issues);
+
+</script>
 {% endblock content %}
