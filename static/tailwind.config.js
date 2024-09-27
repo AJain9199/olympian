@@ -14,7 +14,7 @@ module.exports = {
     // },
     extend: {
       colors: {
-        "drk": '#282828',
+        "drk": '#0d243d',
         "drk-accent": '#3A3A3A',
         "blue": '#87CEEB',
         "yellow": '#FFD700',
