@@ -41,13 +41,30 @@
         animation-timing-function: ease-in-out;
     }
 
+    .athleteVitals {
+        animation-timeline: scroll();
+        animation-duration: 1ms;
+        animation-name: goRight;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes goRight {
+        0% {
+            transform: translateX(120%)
+        }
+
+        100% {
+            transform: translateX(0%)
+        }
+    }
+
     @keyframes scaleUp {
         0% {
             transform: translateX(-25%) scale(0.5) translateY(-50%);
         }
 
         100% {
-            margin-top: 38vh;
+            margin-top: 13vw;
             transform: translateX(0) scale(1);
         }
     }
@@ -58,17 +75,19 @@
         }
 
         100% {
-            transform: translateX(-25%) scale(0.5) translateY(-50%);
+            transform: translateX(-15%) scale(0.7) translateY(-25%);
         }
     }
 
     @keyframes goRightAndShrink {
         0% {
+            filter: grayscale(50%);
             transform: translateX(0) scale(1);
         }
 
         100% {
-            transform: translateX(15%) scale(0.8) translateY(10%);
+            filter: grayscale(0%);
+            transform: translateX(7%) scale(0.8) translateY(10%);
             margin-top: -116vh;
         }
     }
@@ -84,6 +103,34 @@
         line-height: 18vw;
         margin-bottom: -72vh;
         margin-top: 5vh;">{{ athlete_data.name }}</h1>
+        <div class="athleteVitals relative mt-[-5vh] rounded-lg w-[10vw] ml-[62vw] text-white">
+            <table class="w-[10vw] text-sm text-left rtl:text-right">
+                <thead class="text-xs uppercase">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            Information
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                            GOLD MEDALS
+                        </th>
+                    </tr>
+                    <tr class="border-b">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                            Microsoft Surface Pro
+                        </th>
+                    </tr>
+                    <tr class="border-b">
+                        <th scope="row" class="px-6 py-4 font-medium whitespace-nowrape">
+                            Magic Mouse 2
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         <div class=" h-[72vh] mt-[82vh] bg-white athleteInfo">
             <div class="grid grid-cols-2">
                 <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw] ml-[10px]">
@@ -95,57 +142,30 @@
                         molestiae fugiat dolor iure. Doloremque. Lorem ipsum dolor, sit amet consectetur adipisicing
                         elit. Deleniti es</p>
                 </div>
-                <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[30vw]">
-                    <table class="w-[10vw] text-sm text-left rtl:text-right">
-                        <thead class="text-xs uppercase">
-                            <tr>
-                                <th scope="col" class="px-6 py-3">
-                                    Information
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b">
-                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                                    GOLD MEDALS
-                                </th>
-                            </tr>
-                            <tr class="border-b">
-                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
-                                    Microsoft Surface Pro
-                                </th>
-                            </tr>
-                            <tr class="border-b">
-                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrape">
-                                    Magic Mouse 2
-                                </th>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
-
-
-        <img class="athleteImg sm:ml-[16vw] mt-[-154vh] static" src="{{ athlete_data.without_bg.url }}" alt=""
+        <img class="athleteImg sm:ml-[16vw] mt-[-175vh] static" src="{{ athlete_data.without_bg.url }}" alt=""
             style="z-index: 10;">
     </div>
-    <div class="basis-2/6 max-sm:basis-1 bg-neutral-500 p-4 rounded-lg h-svh">
-        <center><span class="mb-[20px] block">INDIA</span></center>
+    <div style="background-color: whitesmoke; z-index: 100;" class="basis-2/6 max-sm:basis-1 p-4 rounded-lg h-svh">
+        <center>
+            <p style="font-weight: 800;font-size: 52px;">INDIA</p>
+        </center>
         <center><img
                 src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png"
                 class="object-cover countryImg w-[200px] rounded-lg"></center>
         <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
             <div class="inline-block flex flex-col align-center justify-center">
-                <span class="text-center" style="font-size: 80px; line-height:70px">🥇</span>
+                <!-- <span class="text-center" style="font-size: 80px; line-height:70px"></span> -->
+                <img src="/media/gold.png">
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
             <div class="inline-block flex flex-col align-center justify-center">
-                <span class="text-center" style="font-size: 80px; line-height:70px">🥈</span>
+                <img src="/media/silver.png">
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
             <div class="col-span-2 inline-block flex flex-col align-center justify-center" style="margin-top: -100px;">
-                <span class="text-center" style="font-size: 80px; line-height:70px">🥉</span>
+                <img src="/media/bronze.png">
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
         </div>
