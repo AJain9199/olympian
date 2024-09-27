@@ -211,6 +211,8 @@
                     let div = document.createElement('div');
                     div.classList.add('grid', 'gap-4');
                     for (const athlete in rows[row]) {
+                        let a = document.createElement('a');
+                        a.href = '/athlete/' + rows[row][athlete]['pk'];
                         let figure = document.createElement('figure');
                         figure.classList.add('relative', 'max-w-full');
                         let img = document.createElement('img');
@@ -228,11 +230,11 @@
                         let country = document.createElement('img');
                         country.classList.add("absolute", "top-2", "right-3", "h-7", "rounded-lg");
                         country.src = `https://flagsapi.com/${rows[row][athlete]['fields']['country']}/flat/64.png`;
-
                         figure.appendChild(img);
                         figure.appendChild(figcaption);
                         figure.appendChild(country);
-                        div.appendChild(figure);
+                        a.appendChild(figure);
+                        div.appendChild(a);
                     }
                     grid.appendChild(div);
                 }
