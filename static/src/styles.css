@@ -1317,6 +1317,18 @@ input:checked + .toggle-bg {
   margin-top: 1.75rem;
 }
 
+.ml-\[62vw\] {
+  margin-left: 62vw;
+}
+
+.mt-\[-175vh\] {
+  margin-top: -175vh;
+}
+
+.mt-\[-5vh\] {
+  margin-top: -5vh;
+}
+
 .block {
   display: block;
 }
