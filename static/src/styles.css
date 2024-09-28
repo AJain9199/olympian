@@ -1204,6 +1204,10 @@ input:checked + .toggle-bg {
   margin: 1rem;
 }
 
+.m-\[20vw\] {
+  margin: 20vw;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -1578,6 +1582,10 @@ input:checked + .toggle-bg {
 
 .w-44 {
   width: 11rem;
+}
+
+.w-\[28vw\] {
+  width: 28vw;
 }
 
 .max-w-\[82vw\] {
@@ -2227,6 +2235,14 @@ input:checked + .toggle-bg {
   font-size: calc(100px + 0.5vw);
 }
 
+.text-\[120px\] {
+  font-size: 120px;
+}
+
+.text-\[14rem\] {
+  font-size: 14rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2269,6 +2285,10 @@ input:checked + .toggle-bg {
 
 .leading-\[100px\] {
   line-height: 100px;
+}
+
+.leading-\[17rem\] {
+  line-height: 17rem;
 }
 
 .tracking-tight {
@@ -2676,6 +2696,10 @@ input:checked + .toggle-bg {
     display: block;
   }
 
+  .max-md\:hidden {
+    display: none;
+  }
+
   .max-md\:pr-\[0px\] {
     padding-right: 0px;
   }
@@ -2756,6 +2780,11 @@ input:checked + .toggle-bg {
   .sm\:py-5 {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
+  }
+
+  .sm\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sm\:text-center {

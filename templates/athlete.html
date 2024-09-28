@@ -150,30 +150,59 @@
         <img class="athleteImg sm:ml-[16vw] mt-[-175vh] static" src="{{ athlete_data.without_bg.url }}" alt=""
             style="z-index: 10;">
     </div>
-    <div style=" color: #ffffff !important; background: linear-gradient(343deg, #00000000, #000000); z-index: 100;" class="basis-2/6 max-sm:basis-1 p-4 h-svh">
+    <div style=" color: #ffffff !important; background: linear-gradient(343deg, #1e1e1e, #000000); z-index: 100;" class="basis-2/6 max-sm:basis-1 p-4 h-svh">
         <center>
             <p style="font-weight: 800;font-size: 52px;">INDIA</p>
         </center>
         <center><img
                 src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png"
                 class="object-cover countryImg w-[200px] rounded-lg"></center>
-        <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
-            <div class="inline-block flex flex-col align-center justify-center">
-                <!-- <span class="text-center" style="font-size: 80px; line-height:70px"></span> -->
-
+        <!-- <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
+            <div style="background: #f00;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;">
+                 <span class="text-center" style="font-size: 80px; line-height:70px"></span> 
+                    
                 <img class="gold" src="/media/gold.png" style="width:50px;height:60px;">
-                <span class="text-center" style="font-size: 40px">100</span>
+                <span class="text-center" style="font-size: 40px">{{ athlete_data.gold_medals }}</span>
             </div>
             <div class="inline-block flex flex-col align-center justify-center">
                 <img class="silver" src="/media/silver.png" style="width:50px;height:60px;">
-                <span class="text-center" style="font-size: 40px">100</span>
+                <span class="text-center" style="font-size: 40px">{{ athlete_data.silver_medals }}</span>
             </div>
             <div class="col-span-2 inline-block flex flex-col align-center justify-center" style="margin-top: -100px;">
                 <img src="/media/bronze.png" style="width:50px;height:60px;">
-                <span class="text-center" style="font-size: 40px">100</span>
+                <span class="text-center" style="font-size: 40px">{{ athlete_data.bronze_medals }}</span>
+            </div>
+        </div> -->
+        
+        <div class="grid grid-rows-2 grid-cols-2 gap-4">
+            <div class="flex flex-col items-center justify-center">
+                <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]" style="background: rgb(213, 182, 2);
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;">
+                </div>
+                <span class="text-center m-[-65px]" style="font-size: 40px">100</span>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]" style="background: silver;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;">
+                </div>
+                <span class="text-center m-[-65px]" style="font-size: 40px">100</span>
+            </div>
+            <div class="flex col-span-2 flex-col m-[50px] items-center justify-center ">
+                <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]" style="background: #Cd7f32;
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 50%;">
+                </div>
+                <span class="text-center m-[-65px]" style="font-size: 40px">100</span>
             </div>
         </div>
-
 
     </div>
 
