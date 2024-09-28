@@ -9,549 +9,331 @@
 
 {% endblock head %}
 {% block title %}Leaderboard | Olympics{% endblock %}
-
 {% block content %}
-<!-- <section class="bg-gray-50 dark:bg-gray-900 p-3 sm:p-5" style="margin-top: 200px">
-    <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
-        <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg" style="height: 800px;">
-            <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
-                <div class="w-full md:w-1/2">
-                    <form class="flex items-center">
-                        <label for="simple-search" class="sr-only">Search</label>
-                        <div class="relative w-full">
-                            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                                    fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd"
-                                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <input type="text" id="simple-search"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Search" required="">
-                        </div>
-                    </form>
-                </div>
-                <div
-                    class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
-                    <div class="flex items-center space-x-3 w-full md:w-auto">
-                        <button id="sportDropdownButton" data-dropdown-toggle="sportDropdown"
-                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                            type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                            Sport
-                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"></path>
-                            </svg>
-                        </button>
-                        <div id="sportDropdown"
-                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
-                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
-                                <li class="flex items-center">
-                                    <input type="checkbox" name="sports" value="forward" id="forward"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="forward"
-                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input type="checkbox" name="sports" value="Shooter" id="Shooter"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="Shooter"
-                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Shooter</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <button id="countryDropdownButton" data-dropdown-toggle="countryDropdown"
-                            class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-                            type="button">
-                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                                class="h-4 w-4 mr-2 text-gray-400" viewbox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            Country
-                            <svg class="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewbox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <path clip-rule="evenodd" fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                            </svg>
-                        </button>
-                        <div id="countryDropdown"
-                            class="z-10 hidden w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700">
-                            <h6 class="mb-3 text-sm font-medium text-gray-900 dark:text-white">Choose brand</h6>
-                            <ul class="space-y-2 text-sm" aria-labelledby="filterDropdownButton">
-                                <li class="flex items-center">
-                                    <input type="checkbox" name="sports" value="forward" id="forward"
-                                        class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="forward"
-                                        class="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300">Forward</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="fitbit" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="fitbit"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Microsoft
-                                        (16)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="razor" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="razor"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Razor
-                                        (49)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="nikon" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="nikon"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">Nikon
-                                        (12)</label>
-                                </li>
-                                <li class="flex items-center">
-                                    <input id="benq" type="checkbox" value=""
-                                        class="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
-                                    <label for="benq"
-                                        class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">BenQ
-                                        (74)</label>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
-                <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-3 lg:grid-cols-4">
-                    <div
-                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
-                        <img class="rounded-t-lg aspect-square"
-                            src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg"/>
-                        <div class="p-5">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                            </h5>
-                            <div class="grid grid-cols-2">
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                                <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                                </p>
-                                <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
-                                alt="" />
-                        </a>
-                        <div class="p-5">
-                            <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                    Noteworthy technology acquisitions 2021</h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
-                                technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                            <a href="#"
-                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                Read more
-                                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div
-                        class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            <img class="rounded-t-lg"
-                                src="https://www.sportsindiashow.com/wp-content/uploads/2019/11/131289-mfukfwpppq-1574309689.jpg"
-                                alt="" />
-                        </a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- <div class="flex flex-col justify-center align-center">
-    <div style="background-image: url(https://images.yourstory.com/cs/2/96eabe90392211eb93f18319e8c07a74/olympicdayy-1687461367442.png); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;">
-        <h1 class="permanent-marker-regular text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
-            LEADERBOARD
-    </div>
-</div>
-
-<div class="grid sm:flex">
-    <div class="basis-1/6 max-sm:basis-1 grid gap-4 h-10" id="countryPicker">
-        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="player">All Countries</div>
-        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="india">India</div>
-        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="pakistan">Pakistan</div>
-        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="newzealand">New Zealand</div>
-        <div class="mx-3 bg-neutral-500 p-4 rounded-lg" id="usa">USA</div>
-    </div>
-
-    <div class="basis-5/6 max-sm:basis-1 grid bg-neutral-500 p-4 rounded-lg grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-5">
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="bg-white border row-span-2 border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player newzealand">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                </div>
-                <div class="relative overflow-x-auto">
-                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                        <tbody>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <td class="px-6 py-4">
-                                    Gold
-                                </td>
-                                <td class="px-6 py-4">
-                                    Bronze
-                                </td>
-                            </tr>
-                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <td class="px-6 py-4">
-                                    10 Medals
-                                </td>
-                                <td class="px-6 py-4">
-                                    20 medals
-                                </td>
-                            </tr>
-                            <tr class="bg-white dark:bg-gray-800">
-                                <td class="px-6 py-4">
-                                    Accessories
-                                </td>
-                                <td class="px-6 py-4">
-                                    $99
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-3 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player india">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player usa">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-        <div
-            class="max-w-sm bg-white row-span-2 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 player">
-            <img class="rounded-t-lg aspect-square"
-                src="https://www.sportsindiashow.com/wp-content/uploads/2021/07/1627178635_manu-bhaker-ap.jpg" alt="" />
-            <div class="p-5">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Manu Bhakar
-                </h5>
-                <div class="grid grid-cols-2">
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Shooter</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">India</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">height</p>
-                    <p class="mb-2 text-sm text-gray-600 dark:text-white">Weight</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Gold: 10 Medals</p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Silver: 20 Medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">Bronze: 20 medals
-                    </p>
-                    <p class="mb-2 text-sm tracking-tight text-gray-600 dark:text-white">5/4/2001</p>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- <script>
-    let players = document.querySelectorAll('.player');
-    const number1 = Math.floor(Math.random() * players.length);
-    const number2 = Math.floor(Math.random() * players.length);
-    const number3 = Math.floor(Math.random() * players.length);
-    players[number1].after('wow')
-    players[number2].after('wow')
-    players[number3].after('wow')
-</script> -->
-<!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    $('#countryPicker div').click(function () {
-        let country = $(this).attr('id');
-        console.log(country);
-        $('.player').hide("slow");
-        $('.' + country).show();
-    })
-    players = document.querySelectorAll('.player');
-    players.forEach(player => {
-        player.dataset.aos = 'fade-up';
-    });
-    AOS.init({
-        mirror: true,
-    });
-</script> -->
-
 
 <div
-        style="background-image: url(/media/olympics.jpg); background-attachment: fixed; min-height: 400px; background-position: center; background-repeat:no-repeat; background-size:cover;">
-        <h1 style="font-weight: 900; font-style: italic; color: white; -webkit-text-stroke-width: 1px;
+    style="background-image: url(/media/olympics.jpg); background-attachment: fixed; min-height: 400px; background-position: center; background-repeat:no-repeat; background-size:cover;">
+    <h1 style="font-weight: 900; font-style: italic; color: white; -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;"
-            class="hallOfFame text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[20vh] text-white"><a style="color: black; text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.37), 0px 0px 5px rgb(255, 255, 255), 0px 0px 34px rgba(0,0,0,0.37);"> LEADERBOARD </a> </h1>
-    </div>
+        class="text-center self-center text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[20vh] text-white">
+        <a
+            class="hidden md:block text-[calc(100px+0.5vw)]" style="color: black; text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.37), 0px 0px 5px rgb(255, 255, 255), 0px 0px 34px rgba(0,0,0,0.37);">
+            LEADERBOARD </a>
+        <a
+        class="hidden max-md:block text-[27vw] leading-[100px]" style="color: black; text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.37), 0px 0px 5px rgb(255, 255, 255), 0px 0px 34px rgba(0,0,0,0.37);">
+        LEADER<br>BOARD </a>
+    </h1>
+</div>
 <section class="bg-drk py-3 sm:py-5">
-    <div class="px-4 mx-auto max-w-screen-2xl lg:px-12">
-        <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-            <div class="overflow-x-auto">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="p-4">
-                                <div class="flex items-center font-medium whitespace-nowrap ">
-                                    Rank
-                                </div>
-                            </th>
-                            <th scope="col" class="px-4 py-3">Country</th>
-                            <th scope="col" class="px-4 py-3">
-                                <th scope="col" class="px-4 py-3" style="font-size: x-large;">🥇</th>
-                            </th>
-                            <th scope="col" class="px-4 py-3" style="font-size: x-large;">🥈</th>
-                            <th scope="col" class="px-4 py-3" style="font-size: x-large;">🥉</th>
-                            <th scope="col" class="px-4 py-3">
-                                <img src="https://gstatic.olympics.com/s1/t_original/static/srm/paris-2024/medalAll.svg" alt="">
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for country in countries %}
-                            <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
-                                <td class="w-4 px-4 py-3">
+    <div class="flex flex-row">
+        <div
+            class="hidden md:block basis-1/4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ml-4 h-[88vh] sticky top-20">
+            <center>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">United States</h5>
+            </center>
+            <img class="rounded-t-lg px-[50px]" src="https://wallpaperaccess.com/full/89107.jpg" alt="" />
+            <div class="my-4 mx-5 space-y-3">
+                <div href="#"
+                    class=" items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                    <span aria-hidden="true" class="h-4" viewBox="0 0 40 38" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39.0728 0L21.9092 12.6999L25.1009 5.21543L39.0728 0Z" fill="#E17726" />
+                        <path d="M0.966797 0.0151367L14.9013 5.21656L17.932 12.7992L0.966797 0.0151367Z"
+                            fill="#E27625" />
+                        <path d="M32.1656 27.0093L39.7516 27.1537L37.1004 36.1603L27.8438 33.6116L32.1656 27.0093Z"
+                            fill="#E27625" />
+                        <path d="M7.83409 27.0093L12.1399 33.6116L2.89876 36.1604L0.263672 27.1537L7.83409 27.0093Z"
+                            fill="#E27625" />
+                        <path
+                            d="M17.5203 10.8677L17.8304 20.8807L8.55371 20.4587L11.1924 16.4778L11.2258 16.4394L17.5203 10.8677Z"
+                            fill="#E27625" />
+                        <path
+                            d="M22.3831 10.7559L28.7737 16.4397L28.8067 16.4778L31.4455 20.4586L22.1709 20.8806L22.3831 10.7559Z"
+                            fill="#E27625" />
+                        <path d="M12.4115 27.0381L17.4768 30.9848L11.5928 33.8257L12.4115 27.0381Z" fill="#E27625" />
+                        <path d="M27.5893 27.0376L28.391 33.8258L22.5234 30.9847L27.5893 27.0376Z" fill="#E27625" />
+                        <path d="M22.6523 30.6128L28.6066 33.4959L23.0679 36.1282L23.1255 34.3884L22.6523 30.6128Z"
+                            fill="#D5BFB2" />
+                        <path d="M17.3458 30.6143L16.8913 34.3601L16.9286 36.1263L11.377 33.4961L17.3458 30.6143Z"
+                            fill="#D5BFB2" />
+                        <path d="M15.6263 22.1875L17.1822 25.4575L11.8848 23.9057L15.6263 22.1875Z" fill="#233447" />
+                        <path d="M24.3739 22.1875L28.133 23.9053L22.8184 25.4567L24.3739 22.1875Z" fill="#233447" />
+                        <path d="M12.8169 27.0049L11.9606 34.0423L7.37109 27.1587L12.8169 27.0049Z" fill="#CC6228" />
+                        <path d="M27.1836 27.0049L32.6296 27.1587L28.0228 34.0425L27.1836 27.0049Z" fill="#CC6228" />
+                        <path
+                            d="M31.5799 20.0605L27.6165 24.0998L24.5608 22.7034L23.0978 25.779L22.1387 20.4901L31.5799 20.0605Z"
+                            fill="#CC6228" />
+                        <path
+                            d="M8.41797 20.0605L17.8608 20.4902L16.9017 25.779L15.4384 22.7038L12.3988 24.0999L8.41797 20.0605Z"
+                            fill="#CC6228" />
+                        <path d="M8.15039 19.2314L12.6345 23.7816L12.7899 28.2736L8.15039 19.2314Z" fill="#E27525" />
+                        <path d="M31.8538 19.2236L27.2061 28.2819L27.381 23.7819L31.8538 19.2236Z" fill="#E27525" />
+                        <path
+                            d="M17.6412 19.5088L17.8217 20.6447L18.2676 23.4745L17.9809 32.166L16.6254 25.1841L16.625 25.1119L17.6412 19.5088Z"
+                            fill="#E27525" />
+                        <path
+                            d="M22.3562 19.4932L23.3751 25.1119L23.3747 25.1841L22.0158 32.1835L21.962 30.4328L21.75 23.4231L22.3562 19.4932Z"
+                            fill="#E27525" />
+                        <path
+                            d="M27.7797 23.6011L27.628 27.5039L22.8977 31.1894L21.9414 30.5138L23.0133 24.9926L27.7797 23.6011Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M12.2373 23.6011L16.9873 24.9926L18.0591 30.5137L17.1029 31.1893L12.3723 27.5035L12.2373 23.6011Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M10.4717 32.6338L16.5236 35.5013L16.4979 34.2768L17.0043 33.8323H22.994L23.5187 34.2753L23.48 35.4989L29.4935 32.641L26.5673 35.0591L23.0289 37.4894H16.9558L13.4197 35.0492L10.4717 32.6338Z"
+                            fill="#C0AC9D" />
+                        <path
+                            d="M22.2191 30.231L23.0748 30.8354L23.5763 34.8361L22.8506 34.2234H17.1513L16.4395 34.8485L16.9244 30.8357L17.7804 30.231H22.2191Z"
+                            fill="#161616" />
+                        <path
+                            d="M37.9395 0.351562L39.9998 6.53242L38.7131 12.7819L39.6293 13.4887L38.3895 14.4346L39.3213 15.1542L38.0875 16.2779L38.8449 16.8264L36.8347 19.1742L28.5894 16.7735L28.5179 16.7352L22.5762 11.723L37.9395 0.351562Z"
+                            fill="#763E1A" />
+                        <path
+                            d="M2.06031 0.351562L17.4237 11.723L11.4819 16.7352L11.4105 16.7735L3.16512 19.1742L1.15488 16.8264L1.91176 16.2783L0.678517 15.1542L1.60852 14.4354L0.350209 13.4868L1.30098 12.7795L0 6.53265L2.06031 0.351562Z"
+                            fill="#763E1A" />
+                        <path
+                            d="M28.1861 16.2485L36.9226 18.7921L39.7609 27.5398L32.2728 27.5398L27.1133 27.6049L30.8655 20.2912L28.1861 16.2485Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M11.8139 16.2485L9.13399 20.2912L12.8867 27.6049L7.72971 27.5398H0.254883L3.07728 18.7922L11.8139 16.2485Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M25.5283 5.17383L23.0847 11.7736L22.5661 20.6894L22.3677 23.4839L22.352 30.6225H17.6471L17.6318 23.4973L17.4327 20.6869L16.9139 11.7736L14.4707 5.17383H25.5283Z"
+                            fill="#F5841F" />🥇
+                    </span>
+                    <span class="flex-1 ms-3 whitespace-nowrap">Most Medals Scored In:</span>
+                    <center class="basis-100 block">
+                        <div class="grid grid-cols-2">
+                            <div><img class="block h-[80px]"
+                                    src="https://gstatic.olympics.com/s1/t_s_athlete_medal/f_auto/static/dark/pictograms/2022/swm.svg"
+                                    alt="">
+                                <span>Athletics</span>
+                                <span class="block">10000 Medals</span>
+                            </div>
+                            <div><img class="block h-[80px]"
+                                    src="https://gstatic.olympics.com/s1/t_s_athlete_medal/f_auto/static/dark/pictograms/2022/ten.svg"
+                                    alt="">
+                                <span>Tennis</span>
+                                <span class="block">1000 Medals</span>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <div class="my-4 mx-5 space-y-2">
+                <div href="#" class=" items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                <span
+                 aria-hidden="true" class="h-4" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M39.0728 0L21.9092 12.6999L25.1009 5.21543L39.0728 0Z" fill="#E17726"/><path d="M0.966797 0.0151367L14.9013 5.21656L17.932 12.7992L0.966797 0.0151367Z" fill="#E27625"/><path d="M32.1656 27.0093L39.7516 27.1537L37.1004 36.1603L27.8438 33.6116L32.1656 27.0093Z" fill="#E27625"/><path d="M7.83409 27.0093L12.1399 33.6116L2.89876 36.1604L0.263672 27.1537L7.83409 27.0093Z" fill="#E27625"/><path d="M17.5203 10.8677L17.8304 20.8807L8.55371 20.4587L11.1924 16.4778L11.2258 16.4394L17.5203 10.8677Z" fill="#E27625"/><path d="M22.3831 10.7559L28.7737 16.4397L28.8067 16.4778L31.4455 20.4586L22.1709 20.8806L22.3831 10.7559Z" fill="#E27625"/><path d="M12.4115 27.0381L17.4768 30.9848L11.5928 33.8257L12.4115 27.0381Z" fill="#E27625"/><path d="M27.5893 27.0376L28.391 33.8258L22.5234 30.9847L27.5893 27.0376Z" fill="#E27625"/><path d="M22.6523 30.6128L28.6066 33.4959L23.0679 36.1282L23.1255 34.3884L22.6523 30.6128Z" fill="#D5BFB2"/><path d="M17.3458 30.6143L16.8913 34.3601L16.9286 36.1263L11.377 33.4961L17.3458 30.6143Z" fill="#D5BFB2"/><path d="M15.6263 22.1875L17.1822 25.4575L11.8848 23.9057L15.6263 22.1875Z" fill="#233447"/><path d="M24.3739 22.1875L28.133 23.9053L22.8184 25.4567L24.3739 22.1875Z" fill="#233447"/><path d="M12.8169 27.0049L11.9606 34.0423L7.37109 27.1587L12.8169 27.0049Z" fill="#CC6228"/><path d="M27.1836 27.0049L32.6296 27.1587L28.0228 34.0425L27.1836 27.0049Z" fill="#CC6228"/><path d="M31.5799 20.0605L27.6165 24.0998L24.5608 22.7034L23.0978 25.779L22.1387 20.4901L31.5799 20.0605Z" fill="#CC6228"/><path d="M8.41797 20.0605L17.8608 20.4902L16.9017 25.779L15.4384 22.7038L12.3988 24.0999L8.41797 20.0605Z" fill="#CC6228"/><path d="M8.15039 19.2314L12.6345 23.7816L12.7899 28.2736L8.15039 19.2314Z" fill="#E27525"/><path d="M31.8538 19.2236L27.2061 28.2819L27.381 23.7819L31.8538 19.2236Z" fill="#E27525"/><path d="M17.6412 19.5088L17.8217 20.6447L18.2676 23.4745L17.9809 32.166L16.6254 25.1841L16.625 25.1119L17.6412 19.5088Z" fill="#E27525"/><path d="M22.3562 19.4932L23.3751 25.1119L23.3747 25.1841L22.0158 32.1835L21.962 30.4328L21.75 23.4231L22.3562 19.4932Z" fill="#E27525"/><path d="M27.7797 23.6011L27.628 27.5039L22.8977 31.1894L21.9414 30.5138L23.0133 24.9926L27.7797 23.6011Z" fill="#F5841F"/><path d="M12.2373 23.6011L16.9873 24.9926L18.0591 30.5137L17.1029 31.1893L12.3723 27.5035L12.2373 23.6011Z" fill="#F5841F"/><path d="M10.4717 32.6338L16.5236 35.5013L16.4979 34.2768L17.0043 33.8323H22.994L23.5187 34.2753L23.48 35.4989L29.4935 32.641L26.5673 35.0591L23.0289 37.4894H16.9558L13.4197 35.0492L10.4717 32.6338Z" fill="#C0AC9D"/><path d="M22.2191 30.231L23.0748 30.8354L23.5763 34.8361L22.8506 34.2234H17.1513L16.4395 34.8485L16.9244 30.8357L17.7804 30.231H22.2191Z" fill="#161616"/><path d="M37.9395 0.351562L39.9998 6.53242L38.7131 12.7819L39.6293 13.4887L38.3895 14.4346L39.3213 15.1542L38.0875 16.2779L38.8449 16.8264L36.8347 19.1742L28.5894 16.7735L28.5179 16.7352L22.5762 11.723L37.9395 0.351562Z" fill="#763E1A"/><path d="M2.06031 0.351562L17.4237 11.723L11.4819 16.7352L11.4105 16.7735L3.16512 19.1742L1.15488 16.8264L1.91176 16.2783L0.678517 15.1542L1.60852 14.4354L0.350209 13.4868L1.30098 12.7795L0 6.53265L2.06031 0.351562Z" fill="#763E1A"/><path d="M28.1861 16.2485L36.9226 18.7921L39.7609 27.5398L32.2728 27.5398L27.1133 27.6049L30.8655 20.2912L28.1861 16.2485Z" fill="#F5841F"/><path d="M11.8139 16.2485L9.13399 20.2912L12.8867 27.6049L7.72971 27.5398H0.254883L3.07728 18.7922L11.8139 16.2485Z" fill="#F5841F"/><path d="M25.5283 5.17383L23.0847 11.7736L22.5661 20.6894L22.3677 23.4839L22.352 30.6225H17.6471L17.6318 23.4973L17.4327 20.6869L16.9139 11.7736L14.4707 5.17383H25.5283Z" fill="#F5841F"/>🥇
+                </span>
+                <span class="flex-1 ms-3 whitespace-nowrap">Most Medals Scored By:</span>
+                <center class="basis-100 block">
+                    <div class="grid grid-cols-2">
+                        <div><img class="block h-[80px]" src="https://img.olympics.com/images/image/private/t_1-1_300/f_auto/primary/vhfr6hduzmldcu4dhgre" alt="">
+                            <span>
+                                Serena WILLIAMS</span>
+                            <span class="block">10000 Medals</span></div>
+                        <div><img class="block h-[80px]" src="https://gstatic.olympics.com/s1/t_s_athlete_medal/f_auto/static/dark/pictograms/2022/ten.svg" alt="">
+                            <span>Tennis</span>
+                            <span class="block">1000 Medals</span></div>
+                    </div>
+                </center>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="basis-3/4 mx-auto max-w-screen-2xl lg:px-6">
+            <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="p-4">
+                                    <div class="flex items-center font-medium whitespace-nowrap ">
+                                        Rank
+                                    </div>
+                                </th>
+                                <th scope="col" class=" py-3">Country</th>
+                                <th scope="col" class="py-3" style="font-size: x-large;">🥇</th>
+                                </th>
+                                <th scope="col" class=" py-3" style="font-size: x-large;">🥈</th>
+                                <th scope="col" class=" py-3" style="font-size: x-large;">🥉</th>
+                                <th scope="col" class="py-3">
+                                    <img src="https://gstatic.olympics.com/s1/t_original/static/srm/paris-2024/medalAll.svg"
+                                        alt="">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for country in countries %}
+                            <tr id="infoTrigger1" class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <td class="w-1 px-4 max-md:pr-[0px] py-3">
                                     <div class="flex items-center">
                                         {{ country.0 }}&#41;
                                     </div>
                                 </td>
-                                <td scope="row" class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                <td scope="row"
+                                    class="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white" style="
+                                    padding-left: 0px;
+                                ">
                                     {% if country.2 %}
-                                         <img src="https://flagsapi.com/{{ country.2 }}/flat/64.png" alt="iMac Front Image" class="w-auto h-8 mr-3">
+                                    <img src="https://flagsapi.com/{{ country.2 }}/flat/64.png" alt="iMac Front Image"
+                                        class="w-auto h-8 mr-3">
                                     {% endif %}
                                     {{ country.1 }}
                                 </td>
-                                <td></td>
-                                <td class="px-4 py-2">{{ country.3 }}</td>
-                                <td class="px-4 py-2">{{ country.4 }}</td>
-                                <td class="px-4 py-2">{{ country.5 }}</td>
-                                <td class="px-4 py-2">{{ country.6 }}</td>
+                                <td class=" py-2 max-md:text-center">{{ country.3 }}</td>
+                                <td class=" py-2 max-md:text-center">{{ country.4 }}</td>
+                                <td class=" py-2 max-md:text-center">{{ country.5 }}</td>
+                                <td class=" py-2 max-md:text-center">{{ country.6 }}</td>
+                                {% endfor %}
                             </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+
     </div>
-  </section>
+
+</section>
+
+<script>
+    let state = 0;
+    $(document).ready(function() {
+    $('#infoTrigger1').on('click', function() {
+        const newSection = $(`<td colspan='7'
+            class="new-section md:hidden">
+            <center>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight mt-4 text-gray-900 dark:text-white">United States</h5>
+            </center>
+            <img class="rounded-t-lg px-[50px]" src="https://wallpaperaccess.com/full/89107.jpg" alt="" />
+            <div class="my-4 mx-5 space-y-3">
+                <div href="#"
+                    class=" items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                    <span aria-hidden="true" class="h-4" viewBox="0 0 40 38" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39.0728 0L21.9092 12.6999L25.1009 5.21543L39.0728 0Z" fill="#E17726" />
+                        <path d="M0.966797 0.0151367L14.9013 5.21656L17.932 12.7992L0.966797 0.0151367Z"
+                            fill="#E27625" />
+                        <path d="M32.1656 27.0093L39.7516 27.1537L37.1004 36.1603L27.8438 33.6116L32.1656 27.0093Z"
+                            fill="#E27625" />
+                        <path d="M7.83409 27.0093L12.1399 33.6116L2.89876 36.1604L0.263672 27.1537L7.83409 27.0093Z"
+                            fill="#E27625" />
+                        <path
+                            d="M17.5203 10.8677L17.8304 20.8807L8.55371 20.4587L11.1924 16.4778L11.2258 16.4394L17.5203 10.8677Z"
+                            fill="#E27625" />
+                        <path
+                            d="M22.3831 10.7559L28.7737 16.4397L28.8067 16.4778L31.4455 20.4586L22.1709 20.8806L22.3831 10.7559Z"
+                            fill="#E27625" />
+                        <path d="M12.4115 27.0381L17.4768 30.9848L11.5928 33.8257L12.4115 27.0381Z" fill="#E27625" />
+                        <path d="M27.5893 27.0376L28.391 33.8258L22.5234 30.9847L27.5893 27.0376Z" fill="#E27625" />
+                        <path d="M22.6523 30.6128L28.6066 33.4959L23.0679 36.1282L23.1255 34.3884L22.6523 30.6128Z"
+                            fill="#D5BFB2" />
+                        <path d="M17.3458 30.6143L16.8913 34.3601L16.9286 36.1263L11.377 33.4961L17.3458 30.6143Z"
+                            fill="#D5BFB2" />
+                        <path d="M15.6263 22.1875L17.1822 25.4575L11.8848 23.9057L15.6263 22.1875Z" fill="#233447" />
+                        <path d="M24.3739 22.1875L28.133 23.9053L22.8184 25.4567L24.3739 22.1875Z" fill="#233447" />
+                        <path d="M12.8169 27.0049L11.9606 34.0423L7.37109 27.1587L12.8169 27.0049Z" fill="#CC6228" />
+                        <path d="M27.1836 27.0049L32.6296 27.1587L28.0228 34.0425L27.1836 27.0049Z" fill="#CC6228" />
+                        <path
+                            d="M31.5799 20.0605L27.6165 24.0998L24.5608 22.7034L23.0978 25.779L22.1387 20.4901L31.5799 20.0605Z"
+                            fill="#CC6228" />
+                        <path
+                            d="M8.41797 20.0605L17.8608 20.4902L16.9017 25.779L15.4384 22.7038L12.3988 24.0999L8.41797 20.0605Z"
+                            fill="#CC6228" />
+                        <path d="M8.15039 19.2314L12.6345 23.7816L12.7899 28.2736L8.15039 19.2314Z" fill="#E27525" />
+                        <path d="M31.8538 19.2236L27.2061 28.2819L27.381 23.7819L31.8538 19.2236Z" fill="#E27525" />
+                        <path
+                            d="M17.6412 19.5088L17.8217 20.6447L18.2676 23.4745L17.9809 32.166L16.6254 25.1841L16.625 25.1119L17.6412 19.5088Z"
+                            fill="#E27525" />
+                        <path
+                            d="M22.3562 19.4932L23.3751 25.1119L23.3747 25.1841L22.0158 32.1835L21.962 30.4328L21.75 23.4231L22.3562 19.4932Z"
+                            fill="#E27525" />
+                        <path
+                            d="M27.7797 23.6011L27.628 27.5039L22.8977 31.1894L21.9414 30.5138L23.0133 24.9926L27.7797 23.6011Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M12.2373 23.6011L16.9873 24.9926L18.0591 30.5137L17.1029 31.1893L12.3723 27.5035L12.2373 23.6011Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M10.4717 32.6338L16.5236 35.5013L16.4979 34.2768L17.0043 33.8323H22.994L23.5187 34.2753L23.48 35.4989L29.4935 32.641L26.5673 35.0591L23.0289 37.4894H16.9558L13.4197 35.0492L10.4717 32.6338Z"
+                            fill="#C0AC9D" />
+                        <path
+                            d="M22.2191 30.231L23.0748 30.8354L23.5763 34.8361L22.8506 34.2234H17.1513L16.4395 34.8485L16.9244 30.8357L17.7804 30.231H22.2191Z"
+                            fill="#161616" />
+                        <path
+                            d="M37.9395 0.351562L39.9998 6.53242L38.7131 12.7819L39.6293 13.4887L38.3895 14.4346L39.3213 15.1542L38.0875 16.2779L38.8449 16.8264L36.8347 19.1742L28.5894 16.7735L28.5179 16.7352L22.5762 11.723L37.9395 0.351562Z"
+                            fill="#763E1A" />
+                        <path
+                            d="M2.06031 0.351562L17.4237 11.723L11.4819 16.7352L11.4105 16.7735L3.16512 19.1742L1.15488 16.8264L1.91176 16.2783L0.678517 15.1542L1.60852 14.4354L0.350209 13.4868L1.30098 12.7795L0 6.53265L2.06031 0.351562Z"
+                            fill="#763E1A" />
+                        <path
+                            d="M28.1861 16.2485L36.9226 18.7921L39.7609 27.5398L32.2728 27.5398L27.1133 27.6049L30.8655 20.2912L28.1861 16.2485Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M11.8139 16.2485L9.13399 20.2912L12.8867 27.6049L7.72971 27.5398H0.254883L3.07728 18.7922L11.8139 16.2485Z"
+                            fill="#F5841F" />
+                        <path
+                            d="M25.5283 5.17383L23.0847 11.7736L22.5661 20.6894L22.3677 23.4839L22.352 30.6225H17.6471L17.6318 23.4973L17.4327 20.6869L16.9139 11.7736L14.4707 5.17383H25.5283Z"
+                            fill="#F5841F" />🥇
+                    </span>
+                    <span class="flex-1 ms-3 whitespace-nowrap">Most Medals Scored In:</span>
+                    <center class="basis-100 block">
+                        <div class="grid grid-cols-2">
+                            <div><img class="block h-[80px]"
+                                    src="https://gstatic.olympics.com/s1/t_s_athlete_medal/f_auto/static/dark/pictograms/2022/swm.svg"
+                                    alt="">
+                                <span>Athletics</span>
+                                <span class="block">10000 Medals</span>
+                            </div>
+                            <div><img class="block h-[80px]"
+                                    src="https://gstatic.olympics.com/s1/t_s_athlete_medal/f_auto/static/dark/pictograms/2022/ten.svg"
+                                    alt="">
+                                <span>Tennis</span>
+                                <span class="block">1000 Medals</span>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <div class="my-4 mx-5 space-y-2">
+                <div href="#" class=" items-center p-3 text-base font-bold text-gray-900 rounded-lg bg-gray-50 hover:bg-gray-100 group hover:shadow dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white">
+                <span
+                 aria-hidden="true" class="h-4" viewBox="0 0 40 38" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M39.0728 0L21.9092 12.6999L25.1009 5.21543L39.0728 0Z" fill="#E17726"/><path d="M0.966797 0.0151367L14.9013 5.21656L17.932 12.7992L0.966797 0.0151367Z" fill="#E27625"/><path d="M32.1656 27.0093L39.7516 27.1537L37.1004 36.1603L27.8438 33.6116L32.1656 27.0093Z" fill="#E27625"/><path d="M7.83409 27.0093L12.1399 33.6116L2.89876 36.1604L0.263672 27.1537L7.83409 27.0093Z" fill="#E27625"/><path d="M17.5203 10.8677L17.8304 20.8807L8.55371 20.4587L11.1924 16.4778L11.2258 16.4394L17.5203 10.8677Z" fill="#E27625"/><path d="M22.3831 10.7559L28.7737 16.4397L28.8067 16.4778L31.4455 20.4586L22.1709 20.8806L22.3831 10.7559Z" fill="#E27625"/><path d="M12.4115 27.0381L17.4768 30.9848L11.5928 33.8257L12.4115 27.0381Z" fill="#E27625"/><path d="M27.5893 27.0376L28.391 33.8258L22.5234 30.9847L27.5893 27.0376Z" fill="#E27625"/><path d="M22.6523 30.6128L28.6066 33.4959L23.0679 36.1282L23.1255 34.3884L22.6523 30.6128Z" fill="#D5BFB2"/><path d="M17.3458 30.6143L16.8913 34.3601L16.9286 36.1263L11.377 33.4961L17.3458 30.6143Z" fill="#D5BFB2"/><path d="M15.6263 22.1875L17.1822 25.4575L11.8848 23.9057L15.6263 22.1875Z" fill="#233447"/><path d="M24.3739 22.1875L28.133 23.9053L22.8184 25.4567L24.3739 22.1875Z" fill="#233447"/><path d="M12.8169 27.0049L11.9606 34.0423L7.37109 27.1587L12.8169 27.0049Z" fill="#CC6228"/><path d="M27.1836 27.0049L32.6296 27.1587L28.0228 34.0425L27.1836 27.0049Z" fill="#CC6228"/><path d="M31.5799 20.0605L27.6165 24.0998L24.5608 22.7034L23.0978 25.779L22.1387 20.4901L31.5799 20.0605Z" fill="#CC6228"/><path d="M8.41797 20.0605L17.8608 20.4902L16.9017 25.779L15.4384 22.7038L12.3988 24.0999L8.41797 20.0605Z" fill="#CC6228"/><path d="M8.15039 19.2314L12.6345 23.7816L12.7899 28.2736L8.15039 19.2314Z" fill="#E27525"/><path d="M31.8538 19.2236L27.2061 28.2819L27.381 23.7819L31.8538 19.2236Z" fill="#E27525"/><path d="M17.6412 19.5088L17.8217 20.6447L18.2676 23.4745L17.9809 32.166L16.6254 25.1841L16.625 25.1119L17.6412 19.5088Z" fill="#E27525"/><path d="M22.3562 19.4932L23.3751 25.1119L23.3747 25.1841L22.0158 32.1835L21.962 30.4328L21.75 23.4231L22.3562 19.4932Z" fill="#E27525"/><path d="M27.7797 23.6011L27.628 27.5039L22.8977 31.1894L21.9414 30.5138L23.0133 24.9926L27.7797 23.6011Z" fill="#F5841F"/><path d="M12.2373 23.6011L16.9873 24.9926L18.0591 30.5137L17.1029 31.1893L12.3723 27.5035L12.2373 23.6011Z" fill="#F5841F"/><path d="M10.4717 32.6338L16.5236 35.5013L16.4979 34.2768L17.0043 33.8323H22.994L23.5187 34.2753L23.48 35.4989L29.4935 32.641L26.5673 35.0591L23.0289 37.4894H16.9558L13.4197 35.0492L10.4717 32.6338Z" fill="#C0AC9D"/><path d="M22.2191 30.231L23.0748 30.8354L23.5763 34.8361L22.8506 34.2234H17.1513L16.4395 34.8485L16.9244 30.8357L17.7804 30.231H22.2191Z" fill="#161616"/><path d="M37.9395 0.351562L39.9998 6.53242L38.7131 12.7819L39.6293 13.4887L38.3895 14.4346L39.3213 15.1542L38.0875 16.2779L38.8449 16.8264L36.8347 19.1742L28.5894 16.7735L28.5179 16.7352L22.5762 11.723L37.9395 0.351562Z" fill="#763E1A"/><path d="M2.06031 0.351562L17.4237 11.723L11.4819 16.7352L11.4105 16.7735L3.16512 19.1742L1.15488 16.8264L1.91176 16.2783L0.678517 15.1542L1.60852 14.4354L0.350209 13.4868L1.30098 12.7795L0 6.53265L2.06031 0.351562Z" fill="#763E1A"/><path d="M28.1861 16.2485L36.9226 18.7921L39.7609 27.5398L32.2728 27.5398L27.1133 27.6049L30.8655 20.2912L28.1861 16.2485Z" fill="#F5841F"/><path d="M11.8139 16.2485L9.13399 20.2912L12.8867 27.6049L7.72971 27.5398H0.254883L3.07728 18.7922L11.8139 16.2485Z" fill="#F5841F"/><path d="M25.5283 5.17383L23.0847 11.7736L22.5661 20.6894L22.3677 23.4839L22.352 30.6225H17.6471L17.6318 23.4973L17.4327 20.6869L16.9139 11.7736L14.4707 5.17383H25.5283Z" fill="#F5841F"/>🥇
+                </span>
+                <span class="flex-1 ms-3 whitespace-nowrap">Most Medals Scored By:</span>
+                <center class="basis-100 block">
+                    <div class="grid grid-cols-2">
+                        <div><img class="block h-[80px]" src="https://img.olympics.com/images/image/private/t_1-1_300/f_auto/primary/vhfr6hduzmldcu4dhgre" alt="">
+                            <span>
+                                Serena WILLIAMS</span>
+                            <span class="block">10000 Medals</span></div>
+                        <div><img class="block h-[80px]" src="https://gstatic.olympics.com/s1/t_s_athlete_medal/f_auto/static/dark/pictograms/2022/ten.svg" alt="">
+                            <span>Tennis</span>
+                            <span class="block">1000 Medals</span></div>
+                    </div>
+                </center>
+                </div>
+            </div>
+
+        </td>`);
+
+        if (state == 0) {
+            console.log('0')
+            console.log(newSection)
+            $('#infoTrigger1').after(newSection)
+            state = 1
+        }
+        else {
+            console.log('1')
+            state = 0
+            $('.new-section').remove()
+        }
+    });
+});
+
+</script>
 {% endblock content %}
