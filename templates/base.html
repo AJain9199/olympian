@@ -3,17 +3,18 @@
 <html lang="en">
 
 <head>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Meta tags for character set, viewport settings, and IE compatibility -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <!-- Link to external stylesheet -->
-  <link rel="stylesheet" href="{% static 'src/styles.css' %}">
-  
-  <!-- Link to external JavaScript library -->
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Meta tags for character set, viewport settings, and IE compatibility -->
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="{% static 'src/styles.css' %}">
+
+    <!-- Link to external JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
     <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="{% static 'src/styles.css' %}">
@@ -29,6 +30,7 @@
 </head>
 
 <body class="bg-drk" style="height: 1000px;">
+
 <!-- Navigation bar -->
 <nav class="bg-drk fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
      style="backdrop-filter: blur(10px); background: #00000094;">
@@ -40,11 +42,13 @@
         </a>
         <!-- Buttons and menu toggle -->
         <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <a href="{% url 'highlights' %}"><button type="button"
-                class="text-white bg-drk focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:px-4 px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Highlights
-        </button></a>
-            
+            <a href="{% url 'highlights' %}">
+                <button type="button"
+                        class="text-white bg-drk focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:px-4 px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Highlights
+                </button>
+            </a>
+
             <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-sticky" aria-expanded="false">
@@ -88,16 +92,21 @@
     {% endblock %}
 </main>
 
+<!-- Kommunicate chat widget -->
 <script type="text/javascript">
-    (function(d, m){
+    (function (d, m) {
         var kommunicateSettings =
-            {"appId":"65c2fde767b13047d20554a1f4e37aa8","popupWidget":true,"automaticChatOpenOnNavigation":true};
-        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            {"appId": "65c2fde767b13047d20554a1f4e37aa8", "popupWidget": true, "automaticChatOpenOnNavigation": true};
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
         s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-        window.kommunicate = m; m._globals = kommunicateSettings;
+        var h = document.getElementsByTagName("head")[0];
+        h.appendChild(s);
+        window.kommunicate = m;
+        m._globals = kommunicateSettings;
     })(document, window.kommunicate || {});
-/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
 </script>
 
 <!-- Footer section -->

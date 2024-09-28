@@ -16,11 +16,13 @@
 
     @font-face {
         font-family: UnityFont;
-        src: url("{ static 'heroFont.ttf'}") format("truetype");
+        src: url("{% static 'heroFont.ttf' %}") format("truetype");
     }
 
+    /* Animation styling */
+
     .athleteHeading {
-        font-family: "UnityFont", sns-serif;
+        font-family: "UnityFont", sans-serif;
         font-style: normal;
         animation-timeline: scroll();
         animation-duration: 1ms;
@@ -54,9 +56,6 @@
         animation-timing-function: ease-in-out;
     }
 
-
-   
-
     @keyframes goRight {
         0% {
             transform: translateX(120%)
@@ -69,6 +68,7 @@
 
     @keyframes scaleUp {
         0% {
+            /* move the element 25% to the left and scale it down to 50% */
             transform: translateX(-25%) scale(0.5) translateY(-50%);
         }
 
@@ -80,6 +80,7 @@
 
     @keyframes scaleDown {
         0% {
+            /* move the element 25% to the left and scale it down to 50% */
             transform: translateX(0) scale(1);
         }
 
@@ -90,6 +91,7 @@
 
     @keyframes goRightAndShrink {
         0% {
+            /* color animations */
             filter: grayscale(50%);
             transform: translateX(0) scale(1);
         }
@@ -157,25 +159,6 @@
         <center><img
                 src="https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1280px-Flag_of_India.svg.png"
                 class="object-cover countryImg w-[200px] rounded-lg"></center>
-        <!-- <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
-            <div style="background: #f00;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;">
-                 <span class="text-center" style="font-size: 80px; line-height:70px"></span> 
-                    
-                <img class="gold" src="/media/gold.png" style="width:50px;height:60px;">
-                <span class="text-center" style="font-size: 40px">{{ athlete_data.gold_medals }}</span>
-            </div>
-            <div class="inline-block flex flex-col align-center justify-center">
-                <img class="silver" src="/media/silver.png" style="width:50px;height:60px;">
-                <span class="text-center" style="font-size: 40px">{{ athlete_data.silver_medals }}</span>
-            </div>
-            <div class="col-span-2 inline-block flex flex-col align-center justify-center" style="margin-top: -100px;">
-                <img src="/media/bronze.png" style="width:50px;height:60px;">
-                <span class="text-center" style="font-size: 40px">{{ athlete_data.bronze_medals }}</span>
-            </div>
-        </div> -->
         
         <div class="grid grid-rows-2 grid-cols-2 gap-4">
             <div class="flex flex-col items-center justify-center">

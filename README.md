@@ -2,6 +2,28 @@
 
 Welcome to the **OLYMPIAN** repository! This project is being developed as part of a submission for a web design competition. The website aims to showcase the rich history of the Olympics, provide detailed athlete profiles, track the latest medal tally, and highlight iconic figures in the Hall of Fame. It also offers additional features that are currently in development.
 
+## 📁 Project Structure
+| Folder          | Purpose                                                   |
+|-----------------|-----------------------------------------------------------|
+| ```media/```    | contains images for database records.                     |
+| ```Olympian/``` | Django-specific configurations for the project.           |
+| ```olympics/```    | Python code for rendering the application-specific pages. |
+| ```static/```   | contains static files (CSS, JS, images) for the website.  |
+| ```templates/```| contains HTML templates for the website.                 |
+
+
+## 🏃‍♂️Running
+
+To run the developer experience, run the following script:
+```
+./run.sh
+```
+
+To run the production experience, run the following script:
+```
+python manage.py runserver
+```
+
 ## 🌍 Website Features
 
 ### 1. **Olympics History**

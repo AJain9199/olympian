@@ -18,7 +18,10 @@
 
         <div class="flex flex-col justify-center align-center w-full mt-5">
             {% for highlight in highlights %}
-                <div class="rounded-lg bg-gray-200 w-5/6 self-center flex flex-row m-4 cursor-pointer" onclick="window.location.href = '{{ highlight.url }}';">
+                <!-- Highlight card -->
+                <!-- Redirect to the highlight's URL when clicked -->
+                <div class="rounded-lg bg-gray-200 w-5/6 self-center flex flex-row m-4 cursor-pointer"
+                     onclick="window.location.href = '{{ highlight.url }}';">
                     <img src="{{ highlight.img.url }}" class="m-3 w-1/2 rounded-xl object-cover">
 
                     <div class="m-4">

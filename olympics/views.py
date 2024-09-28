@@ -1,11 +1,9 @@
 import csv
-
 import pycountry
 from django.core import serializers
 from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render
-
 from .models import Athlete, Highlight
 
 
@@ -38,6 +36,7 @@ def athlete_list(request):
         if not countries and not sports and not name:
             data = Athlete.objects.all()
         else:
+            # Dynamic filtering according to user input
             data = Athlete.objects.all()
             if countries:
                 c_query = Q()
@@ -64,6 +63,7 @@ def leaderboard(request):
         data = list(reader)
 
         for row in data[1:]:
+            # resolve country alpha 3 code to alpha 2 code and full name, and add to list
             if not pycountry.countries.get(alpha_3=row[2]):
                 print(row[1])
                 countries.append((row[0], row[1], None, row[3], row[4], row[5], row[6]))
