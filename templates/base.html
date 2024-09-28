@@ -88,6 +88,18 @@
     {% endblock %}
 </main>
 
+<script type="text/javascript">
+    (function(d, m){
+        var kommunicateSettings =
+            {"appId":"65c2fde767b13047d20554a1f4e37aa8","popupWidget":true,"automaticChatOpenOnNavigation":true};
+        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+        window.kommunicate = m; m._globals = kommunicateSettings;
+    })(document, window.kommunicate || {});
+/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+</script>
+
 <!-- Footer section -->
 <footer class="bg-gray-900 mt-3">
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
