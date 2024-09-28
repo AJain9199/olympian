@@ -7,6 +7,10 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
+    footer{
+        display: none;
+    }
+
     @font-face {
         font-family: UnityFont;
         src: url("{ static 'heroFont.ttf'}") format("truetype");
@@ -23,7 +27,6 @@
         background-image: -webkit-linear-gradient(45deg, #ffffff 21%, #9c9599 50%, #242326 100%);
         background-clip: text;
         -webkit-background-clip: text;
-        text-fill-color: transparent;
         -webkit-text-fill-color: transparent;
     }
 
@@ -47,6 +50,9 @@
         animation-name: goRight;
         animation-timing-function: ease-in-out;
     }
+
+
+   
 
     @keyframes goRight {
         0% {
@@ -151,15 +157,15 @@
         <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
             <div class="inline-block flex flex-col align-center justify-center">
                 <!-- <span class="text-center" style="font-size: 80px; line-height:70px"></span> -->
-                <img src="/media/gold.png">
+                <img class="gold" src="/media/gold.png" style="width:50px;height:60px;">
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
             <div class="inline-block flex flex-col align-center justify-center">
-                <img src="/media/silver.png">
+                <img class="silver" src="/media/silver.png" style="width:50px;height:60px;">
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
             <div class="col-span-2 inline-block flex flex-col align-center justify-center" style="margin-top: -100px;">
-                <img src="/media/bronze.png">
+                <img src="/media/bronze.png" style="width:50px;height:60px;">
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
         </div>
