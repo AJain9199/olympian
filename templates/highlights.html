@@ -2,69 +2,25 @@
 {% load static %}
 {% block head %}
     <title>Catch the Hottest Highlights</title>
-    <script src="https://cdn.tailwindcss.com"></script>
 {% endblock %}
 {% block content %}
 
-    
-
-<!-- 
-
-<div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-
-   <div class="hidden duration-700 ease-in-out" data-carousel-item>
-       <img src="https://imageio.forbes.com/specials-images/imageserve/610fdef8abffae85e89a843e/0x0.jpg?format=jpg&crop=1914,1077,x48,y76,safe&height=900&width=1600&fit=bounds" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-   </div>
-
-   <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-       <img src="/docs/images/carousel/carousel-2.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-   </div>
-
-   <div class="hidden duration-700 ease-in-out" data-carousel-item>
-       <img src="/docs/images/carousel/carousel-3.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-   </div>
-
-   <div class="hidden duration-700 ease-in-out" data-carousel-item>
-       <img src="/docs/images/carousel/carousel-4.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-   </div>
-
-   <div class="hidden duration-700 ease-in-out" data-carousel-item>
-       <img src="/docs/images/carousel/carousel-5.svg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-   </div>
-</div>
-
-<button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-   <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-       <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-       </svg>
-       <span class="sr-only">Previous</span>
-   </span>
-</button>
-<button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-   <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-       <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-       </svg>
-       <span class="sr-only">Next</span>
-   </span>
-</button>
-</div> -->
 
     <div class="flex flex-col justify-center align-center">
         <div
-                style="background-image: url({% static '2024-08-02T200444Z_995279073_UP1EK821JRR5R_RTRMADP_3_OLYMPICS-2024-ATHLETICS-1722630334.webp' %}); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;"
+                style="background-image: url({% static 'highlights header panel.webp' %}); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;"
                 class="bg-opacity-40">
             <h1 style="font-weight: 900; font-style: italic; color: white; -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;"
-                class="hallOfFame text-center self-center sm:text-9xl text-[20vw] text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+                class="hallOfFame text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
                 Highlights</h1>
         </div>
 
         <div class="flex flex-col justify-center align-center w-full mt-5">
             {% for highlight in highlights %}
-                <div class="rounded-lg bg-gray-200 w-90 sm:w-5/6 self-center flex max-sm:grid max-sm:grid-cols-1 flex-row m-4 cursor-pointer" onclick="window.location.href = '{{ highlight.url }}';">
-                    <img src="{{ highlight.img.url }}" class="p-3 w-full sm:w-1/2 sm:pr-4 rounded-lg object-cover">
+                <div class="rounded-lg bg-gray-200 w-5/6 self-center flex flex-row m-4 cursor-pointer" onclick="window.location.href = '{{ highlight.url }}';">
+                    <img src="{{ highlight.img.url }}" class="m-3 w-1/2 rounded-xl object-cover">
+
                     <div class="m-4">
                         <h1 class="text-3xl font-bold">{{ highlight.title }}</h1>
                         <p class="text-lg mt-3">{{ highlight.description }}</p>
