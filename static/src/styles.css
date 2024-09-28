@@ -1534,6 +1534,10 @@ input:checked + .toggle-bg {
   width: 150%;
 }
 
+.w-1 {
+  width: 0.25rem;
+}
+
 .max-w-\[82vw\] {
   max-width: 82vw;
 }
@@ -2144,6 +2148,14 @@ input:checked + .toggle-bg {
   line-height: 2.25rem;
 }
 
+.text-\[27vw\] {
+  font-size: 27vw;
+}
+
+.text-\[calc\(100px\+0\.5vw\)\] {
+  font-size: calc(100px + 0.5vw);
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2182,6 +2194,10 @@ input:checked + .toggle-bg {
 
 .leading-9 {
   line-height: 2.25rem;
+}
+
+.leading-\[100px\] {
+  line-height: 100px;
 }
 
 .tracking-tight {
@@ -2535,6 +2551,20 @@ input:checked + .toggle-bg {
   --tw-ring-offset-color: #374151;
 }
 
+@media not all and (min-width: 768px) {
+  .max-md\:block {
+    display: block;
+  }
+
+  .max-md\:pr-\[0px\] {
+    padding-right: 0px;
+  }
+
+  .max-md\:text-center {
+    text-align: center;
+  }
+}
+
 @media not all and (min-width: 640px) {
   .max-sm\:hidden {
     display: none;
@@ -2552,6 +2582,10 @@ input:checked + .toggle-bg {
 @media (min-width: 640px) {
   .sm\:ml-\[16vw\] {
     margin-left: 16vw;
+  }
+
+  .sm\:inline {
+    display: inline;
   }
 
   .sm\:flex {
@@ -2583,6 +2617,10 @@ input:checked + .toggle-bg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  .sm\:text-\[15rem\] {
+    font-size: 15rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2599,8 +2637,17 @@ input:checked + .toggle-bg {
     margin-right: 2.5rem;
   }
 
+  .md\:mx-7 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:flex {
@@ -2675,6 +2722,10 @@ input:checked + .toggle-bg {
 
   .md\:p-0 {
     padding: 0px;
+  }
+
+  .md\:p-3 {
+    padding: 0.75rem;
   }
 
   .md\:hover\:bg-transparent:hover {
