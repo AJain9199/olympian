@@ -55,7 +55,42 @@
             </h1>
         </div>
         <div class="flex flex-col align-center justify-center mt-5 mx-7">
-            <div class="flex flex-row  mt-10 bg-red rounded-xl p-3">
+            <div class="md:hidden grid grid-cols-1 flex flex-row  mt-10 bg-red rounded-xl p-3">
+                <div class="atropos my-atropos w-full m-3">
+                    <!-- scale container (required) -->
+                    <div class="atropos-scale w-full">
+                        <!-- rotate container (required) -->
+                        <div class="atropos-rotate w-full">
+                            <!-- inner container (required) -->
+                            <div class="atropos-inner w-full">
+                                <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-5" >
+                    <h1 class="caveat text-white text-6xl">
+                        The Olympic Flame
+                    </h1>
+            <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                class="text-white mt-3 text-xl">
+                        The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
+                        held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
+                        modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
+                        ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
+                        high priestess.
+                        <br><br>
+                        Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
+                        Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
+                        arrived
+                        in France on May 8, after which it was carried across the country, culminating in its
+                        arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
+                        through France is part of a broader effort to celebrate the Games' values of inclusivity,
+                        sustainability, and peace.
+                    </p>
+                </div>
+            </div>
+            <div class="max-sm:hidden flex flex-row  mt-10 bg-red rounded-xl p-3">
                 <div class="atropos my-atropos w-full m-3">
                     <!-- scale container (required) -->
                     <div class="atropos-scale w-full">
@@ -135,14 +170,21 @@
                     Music- An Expression of Diversity
                 </h1>
                 <div class="flex-row flex justify-center mt-5 space-x-5">
-                    <img src="{% static 'n4t0tvggqh1teorzzrjl.avif' %}" class="hover:grow transition-all w-1/3 h-auto object-cover rounded-lg">
+                    <img src="{% static 'n4t0tvggqh1teorzzrjl.avif' %}"
+                         class="hover:grow transition-all w-1/3 h-auto object-cover rounded-lg atropos-1">
                     <p class="text-white text-xl text-justify hover:grow ">
-                        The 2024 Paris Olympics opening ceremony showcased musical diversity with Lady Gaga performing “Mon truc en plumes,” Celine Dion singing atop the Eiffel Tower, and French-Malian star Aya Nakamura. The event spanned genres, including rapper Snoop Dogg, who added a unique flair with a surprise performance, alongside French metal band Gojira at the Bastille. The lineup reflected unity through music, highlighting global and cultural collaboration
+                        The 2024 Paris Olympics opening ceremony showcased musical diversity with Lady Gaga performing
+                        “Mon truc en plumes,” Celine Dion singing atop the Eiffel Tower, and French-Malian star Aya
+                        Nakamura. The event spanned genres, including rapper Snoop Dogg, who added a unique flair with a
+                        surprise performance, alongside French metal band Gojira at the Bastille. The lineup reflected
+                        unity through music, highlighting global and cultural collaboration
                     </p>
-                    <img src="{% static 'Celine Dion Lady Gaga 072624.png' %}" class="hover:grow transition-all w-1/3 object-cover rounded-lg">
+                    <img src="{% static 'Celine Dion Lady Gaga 072624.png' %}"
+                         class="hover:grow transition-all w-1/3 object-cover rounded-lg atropos-2">
                 </div>
             </div>
         </div>
+        
 
 
         {#        <div class="flex flex-col align-center justify-center w-full mt-5">#}
