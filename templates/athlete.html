@@ -7,6 +7,9 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
+    body{
+        background-color: #242326 !important;
+    }
     footer{
         display: none;
     }
@@ -103,7 +106,7 @@
 {% block content %}
 
 <div class="grid sm:flex sm:h-lvh max-sm:flex-row-reverse fixed">
-    <div class="basis-5/6 max-sm:basis-1 grid gap-4 h-10 h-svh bg-[#1A1A1A] max-w-[82vw]">
+    <div style="background: radial-gradient(#00000000, #000000);" class="basis-5/6 max-sm:basis-1 grid gap-4 h-10 h-svh bg-[#1A1A1A] max-w-[82vw]">
         <h1 class="sm:text-[10vw] athleteHeading" style="text-align: center;
         font-size: 25vw;
         line-height: 18vw;
@@ -138,16 +141,16 @@
             </table>
         </div>
         <div class=" h-[72vh] mt-[82vh] bg-white athleteInfo">
-            <div class="grid grid-cols-2">
+            <div class="grid grid-cols-2" style="background: radial-gradient(#000000, #000000d4);">
                 <div class="relative overflow-x-auto mt-[20px] rounded-lg w-[40vw] ml-[10px]">
-                    <p style="z-index: 101;" class="text-justify my-auto block w-[40vw] text-sm text-left rtl:text-right">{{ athlete_data.history }}</p>
+                    <p style="font-weight: 400; z-index: 101; color: #ffffff !important;" class="text-justify my-auto block w-[28vw] text-sm text-left rtl:text-right">{{ athlete_data.history }}</p>
                 </div>
             </div>
         </div>
         <img class="athleteImg sm:ml-[16vw] mt-[-175vh] static" src="{{ athlete_data.without_bg.url }}" alt=""
             style="z-index: 10;">
     </div>
-    <div style="background-color:rgb(28, 71, 117); z-index: 100;" class="basis-2/6 max-sm:basis-1 p-4 rounded-lg h-svh">
+    <div style=" color: #ffffff !important; background: linear-gradient(343deg, #00000000, #000000); z-index: 100;" class="basis-2/6 max-sm:basis-1 p-4 h-svh">
         <center>
             <p style="font-weight: 800;font-size: 52px;">INDIA</p>
         </center>
@@ -157,11 +160,8 @@
         <div class="grid grid-rows-2 grid-cols-2 gap-4 h-[400px]">
             <div class="inline-block flex flex-col align-center justify-center">
                 <!-- <span class="text-center" style="font-size: 80px; line-height:70px"></span> -->
-<<<<<<< HEAD
-                <img  src="/media/gold.png">
-=======
+
                 <img class="gold" src="/media/gold.png" style="width:50px;height:60px;">
->>>>>>> 0718fbdd5855ec250b0976d1564d7e187453a5d7
                 <span class="text-center" style="font-size: 40px">100</span>
             </div>
             <div class="inline-block flex flex-col align-center justify-center">
