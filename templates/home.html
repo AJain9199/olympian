@@ -6,8 +6,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+          rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
             integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
@@ -55,43 +56,40 @@
             </h1>
         </div>
         <div class="flex flex-col align-center justify-center mt-5 mx-7">
-            <div class="md:hidden grid grid-cols-1 flex flex-row  mt-10 bg-red rounded-xl p-3">
-                <div class="atropos my-atropos w-full m-3">
+            <div class="max-sm:hidden flex flex-row justify-center align-center mt-10 bg-drk-accent rounded-xl p-3">
+                <div class="ml-5 grow-0 w-[150%]">
+                    <h1 class="caveat text-white text-6xl">
+                        Olympics: Pushing the Human Form to its limits
+                    </h1>
+                    <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                       class="text-white mt-3 text-xl text-justify">
+                        The Olympic Games, originating in ancient Greece, have evolved into a global showcase of
+                        athletic excellence. Revived in 1896, the modern Olympics have continually pushed the boundaries
+                        of human performance. Athletes train relentlessly, employing cutting-edge techniques and
+                        technologies to surpass previous records. From Usain Bolt's lightning-fast sprints to Michael
+                        Phelps' aquatic dominance, Olympians redefine what's physically possible. The games have
+                        witnessed extraordinary feats, like Bob Beamon's seemingly impossible long jump in 1968. Each
+                        Olympiad brings new milestones, challenging preconceived notions of human potential. The
+                        Olympics not only celebrate athletic achievement but also inspire millions worldwide to strive
+                        for their personal best.
+                    </p>
+                </div>
+                <div class="atropos atropos1 w-full m-3 grow">
                     <!-- scale container (required) -->
                     <div class="atropos-scale w-full">
                         <!-- rotate container (required) -->
                         <div class="atropos-rotate w-full">
                             <!-- inner container (required) -->
                             <div class="atropos-inner w-full">
-                                <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h">
+                                <img src="{% static '0723PhysicalPerformance_SC.jpg' %}" data-apropos-offset="10"
+                                     class="rounded-lg h-full">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="ml-5" >
-                    <h1 class="caveat text-white text-6xl">
-                        The Olympic Flame
-                    </h1>
-            <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
-                class="text-white mt-3 text-xl">
-                        The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
-                        held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
-                        modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
-                        ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
-                        high priestess.
-                        <br><br>
-                        Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
-                        Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
-                        arrived
-                        in France on May 8, after which it was carried across the country, culminating in its
-                        arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
-                        through France is part of a broader effort to celebrate the Games' values of inclusivity,
-                        sustainability, and peace.
-                    </p>
                 </div>
             </div>
             <div class="max-sm:hidden flex flex-row  mt-10 bg-red rounded-xl p-3">
-                <div class="atropos my-atropos w-full m-3">
+                <div class="atropos atropos2 w-full m-3">
                     <!-- scale container (required) -->
                     <div class="atropos-scale w-full">
                         <!-- rotate container (required) -->
@@ -103,12 +101,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="ml-5" >
+                <div class="ml-5">
                     <h1 class="caveat text-white text-6xl">
                         The Olympic Flame
                     </h1>
-            <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
-                class="text-white mt-3 text-xl">
+                    <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                       class="text-white mt-3 text-xl">
                         The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
                         held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
                         modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
@@ -184,7 +182,6 @@
                 </div>
             </div>
         </div>
-        
 
 
         {#        <div class="flex flex-col align-center justify-center w-full mt-5">#}
@@ -200,13 +197,18 @@
     <script type="text/javascript">
         new ScrollyVideo({
             scrollyVideoContainer: "scrolly-video",
-            src: "{% static 'heaer.mp4' %}",
+            src: "{% static 'header.mp4' %}",
             useWebCodecs: true
         });
 
         // Initialize
         const myAtropos = Atropos({
-            el: '.my-atropos',
+            el: '.atropos2',
+            // rest of parameters
+        });
+
+        const atropos1 = Atropos({
+            el: '.atropos1',
             // rest of parameters
         });
     </script>

@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import render
 
-from .models import Athlete
+from .models import Athlete, Highlight
 
 
 def index(request):
@@ -68,9 +68,14 @@ def leaderboard(request):
                 print(row[1])
                 countries.append((row[0], row[1], None, row[3], row[4], row[5], row[6]))
             else:
-                countries.append((row[0], row[1], pycountry.countries.get(alpha_3=row[2]).alpha_2, row[3], row[4], row[5], row[6]))
+                countries.append(
+                    (row[0], row[1], pycountry.countries.get(alpha_3=row[2]).alpha_2, row[3], row[4], row[5], row[6]))
     return render(request, 'leaderboard.html', {'countries': countries})
 
 
 def history(request):
     return render(request, 'history.html')
+
+
+def highlights(request):
+    return render(request, 'highlights.html', {'highlights': Highlight.objects.all()})

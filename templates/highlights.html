@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <title>Catch the Hottest Highlights</title>
+{% endblock %}
+{% block content %}
+    <div class="flex flex-col justify-center align-center">
+        <div
+                style="background-image: url({% static '2024-08-02T200444Z_995279073_UP1EK821JRR5R_RTRMADP_3_OLYMPICS-2024-ATHLETICS-1722630334.webp' %}); background-attachment: fixed; min-height: 500px; background-position: center; background-repeat:no-repeat; background-size:cover;"
+                class="bg-opacity-40">
+            <h1 style="font-weight: 900; font-style: italic; color: white; -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;"
+                class="hallOfFame text-center self-center text-9xl text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white">
+                Highlights</h1>
+        </div>
+
+        <div class="flex flex-col justify-center align-center w-full mt-5">
+            {% for highlight in highlights %}
+                <div class="rounded-lg bg-gray-200 w-5/6 self-center flex flex-row m-4 cursor-pointer" onclick="window.location.href = '{{ highlight.url }}';">
+                    <img src="{{ highlight.img.url }}" class="m-3 w-1/2 rounded-xl object-cover">
+
+                    <div class="m-4">
+                        <h1 class="text-3xl font-bold">{{ highlight.title }}</h1>
+                        <p class="text-lg mt-3">{{ highlight.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
