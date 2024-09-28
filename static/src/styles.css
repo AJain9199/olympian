@@ -1230,6 +1230,11 @@ input:checked + .toggle-bg {
   margin-bottom: auto;
 }
 
+.my-7 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
 .-mr-1 {
   margin-right: -0.25rem;
 }
@@ -1368,6 +1373,10 @@ input:checked + .toggle-bg {
 
 .table {
   display: table;
+}
+
+.table-row {
+  display: table-row;
 }
 
 .grid {
@@ -1536,6 +1545,10 @@ input:checked + .toggle-bg {
 
 .w-1 {
   width: 0.25rem;
+}
+
+.w-\[50px\] {
+  width: 50px;
 }
 
 .max-w-\[82vw\] {
