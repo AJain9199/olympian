@@ -17,3 +17,11 @@ class Athlete(models.Model):
     without_bg = models.ImageField(upload_to='media/', blank=True, null=True, default="")
     date_of_birth = models.DateField()
     history = models.TextField(max_length=3000)
+
+
+class Highlight(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=1000)
+    img = models.ImageField(upload_to='media/', blank=True, null=True, default="")
+    url = models.URLField()
+

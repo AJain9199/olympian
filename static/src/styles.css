@@ -114,7 +114,7 @@
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
 *,
 ::before,
 ::after {
@@ -1152,6 +1152,10 @@ input:checked + .toggle-bg {
   top: 0.5rem;
 }
 
+.top-20 {
+  top: 5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1188,6 +1192,14 @@ input:checked + .toggle-bg {
   margin: 0.75rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -1206,6 +1218,11 @@ input:checked + .toggle-bg {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .my-auto {
@@ -1245,12 +1262,20 @@ input:checked + .toggle-bg {
   margin-left: 0.5rem;
 }
 
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .ml-5 {
   margin-left: 1.25rem;
 }
 
 .ml-\[10px\] {
   margin-left: 10px;
+}
+
+.ml-\[62vw\] {
+  margin-left: 62vw;
 }
 
 .mr-1 {
@@ -1297,28 +1322,12 @@ input:checked + .toggle-bg {
   margin-top: 1.25rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
-.mt-\[-150vh\] {
-  margin-top: -150vh;
-}
-
-.mt-\[20px\] {
-  margin-top: 20px;
-}
-
-.mt-\[82vh\] {
-  margin-top: 82vh;
-}
-
 .mt-7 {
   margin-top: 1.75rem;
 }
 
-.ml-\[62vw\] {
-  margin-left: 62vw;
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .mt-\[-175vh\] {
@@ -1327,6 +1336,14 @@ input:checked + .toggle-bg {
 
 .mt-\[-5vh\] {
   margin-top: -5vh;
+}
+
+.mt-\[20px\] {
+  margin-top: 20px;
+}
+
+.mt-\[82vh\] {
+  margin-top: 82vh;
 }
 
 .block {
@@ -1413,6 +1430,14 @@ input:checked + .toggle-bg {
   height: 72vh;
 }
 
+.h-\[80px\] {
+  height: 80px;
+}
+
+.h-\[88vh\] {
+  height: 88vh;
+}
+
 .h-auto {
   height: auto;
 }
@@ -1427,6 +1452,10 @@ input:checked + .toggle-bg {
 
 .w-1\/2 {
   width: 50%;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
 }
 
 .w-10 {
@@ -1473,8 +1502,8 @@ input:checked + .toggle-bg {
   width: 200px;
 }
 
-.w-\[30vw\] {
-  width: 30vw;
+.w-\[40vw\] {
+  width: 40vw;
 }
 
 .w-auto {
@@ -1489,16 +1518,24 @@ input:checked + .toggle-bg {
   width: 25%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
+.w-4\/5 {
+  width: 80%;
 }
 
-.w-1\/3 {
-  width: 33.333333%;
+.w-5\/6 {
+  width: 83.333333%;
 }
 
-.w-\[40vw\] {
-  width: 40vw;
+.w-11\/12 {
+  width: 91.666667%;
+}
+
+.w-\[150\%\] {
+  width: 150%;
+}
+
+.w-1 {
+  width: 0.25rem;
 }
 
 .max-w-\[82vw\] {
@@ -1537,12 +1574,24 @@ input:checked + .toggle-bg {
   flex-grow: 1;
 }
 
+.grow-0 {
+  flex-grow: 0;
+}
+
+.basis-1\/4 {
+  flex-basis: 25%;
+}
+
 .basis-1\/6 {
   flex-basis: 16.666667%;
 }
 
 .basis-2\/6 {
   flex-basis: 33.333333%;
+}
+
+.basis-3\/4 {
+  flex-basis: 75%;
 }
 
 .basis-5\/6 {
@@ -1630,16 +1679,16 @@ input:checked + .toggle-bg {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-rows-2 {
@@ -1714,6 +1763,12 @@ input:checked + .toggle-bg {
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-x-5 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
+  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
 .space-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1724,12 +1779,6 @@ input:checked + .toggle-bg {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
-}
-
-.space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
 .self-center {
@@ -1750,14 +1799,6 @@ input:checked + .toggle-bg {
 
 .whitespace-nowrap {
   white-space: nowrap;
-}
-
-.break-words {
-  overflow-wrap: break-word;
-}
-
-.break-all {
-  word-break: break-all;
 }
 
 .rounded {
@@ -1841,9 +1882,15 @@ input:checked + .toggle-bg {
 .bg-black\/30 {
   background-color: rgb(0 0 0 / 0.3);
 }
+
+.bg-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(135 206 235 / var(--tw-bg-opacity));
+}
+
 .bg-drk {
   --tw-bg-opacity: 1;
-  background-color: rgb(13, 36, 61);
+  background-color: rgb(13 36 61 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -1882,7 +1929,7 @@ input:checked + .toggle-bg {
 
 .bg-red {
   --tw-bg-opacity: 1;
-  background-color: rgb(28, 71, 117);
+  background-color: rgb(255 160 122 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -1894,14 +1941,18 @@ input:checked + .toggle-bg {
   background-color: rgb(255 255 255 / 0.5);
 }
 
-.bg-green {
+.bg-yellow {
   --tw-bg-opacity: 1;
-  background-color: rgb(152 251 152 / var(--tw-bg-opacity));
+  background-color: rgb(255 215 0 / var(--tw-bg-opacity));
 }
 
-.bg-blue {
+.bg-drk-accent {
   --tw-bg-opacity: 1;
-  background-color: #01264fd4;
+  background-color: rgb(58 58 58 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
 }
 
 .object-cover {
@@ -1933,10 +1984,6 @@ input:checked + .toggle-bg {
   padding: 1.25rem;
 }
 
-.p-6 {
-  padding: 1.5rem;
-}
-
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1960,6 +2007,11 @@ input:checked + .toggle-bg {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+
+.px-\[50px\] {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .py-2 {
@@ -2047,6 +2099,11 @@ input:checked + .toggle-bg {
   line-height: 1;
 }
 
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
 .text-8xl {
   font-size: 6rem;
   line-height: 1;
@@ -2061,6 +2118,11 @@ input:checked + .toggle-bg {
   font-size: 15rem;
 }
 
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2073,7 +2135,7 @@ input:checked + .toggle-bg {
 
 .text-xl {
   font-size: 1.25rem;
-  /* line-height: 1.75rem; */
+  line-height: 1.75rem;
 }
 
 .text-xs {
@@ -2081,9 +2143,17 @@ input:checked + .toggle-bg {
   line-height: 1rem;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
-  line-height: 1;
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-\[27vw\] {
+  font-size: 27vw;
+}
+
+.text-\[calc\(100px\+0\.5vw\)\] {
+  font-size: calc(100px + 0.5vw);
 }
 
 .font-bold {
@@ -2124,6 +2194,10 @@ input:checked + .toggle-bg {
 
 .leading-9 {
   line-height: 2.25rem;
+}
+
+.leading-\[100px\] {
+  line-height: 100px;
 }
 
 .tracking-tight {
@@ -2197,6 +2271,11 @@ input:checked + .toggle-bg {
 
 .blur {
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.brightness-50 {
+  --tw-brightness: brightness(.5);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -2281,6 +2360,12 @@ input:checked + .toggle-bg {
 .hover\:text-gray-900:hover {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+
+.hover\:shadow:hover {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hover\:shadow-md:hover {
@@ -2422,6 +2507,11 @@ input:checked + .toggle-bg {
   --tw-ring-offset-color: #374151;
 }
 
+.dark\:hover\:bg-gray-500:hover:is(.dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
 .dark\:hover\:bg-gray-600:hover:is(.dark *) {
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
@@ -2461,6 +2551,20 @@ input:checked + .toggle-bg {
   --tw-ring-offset-color: #374151;
 }
 
+@media not all and (min-width: 768px) {
+  .max-md\:block {
+    display: block;
+  }
+
+  .max-md\:pr-\[0px\] {
+    padding-right: 0px;
+  }
+
+  .max-md\:text-center {
+    text-align: center;
+  }
+}
+
 @media not all and (min-width: 640px) {
   .max-sm\:hidden {
     display: none;
@@ -2478,6 +2582,10 @@ input:checked + .toggle-bg {
 @media (min-width: 640px) {
   .sm\:ml-\[16vw\] {
     margin-left: 16vw;
+  }
+
+  .sm\:inline {
+    display: inline;
   }
 
   .sm\:flex {
@@ -2509,6 +2617,10 @@ input:checked + .toggle-bg {
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+
+  .sm\:text-\[15rem\] {
+    font-size: 15rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2525,8 +2637,17 @@ input:checked + .toggle-bg {
     margin-right: 2.5rem;
   }
 
+  .md\:mx-7 {
+    margin-left: 1.75rem;
+    margin-right: 1.75rem;
+  }
+
   .md\:mt-0 {
     margin-top: 0px;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:flex {
@@ -2551,10 +2672,6 @@ input:checked + .toggle-bg {
 
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -2605,6 +2722,10 @@ input:checked + .toggle-bg {
 
   .md\:p-0 {
     padding: 0px;
+  }
+
+  .md\:p-3 {
+    padding: 0.75rem;
   }
 
   .md\:hover\:bg-transparent:hover {
@@ -2664,20 +2785,4 @@ input:checked + .toggle-bg {
 
 .rtl\:text-right:where([dir="rtl"], [dir="rtl"] *) {
   text-align: right;
-}
-
-.\[\&\>\*\]\:-translate-y-2>* {
-  --tw-translate-y: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
-.\[\&\>\*\]\:transition-all>* {
-  transition-property: all;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.\[\&\>\*\]\:hover\:-translate-y-2:hover>* {
-  --tw-translate-y: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

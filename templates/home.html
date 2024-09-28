@@ -2,47 +2,40 @@
 {% load static %}
 
 {% block head %}
+<<<<<<< HEAD
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+=======
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+>>>>>>> origin/HEAD
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-    rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
-<style>
-    .gilda {
-        font-family: "Gilda Display", serif;
-        font-weight: 700;
-        color: rgba(256, 256, 256, 0.8);
-        font-style: bold;
-        font-size: 17vw;
-        position: absolute;
-        text-shadow: 0px 0px 20px rgba(0, 0, 0, 1), 0px 0px 500px rgba(0, 0, 0, 1), 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
-    }
-
-    .caveat {
-        font-family: "Caveat", cursive;
-
-        font-style: normal;
-    }
-    @media (max-width: 640px) {
-        .ParisHeading{
-            font-size: 10rem;
-            line-height: 8rem;
+    <style>
+        .gilda {
+            font-family: "Gilda Display", serif;
+            font-weight: 700;
+            color: rgba(256, 256, 256, 0.8);
+            font-style: bold;
+            font-size: 17vw;
+            position: absolute;
+            text-shadow: 0px 0px 20px rgba(0, 0, 0, 1), 0px 0px 500px rgba(0, 0, 0, 1), 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
         }
-        .FlameImg{
-            padding-right: 20px
+
+        .caveat {
+            font-family: "Caveat", cursive;
+            font-optical-sizing: auto;
+            font-style: normal;
         }
-    }
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" link="{% static 'node_modules/atropos/atropos.min.css' %}">
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" link="{% static 'node_modules/atropos/atropos.min.css' %}">
 
 {% endblock %}
 
@@ -50,117 +43,154 @@
 
 {% block content %}
 
-<div class="flex flex-col mt-2">
-    <div style="height: 350vh;">
-        <div id="scrolly-video"></div>
-    </div>
-    <div class="mt-10" style="background-image: url({% static '666488b8db21a7.29284501.webp' %}); background-attachment:fixed; min-height: 75vh; background-position: center; background-repeat:no-repeat; background-size:cover">
-        <h1
-            class="caveat ParisHeading sm:text-[15rem] text-[15rem] text-white text-center top-1/2 left-1/2">
-            Paris 2024
-        </h1>
-        <h3 class="caveat text-white text-5xl text-center">
-            Citius-Altius-Fortius
-        </h3>
-        <h1 class="caveat text-8xl text-white text-center mt-10">
-            The Story Begins...
-        </h1>
-    </div>
-    <div class="flex flex-col align-center justify-center mt-5 md:mx-7 mx-3">
-        <div class="md:hidden grid grid-cols-1 flex flex-row mt-10 bg-red rounded-xl md:p-3">
-            <div class="atropos my-atropos w-full m-3">
-                <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="FlameImg rounded-lg -h">
-            </div>
-            <div class="m-5">
-                <center><h1 class="caveat text-white text-6xl">
-                    The Olympic Flame
-                </h1></center>
-                
-                <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
-                    class="text-white mt-3 text-xl mx-5">
-                    The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
-                    held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
-                    modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
-                    ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
-                    high priestess.
-                    <br><br>
-                    Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
-                    Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
-                    arrived
-                    in France on May 8, after which it was carried across the country, culminating in its
-                    arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
-                    through France is part of a broader effort to celebrate the Games' values of inclusivity,
-                    sustainability, and peace.
-                </p>
-            </div>
+    <div class="flex flex-col mt-2">
+        <div style="height: 350vh;">
+            <div id="scrolly-video"></div>
         </div>
-        <div class="max-sm:hidden flex flex-row  mt-10 bg-red rounded-xl md:p-3">
-            <div class="atropos my-atropos w-full m-3">
-                <!-- scale container (required) -->
-                <div class="atropos-scale w-full">
-                    <!-- rotate container (required) -->
-                    <div class="atropos-rotate w-full">
-                        <!-- inner container (required) -->
-                        <div class="atropos-inner w-full">
-                            <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h" >
+        <div class="mt-10"
+             style="background-image: url({% static '666488b8db21a7.29284501.webp' %}); background-attachment: fixed; min-height: 75vh; background-position: center; background-repeat:no-repeat; background-size:cover;">
+            <h1 class="caveat text-[15rem] text-white text-center top-1/2 left-1/2">
+                Paris 2024
+            </h1>
+            <h3 class="caveat text-white text-5xl text-center">
+                Citius-Altius-Fortius
+            </h3>
+            <h1 class="caveat text-8xl text-white text-center mt-10">
+                The Story Begins...
+            </h1>
+        </div>
+        <div class="flex flex-col align-center justify-center mt-5 mx-7">
+            <div class="md:hidden grid grid-cols-1 flex flex-row  mt-10 bg-red rounded-xl p-3">
+                <div class="atropos my-atropos w-full m-3">
+                    <!-- scale container (required) -->
+                    <div class="atropos-scale w-full">
+                        <!-- rotate container (required) -->
+                        <div class="atropos-rotate w-full">
+                            <!-- inner container (required) -->
+                            <div class="atropos-inner w-full">
+                                <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h">
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="ml-5" >
+                    <h1 class="caveat text-white text-6xl">
+                        The Olympic Flame
+                    </h1>
+            <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                class="text-white mt-3 text-xl">
+                        The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
+                        held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
+                        modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
+                        ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
+                        high priestess.
+                        <br><br>
+                        Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
+                        Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
+                        arrived
+                        in France on May 8, after which it was carried across the country, culminating in its
+                        arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
+                        through France is part of a broader effort to celebrate the Games' values of inclusivity,
+                        sustainability, and peace.
+                    </p>
+                </div>
             </div>
-            <div class="ml-5">
-                <h1 class="caveat text-white text-6xl">
-                    The Olympic Flame
+            <div class="max-sm:hidden flex flex-row  mt-10 bg-red rounded-xl p-3">
+                <div class="atropos my-atropos w-full m-3">
+                    <!-- scale container (required) -->
+                    <div class="atropos-scale w-full">
+                        <!-- rotate container (required) -->
+                        <div class="atropos-rotate w-full">
+                            <!-- inner container (required) -->
+                            <div class="atropos-inner w-full">
+                                <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-5" >
+                    <h1 class="caveat text-white text-6xl">
+                        The Olympic Flame
+                    </h1>
+            <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                class="text-white mt-3 text-xl">
+                        The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
+                        held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
+                        modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
+                        ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
+                        high priestess.
+                        <br><br>
+                        Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
+                        Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
+                        arrived
+                        in France on May 8, after which it was carried across the country, culminating in its
+                        arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
+                        through France is part of a broader effort to celebrate the Games' values of inclusivity,
+                        sustainability, and peace.
+                    </p>
+                </div>
+            </div>
+            <div class="flex-col flex align-center justify-center bg-blue p-3 rounded-xl mt-5">
+                <h1 class="caveat text-center text-7xl text-white mb-2">The Opening Ceremony</h1>
+                <h1 class="caveat text-center text-5xl text-white">A Celebration of Unity, Diversity and
+                    Inclusivity</h1>
+
+                <div class="grid grid-cols-3 gap-4 mt-5 self-center w-full mx-5">
+                    <div class="grid gap-4">
+                        <div class="hover:-translate-y-2 transition-all">
+                            <img class="h-full object-cover max-w-full rounded-lg"
+                                 src="{% static 'achanta_sindhu_1722042037729_1722042048859.jpg' %}" alt="">
+                        </div>
+                        <div class="hover:-translate-y-2 transition-all">
+                            <img class="h-full object-cover max-w-full rounded-lg"
+                                 src="{% static 'Tom_Daley_Paris_2024_flag_bearer_1200x675.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="hover:-translate-y-2 transition-all">
+                            <img class="h-full max-w-full rounded-lg object-cover"
+                                 src="{% static 'E53WU7QXsAM4j2_-116145496-1627035719559-e1710382271257.webp' %}"
+                                 alt="">
+                        </div>
+                    </div>
+                    <div class="grid gap-4">
+                        <div class="hover:-translate-y-2 transition-all">
+                            <img class="h-auto max-w-full rounded-lg" src="{% static 'qkufgy5j1yvjz8pdnlpy.avif' %}">
+                        </div>
+                        <div class="hover:-translate-y-2 transition-all">
+                            <img class="h-auto max-w-full rounded-lg"
+                                 src="{% static 'benjamin_savsek_flagbearer_2024.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="caveat text-center text-white text-6xl mt-5">
+                    Flags- Transcending the Gender Gap
                 </h1>
-                <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
-                    class="text-white mt-3 text-xl">
-                    The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
-                    held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
-                    modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
-                    ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
-                    high priestess.
-                    <br><br>
-                    Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
-                    Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
-                    arrived
-                    in France on May 8, after which it was carried across the country, culminating in its
-                    arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
-                    through France is part of a broader effort to celebrate the Games' values of inclusivity,
-                    sustainability, and peace.
-                </p>
+                <p class="text-white text-center text-xl">The 2024 Olympics were the first edition of the olympics to
+                    require countries to have flag-bearer of both genders- a massive step towards gender equality and
+                    equal representation of men and women in sports culture.</p>
+
+                <h1 class="caveat text-center text-white text-6xl mt-7">
+                    Music- An Expression of Diversity
+                </h1>
+                <div class="flex-row flex justify-center mt-5 space-x-5">
+                    <img src="{% static 'n4t0tvggqh1teorzzrjl.avif' %}"
+                         class="hover:grow transition-all w-1/3 h-auto object-cover rounded-lg atropos-1">
+                    <p class="text-white text-xl text-justify hover:grow ">
+                        The 2024 Paris Olympics opening ceremony showcased musical diversity with Lady Gaga performing
+                        “Mon truc en plumes,” Celine Dion singing atop the Eiffel Tower, and French-Malian star Aya
+                        Nakamura. The event spanned genres, including rapper Snoop Dogg, who added a unique flair with a
+                        surprise performance, alongside French metal band Gojira at the Bastille. The lineup reflected
+                        unity through music, highlighting global and cultural collaboration
+                    </p>
+                    <img src="{% static 'Celine Dion Lady Gaga 072624.png' %}"
+                         class="hover:grow transition-all w-1/3 object-cover rounded-lg atropos-2">
+                </div>
             </div>
         </div>
-        <div class="flex-col flex align-center justify-center bg-blue p-3 rounded-xl mt-5">
-            <h1 class="caveat text-center text-7xl text-white mb-2">The Opening Ceremony</h1>
-            <h1 class="caveat text-center text-5xl text-white">A Celebration of Unity, Diversity and
-                Inclusivity</h1>
+        
 
-            <div class="grid grid-cols-3 gap-4 mt-5 self-center w-full mx-5">
-                <div class="grid gap-4">
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-full object-cover max-w-full rounded-lg"
-                            src="{% static 'achanta_sindhu_1722042037729_1722042048859.jpg' %}" alt="">
-                    </div>
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-full object-cover max-w-full rounded-lg"
-                            src="{% static 'Tom_Daley_Paris_2024_flag_bearer_1200x675.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-full max-w-full rounded-lg object-cover"
-                            src="{% static 'E53WU7QXsAM4j2_-116145496-1627035719559-e1710382271257.webp' %}" alt="">
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-auto max-w-full rounded-lg" src="{% static 'qkufgy5j1yvjz8pdnlpy.avif' %}">
-                    </div>
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-auto max-w-full rounded-lg"
-                            src="{% static 'benjamin_savsek_flagbearer_2024.jpg' %}" alt="">
-                    </div>
-                </div>
-            </div>
 
             <h1 class="caveat text-center text-white text-6xl mt-5">
                 Flags- Transcending the Gender Gap
@@ -267,29 +297,11 @@
                 </div>
             </section>
 
-
-    {# <div class="flex flex-col align-center justify-center w-full mt-5">#}
-        {# <h1 class="caveat text-[15rem] text-white text-center">#}
-            {# Paris 2024#}
-            {# </h1>#}
-        {# <img src="{% static 'rings.svg' %}" class="w-3/4 self-center">#}
-        {# </div>#}
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
-<script src="{% static 'node_modules/atropos/atropos.min.js' %}"></script>
-<script type="text/javascript">
-    new ScrollyVideo({
-        scrollyVideoContainer: "scrolly-video",
-        src: "{% static 'heaer.mp4' %}",
-        useWebCodecs: true
-    });
-
-    // Initialize
-    const myAtropos = Atropos({
-        el: '.my-atropos',
-        // rest of parameters
-    });
-</script>
+        // Initialize
+        const myAtropos = Atropos({
+            el: '.my-atropos',
+            // rest of parameters
+        });
+    </script>
 
 {% endblock %}
