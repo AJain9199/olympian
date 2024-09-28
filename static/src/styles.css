@@ -1986,7 +1986,7 @@ input:checked + .toggle-bg {
 
 .bg-red {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 160 122 / var(--tw-bg-opacity));
+  background-color: rgb(28, 71, 117) / var(--tw-bg-opacity);
 }
 
 .bg-white {
