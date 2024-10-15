@@ -189,7 +189,7 @@
             <h1 class="caveat text-center text-5xl text-white">A Celebration of Unity, Diversity and
                 Inclusivity</h1>
 
-            <div class="grid grid-cols-3 gap-4 mt-5 self-center w-full mx-5">
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-5 self-center w-full mx-5">
                 <div class="grid gap-4">
                     <div class="hover:-translate-y-2 transition-all">
                         <img class="h-full object-cover max-w-full rounded-lg"
@@ -206,7 +206,7 @@
                              src="{% static 'FR flag bearers.webp' %}" alt="">
                     </div>
                 </div>
-                <div class="grid gap-4">
+                <div class="grid sm:grid-col-1 sm:col-span-1 grid-col-2 col-span-2 gap-4">
                     <div class="hover:-translate-y-2 transition-all">
                         <img class="h-auto max-w-full rounded-lg" src="{% static 'qkufgy5j1yvjz8pdnlpy.avif' %}">
                     </div>
@@ -224,24 +224,26 @@
             <p class="text-white text-center text-xl">The 2024 Olympics were the first edition of the olympics to
                 require countries to have flag-bearer of both genders- a massive step towards gender equality and
                 equal representation of men and women in sports culture.</p>
-
+            
+            
             <h1 class="caveat text-center text-white text-6xl mt-7">
                 Music- An Expression of Diversity
             </h1>
-            <div class="flex-row flex justify-center mt-5 space-x-5">
+                
+            <div class="flex-col sm:flex-row flex justify-center mt-5 space-x-5">
                 <img src="{% static 'n4t0tvggqh1teorzzrjl.avif' %}"
-                     class="hover:grow transition-all w-1/3 h-auto object-cover rounded-lg atropos-1">
+                     class="hover:grow transition-all sm:w-1/3 h-auto object-cover rounded-lg atropos-1 t-">
                 <p style="font-size: 109% !important;
                 font-weight: 300;
-                margin: -2px 27px;" class="text-white text-justify hover:grow ">
+                margin: -2px 27px;" class="text-white text-justify hover:grow sm:mt-[10px]">
                     The 2024 Paris Olympics opening ceremony showcased musical diversity with Lady Gaga performing
                     “Mon truc en plumes,” Celine Dion singing atop the Eiffel Tower, and French-Malian star Aya
                     Nakamura. The event spanned genres, including rapper Snoop Dogg, who added a unique flair with a
                     surprise performance, alongside French metal band Gojira at the Bastille. The lineup reflected
-                    unity through music, highlighting global and cultural collaboration
+                    unity through music, highlighting global and cultural collaboration.
                 </p>
                 <img src="{% static 'Celine Dion Lady Gaga 072624.png' %}"
-                     class="hover:grow transition-all w-1/3 object-cover rounded-lg atropos-2">
+                     class="hover:grow transition-all sm:w-1/3 object-cover rounded-lg atropos-2">
             </div>
         </div>
     </div>
@@ -278,10 +280,10 @@
     </section>
 
 
-    <div style="background-color: rgb(28, 71, 117) !important" class="container">
+    <div style="background-color: rgb(28, 71, 117) !important" class="px-[30px]">
         <!-- Closing Ceremony Section -->
-        <section class="section">
-            <div class="content">
+        <section class="flex flex-col sm:flex-row">
+            <div class="">
                 <h2 style="font-weight: 700; font-size: 250% !important; color: #fff;">Closing Ceremony: A Celebration
                     of Unity and Triumph</h2>
                 <br>
@@ -293,20 +295,20 @@
                     and honor the athletes who have inspired us all.
                 </p>
             </div>
-            <div class="image">
+            <div>
                 <img src="https://www.harpersbazaararabia.com/cloud/2021/09/09/4lprFuES-234789417_3844434945661653_2756983982712914060_n-1-958x900.jpg"
                      alt="Closing Ceremony Highlights">
             </div>
         </section>
 
         <!-- Highlights of the Ceremony -->
-        <section class="section">
-            <div class="image">
+        <section class="flex flex-col-reverse sm:flex-row flex-row-reverse">
+            <div class="mb-[30px] mt-[20px] rounded-lg">
                 <img src="https://imageio.forbes.com/specials-images/imageserve/610fdef8abffae85e89a843e/0x0.jpg?format=jpg&crop=1914,1077,x48,y76,safe&height=900&width=1600&fit=bounds"
                      alt="Parade of Nations">
             </div>
-            <div class="content">
-                <h2 style="font-weight: 700; font-size: 250% !important; color: #fff;">The Highlights of the
+            <div class="ml-[20px]">
+                <h2 class="" style="font-weight: 700; font-size: 250% !important; color: #fff;">The Highlights of the
                     Ceremony</h2>
                 <p style="font-size: larger !important; color: #fff;">Expect a night of spectacular performances,
                     emotional tributes, and unforgettable moments that will
@@ -337,7 +339,7 @@
     <script type="text/javascript">
         new ScrollyVideo({
             scrollyVideoContainer: "scrolly-video",
-            src: "{% static 'header.mp4' %}",
+            src: "{% static 'heder.mp4' %}",
             useWebCodecs: true
         });
 
