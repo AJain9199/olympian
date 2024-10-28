@@ -19,9 +19,6 @@
     <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="{% static 'src/styles.css' %}">
 
-    <!-- Link to external JavaScript library -->
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-
     <!-- Title block for the page -->
     <title>{% block title %}{% endblock %}</title>
     <link sizes="32x32" rel="icon" href="{% static 'png-clipart-olympics-logo-2016-summer-olympics-2016-summer-paralympics-olympic-symbols-olympic-flame-the-olympic-rings-food-ring-thumbnail.png' %}">
@@ -87,7 +84,7 @@
 </nav>
 
 <!-- Main content area -->
-<main class="mt-20 bg-drk">
+<main class="mt-20">
     {% block content %}
     {% endblock %}
 </main>

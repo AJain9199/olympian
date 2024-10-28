@@ -3,355 +3,459 @@
 
 {% block head %}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&display=swap" rel="stylesheet">
 
-    <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-            rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-            integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/parlx.js@2.0.4/lib/parlx.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
-    <style>
-        .gilda {
-            font-family: "Gilda Display", serif;
-            font-weight: 700;
-            color: rgba(256, 256, 256, 0.8);
-            font-style: bold;
-            font-size: 17vw;
-            position: absolute;
-            text-shadow: 0px 0px 20px rgba(0, 0, 0, 1), 0px 0px 500px rgba(0, 0, 0, 1), 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
+<style>
+    .gilda {
+        font-family: "Gilda Display", serif;
+        font-weight: 700;
+        color: rgba(256, 256, 256, 0.8);
+        font-style: bold;
+        font-size: 17vw;
+        position: absolute;
+        text-shadow: 0px 0px 20px rgba(0, 0, 0, 1), 0px 0px 500px rgba(0, 0, 0, 1), 0px 0px 5px rgb(0, 0, 0), 0px 0px 10px rgb(0, 0, 0);
+    }
+
+    .caveat {
+        font-family: "Cuprum", sans-serif;
+        font-style: normal;
+    }
+
+    @media (max-width: 640px) {
+        .ParisHeading {
+            font-size: 10rem !important;
+            line-height: 8rem !important;
+            text-align: center !important;
         }
 
-        .caveat {
-            font-family: "Caveat", cursive;
-            font-style: normal;
+        .FlameImg {
+            padding-right: 20px !important;
+            ;
         }
+    }
 
-        @media (max-width: 640px) {
-            .ParisHeading {
-                font-size: 10rem !important;
-                line-height: 8rem !important;
-                text-align: center !important;
-            }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+    }
 
-            .FlameImg {
-                padding-right: 20px !important;;
-            }
-        }
+    .section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-        }
+    .content {
+        width: 70%;
+        padding: 20px;
+    }
 
-        .section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 50px;
-            padding: 20px;
-            border-bottom: 1px solid #ddd;
-        }
+    .image {
+        width: 30%;
+        padding: 20px;
+    }
 
-        .content {
-            width: 70%;
-            padding: 20px;
-        }
+    .image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-        .image {
-            width: 30%;
-            padding: 20px;
-        }
+    h2 {
+        color: #333;
+    }
 
-        .image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    p {
+        color: #555;
+        line-height: 1.6;
+    }
 
-        h2 {
-            color: #333;
-        }
+    ul {
+        color: #555;
+        line-height: 1.6;
+    }
 
-        p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        ul {
-            color: #555;
-            line-height: 1.6;
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" link="{% static 'node_modules/atropos/atropos.min.css' %}">
+    /* Gradient CSS */
+    .blob {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 350px;
+        border-radius: 100%;
+        background-image: linear-gradient(#1100ff 10%, #ff00f2);
+        filter: blur(250px);
+        transition: all 450ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+        z-index: -1;
+    }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="stylesheet" link="{% static 'node_modules/atropos/atropos.min.css' %}">
 
 {% endblock %}
 
 {% block title %}Olympics{% endblock %}
 
 {% block content %}
+<div class="blob"></div>
+<script>
+    var cursor = document.querySelector('.blob');
 
-    <div class="flex flex-col mt-2">
-        <div class="max-md:hidden" style="height: 350vh;">
-            <div id="scrolly-video"></div>
-        </div>
-        <div class="mt-10"
-             style="background-image: url({% static 'Paris 2024.webp' %}); background-attachment: fixed; min-height: 75vh; background-position: center; background-repeat:no-repeat; background-size:cover;">
-            <center><h1
-                    class="caveat ParisHeading text-[14rem] leading-[17rem] text-white text-center top-1/2 left-1/2">
-                Paris 2024
-            </h1></center>
-            <h3 class="caveat text-white text-5xl text-center">
-                Citius-Altius-Fortius
-            </h3>
-            <h1 class="caveat text-8xl text-white text-center mt-10">
-                The Story Begins...
-            </h1>
-        </div>
-        <div class="flex flex-col align-center justify-center mt-5 mx-7">
-            <div style="background-color: rgb(28, 71, 117);"
-                 class="max-sm:hidden flex flex-row  mt-10 bg-red rounded-xl p-3">
-                <div class="ml-5 w-[150%]">
-                    <h1 class="caveat text-white text-6xl">
-                        The Olympics: Pushing Humanity to its Limits
-                    </h1>
-                    <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
-                       class="text-white mt-3 text-xl">
-                        The Olympic Games, originating in ancient Greece, have evolved into a global showcase of
-                        athletic excellence. Revived in 1896, the modern Olympics have continually pushed the boundaries
-                        of human performance. Athletes train relentlessly, employing cutting-edge techniques and
-                        technologies to surpass previous records. From Usain Bolt's lightning-fast sprints to Michael
-                        Phelps' aquatic dominance, Olympians redefine what's physically possible. The games have
-                        witnessed extraordinary feats, like Bob Beamon's seemingly impossible long jump in 1968. Each
-                        Olympiad brings new milestones, challenging preconceived notions of human potential. The
-                        Olympics not only celebrate athletic achievement but also inspire millions worldwide to strive
-                        for their personal best.
-                    </p>
-                </div>
-                <div class="atropos atropos1 w-full m-3">
-                    <!-- scale container (required) -->
-                    <div class="atropos-scale w-full">
-                        <!-- rotate container (required) -->
-                        <div class="atropos-rotate w-full">
-                            <!-- inner container (required) -->
-                            <div class="atropos-inner w-full">
-                                <img src="{% static 'Pushing Humanity.jpg' %}" data-atropos-offset="10"
-                                     class="rounded-lg -h">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    document.addEventListener('mousemove', function (e) {
+        var x = e.clientX;
+        var y = e.clientY;
+        cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+    });
+</script>
+
+<div class="flex flex-col mt-2">
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-0 px-4 mx-auto max-w-screen-xl text-center pt-2 lg:px-12">
+            <a href="#"
+                class="inline-flex justify-between items-center py-1 px-1 pr-4 mb-7 text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+                role="alert">
+                <span class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span
+                    class="text-sm font-medium">Flowbite is out! See what's new</span>
+                <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </a>
+            <h1
+                class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                Paris Olympics 2024</h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here
+                at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value
+                and drive economic growth.</p>
+            <div
+                class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                    Learn more
+                    <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    <svg class="mr-2 -ml-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z">
+                        </path>
+                    </svg>
+                    Watch video
+                </a>
             </div>
         </div>
-        <div style="background-color: rgb(28, 71, 117);"
-             class="max-sm:hidden flex flex-row  mt-10 bg-red rounded-xl p-3">
-            <div class="atropos my-atropos w-full m-3">
+    </section>
+    <div class=" 
+    max-md:hidden mt-[-50px] z-100" style="height: 350vh;">
+        <div id="scrolly-video" style=" mask-image: radial-gradient(ellipse, black 50%, rgba(0, 0, 0) 50%);"></div>
+    </div>
+    <div class="mt-10"
+        style="background-image: url({% static 'Paris 2024.webp' %}); background-attachment: fixed; min-height: 75vh; background-position: center; background-repeat:no-repeat; background-size:cover;">
+        
+        <section class="bg-white dark:bg-gray-900">
+            <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+                <div class="mr-auto place-self-center lg:col-span-7">
+                    <h1
+                        class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+                        Payments tool for software companies</h1>
+                    <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+                        From checkout to global sales tax compliance, companies around the world use Flowbite to
+                        simplify their payment stack.</p>
+                    <a href="#"
+                        class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+                        Get started
+                        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#"
+                        class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        Speak to Sales
+                    </a>
+                </div>
+                <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+                    <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup">
+                </div>
+            </div>
+        </section>
+        <center>
+            <h1 class="caveat ParisHeading text-[14rem] leading-[17rem] text-white text-center top-1/2 left-1/2">
+                Paris 2024
+            </h1>
+        </center>
+        <h3 class="caveat text-white text-5xl text-center">
+            Citius-Altius-Fortius
+        </h3>
+        <h1 class="caveat text-8xl text-white text-center mt-10">
+            The Story Begins...
+        </h1>
+    </div>
+    <div class="flex flex-col align-center justify-center mt-5">
+        <div style="background-color: rgba(118, 118, 118, 0.212) !important" class="m-[15px] p-[30px] rounded-lg max-sm:hidden flex flex-row">
+            <div class="ml-5 w-[150%]">
+                <h1 class="caveat text-white text-6xl">
+                    The Olympics: Pushing Humanity to its Limits
+                </h1>
+                <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                    class="text-white mt-3 text-xl">
+                    The Olympic Games, originating in ancient Greece, have evolved into a global showcase of
+                    athletic excellence. Revived in 1896, the modern Olympics have continually pushed the boundaries
+                    of human performance. Athletes train relentlessly, employing cutting-edge techniques and
+                    technologies to surpass previous records. From Usain Bolt's lightning-fast sprints to Michael
+                    Phelps' aquatic dominance, Olympians redefine what's physically possible. The games have
+                    witnessed extraordinary feats, like Bob Beamon's seemingly impossible long jump in 1968. Each
+                    Olympiad brings new milestones, challenging preconceived notions of human potential. The
+                    Olympics not only celebrate athletic achievement but also inspire millions worldwide to strive
+                    for their personal best.
+                </p>
+            </div>
+            <div class="atropos atropos1 w-full m-3">
                 <!-- scale container (required) -->
                 <div class="atropos-scale w-full">
                     <!-- rotate container (required) -->
                     <div class="atropos-rotate w-full">
                         <!-- inner container (required) -->
                         <div class="atropos-inner w-full">
-                            <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h">
+                            <img src="{% static 'Pushing Humanity.jpg' %}" data-atropos-offset="10"
+                                class="rounded-lg -h">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="ml-5">
-                <h1 class="caveat text-white text-6xl">
-                    The Olympic Flame
-                </h1>
-                <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
-                   class="text-white mt-3 text-xl">
-                    The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
-                    held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
-                    modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
-                    ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
-                    high priestess.
-                    <br><br>
-                    Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
-                    Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
-                    arrived
-                    in France on May 8, after which it was carried across the country, culminating in its
-                    arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
-                    through France is part of a broader effort to celebrate the Games' values of inclusivity,
-                    sustainability, and peace.
-                </p>
-            </div>
-        </div>
-        <div style="background-color: rgb(28, 71, 117);"
-             class="flex-col flex align-center justify-center bg-blue p-3 rounded-xl mt-5">
-            <h1 class="caveat text-center text-7xl text-white mb-2">The Opening Ceremony</h1>
-            <h1 class="caveat text-center text-5xl text-white">A Celebration of Unity, Diversity and
-                Inclusivity</h1>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-5 self-center w-full mx-5">
-                <div class="grid gap-4">
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-full object-cover max-w-full rounded-lg"
-                             src="{% static 'achanta_sindhu_1722042037729_1722042048859.jpg' %}" alt="">
-                    </div>
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-full object-cover max-w-full rounded-lg"
-                             src="{% static 'GB_flag bearers.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="grid gap-4">
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-full max-w-full rounded-lg object-cover"
-                             src="{% static 'FR flag bearers.webp' %}" alt="">
-                    </div>
-                </div>
-                <div class="grid sm:grid-col-1 sm:col-span-1 grid-col-2 col-span-2 gap-4">
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-auto max-w-full rounded-lg" src="{% static 'qkufgy5j1yvjz8pdnlpy.avif' %}">
-                    </div>
-                    <div class="hover:-translate-y-2 transition-all">
-                        <img class="h-auto max-w-full rounded-lg"
-                             src="{% static 'benjamin_savsek_flagbearer_2024.jpg' %}" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <h1 class="caveat text-center text-white text-6xl mt-5">
-                Flags- Transcending the Gender Gap
-            </h1>
-            <br>
-            <p class="text-white text-center text-xl">The 2024 Olympics were the first edition of the olympics to
-                require countries to have flag-bearer of both genders- a massive step towards gender equality and
-                equal representation of men and women in sports culture.</p>
-            
-            
-            <h1 class="caveat text-center text-white text-6xl mt-7">
-                Music- An Expression of Diversity
-            </h1>
-                
-            <div class="flex-col sm:flex-row flex justify-center mt-5 space-x-5">
-                <img src="{% static 'n4t0tvggqh1teorzzrjl.avif' %}"
-                     class="hover:grow transition-all sm:w-1/3 h-auto object-cover rounded-lg atropos-1 t-">
-                <p style="font-size: 109% !important;
-                font-weight: 300;
-                margin: -2px 27px;" class="text-white text-justify hover:grow sm:mt-[10px]">
-                    The 2024 Paris Olympics opening ceremony showcased musical diversity with Lady Gaga performing
-                    “Mon truc en plumes,” Celine Dion singing atop the Eiffel Tower, and French-Malian star Aya
-                    Nakamura. The event spanned genres, including rapper Snoop Dogg, who added a unique flair with a
-                    surprise performance, alongside French metal band Gojira at the Bastille. The lineup reflected
-                    unity through music, highlighting global and cultural collaboration.
-                </p>
-                <img src="{% static 'Celine Dion Lady Gaga 072624.png' %}"
-                     class="hover:grow transition-all sm:w-1/3 object-cover rounded-lg atropos-2">
-            </div>
         </div>
     </div>
-
-    <section id="athletes">
-        <div style="margin: 29px 53px;">
-            <h2 class="caveat text-center text-white text-6xl mt-7">Meet the Athletes: The Stars of Paris 2024</h2>
-            <br>
-            <p class="text-white text-xl text-justify hover:grow">Get to know the incredible athletes pushing the
-                boundaries
-                of human potential at Paris 2024. Follow their journeys, and be inspired by their dedication and
-                passion.
+    <div style="" class="m-[15px] p-[30px] rounded-lg max-sm:hidden flex flex-row rounded-lg">
+        <div class="atropos my-atropos w-full m-3">
+            <!-- scale container (required) -->
+            <div class="atropos-scale w-full">
+                <!-- rotate container (required) -->
+                <div class="atropos-rotate w-full">
+                    <!-- inner container (required) -->
+                    <div class="atropos-inner w-full">
+                        <img src="{% static 'flame.jpg' %}" data-apropos-offset="10" class="rounded-lg -h">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ml-5">
+            <h1 class="caveat text-white text-6xl">
+                The Olympic Flame
+            </h1>
+            <p style="font-family: 'Nunito Sans', sans-serif; font-weight: 400 !important; font-size:19px !important;"
+                class="text-white mt-3 text-xl">
+                The Olympic flame for the 2024 Paris Games was lit on April 16, 2024, during a ceremonial event
+                held at the ancient site of Olympia, Greece, a tradition that dates back to the inception of the
+                modern Olympics. The flame symbolizes peace, unity, and the enduring spirit of the Games. It was
+                ignited using the sun's rays, concentrated with a parabolic mirror by an actress portraying the
+                high priestess.
+                <br><br>
+                Following the lighting, the flame embarked on a journey, starting with an 11-day relay through
+                Greece before being handed over to the Paris 2024 organizing committee in Athens. It will
+                arrived
+                in France on May 8, after which it was carried across the country, culminating in its
+                arrival at the Olympic Stadium in Paris for the opening ceremony on July 26. The flame’s journey
+                through France is part of a broader effort to celebrate the Games' values of inclusivity,
+                sustainability, and peace.
             </p>
-            <ul>
-                <li class="text-white text-xl text-justify hover:grow"><strong>• Simone Biles:</strong> Gymnastics
-                    superstar
-                    returning for another chance at gold.
-                </li>
-                <li class="text-white text-xl text-justify hover:grow"><strong>• Armand Duplantis:</strong> Swedish pole
-                    vault
-                    sensation rewriting the record books.
-                </li>
-                <li class="text-white text-xl text-justify hover:grow"><strong>• Shelly-Ann Fraser-Pryce:</strong>
-                    Jamaica’s
-                    sprint queen aiming for more medals.
-                </li>
-                <br>
-                <button type="button"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-                    <a href="/hof"> Go
-                        to the Hall of Flame → </a></button>
-            </ul>
+        </div>
+    </div>
+    <div style="background-color: rgba(118, 118, 118, 0.212) !important" class="m-[15px] p-[30px] rounded-lg""
+        class="flex-col flex align-center justify-center bg-blue p-3 rounded-xl mt-5">
+        <h1 class="caveat text-center text-7xl text-white mb-2">The Opening Ceremony</h1>
+        <h1 class="caveat text-center text-5xl text-white">A Celebration of Unity, Diversity and
+            Inclusivity</h1>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-5 self-center w-full mx-5">
+            <div class="grid gap-4">
+                <div class="hover:-translate-y-2 transition-all">
+                    <img class="h-full object-cover max-w-full rounded-lg"
+                        src="{% static 'achanta_sindhu_1722042037729_1722042048859.jpg' %}" alt="">
+                </div>
+                <div class="hover:-translate-y-2 transition-all">
+                    <img class="h-full object-cover max-w-full rounded-lg" src="{% static 'GB_flag bearers.png' %}"
+                        alt="">
+                </div>
+            </div>
+            <div class="grid gap-4">
+                <div class="hover:-translate-y-2 transition-all">
+                    <img class="h-full max-w-full rounded-lg object-cover" src="{% static 'FR flag bearers.webp' %}"
+                        alt="">
+                </div>
+            </div>
+            <div class="grid sm:grid-col-1 sm:col-span-1 grid-col-2 col-span-2 gap-4">
+                <div class="hover:-translate-y-2 transition-all">
+                    <img class="h-auto max-w-full rounded-lg" src="{% static 'qkufgy5j1yvjz8pdnlpy.avif' %}">
+                </div>
+                <div class="hover:-translate-y-2 transition-all">
+                    <img class="h-auto max-w-full rounded-lg" src="{% static 'benjamin_savsek_flagbearer_2024.jpg' %}"
+                        alt="">
+                </div>
+            </div>
+        </div>
+
+        <h1 class="caveat text-center text-white text-6xl mt-5">
+            Flags- Transcending the Gender Gap
+        </h1>
+        <br>
+        <p class="text-white text-center text-xl">The 2024 Olympics were the first edition of the olympics to
+            require countries to have flag-bearer of both genders- a massive step towards gender equality and
+            equal representation of men and women in sports culture.</p>
+
+
+        <h1 class="caveat text-center text-white text-6xl mt-7">
+            Music- An Expression of Diversity
+        </h1>
+
+        <div class="flex-col sm:flex-row flex justify-center mt-5 space-x-5">
+            <img src="{% static 'n4t0tvggqh1teorzzrjl.avif' %}"
+                class="hover:grow transition-all sm:w-1/3 h-auto object-cover rounded-lg atropos-1 t-">
+            <p style="font-size: 109% !important;
+                font-weight: 300;
+                margin: -2px 27px;" class="text-white text-justify hover:grow sm:mt-[10px]">
+                The 2024 Paris Olympics opening ceremony showcased musical diversity with Lady Gaga performing
+                “Mon truc en plumes,” Celine Dion singing atop the Eiffel Tower, and French-Malian star Aya
+                Nakamura. The event spanned genres, including rapper Snoop Dogg, who added a unique flair with a
+                surprise performance, alongside French metal band Gojira at the Bastille. The lineup reflected
+                unity through music, highlighting global and cultural collaboration.
+            </p>
+            <img src="{% static 'Celine Dion Lady Gaga 072624.png' %}"
+                class="hover:grow transition-all sm:w-1/3 object-cover rounded-lg atropos-2">
+        </div>
+    </div>
+</div>
+
+<section id="athletes">
+    <div style="margin: 29px 53px;">
+        <h2 class="caveat text-center text-white text-6xl mt-7">Meet the Athletes: The Stars of Paris 2024</h2>
+        <br>
+        <p class="text-white text-xl text-justify hover:grow">Get to know the incredible athletes pushing the
+            boundaries
+            of human potential at Paris 2024. Follow their journeys, and be inspired by their dedication and
+            passion.
+        </p>
+        <ul>
+            <li class="text-white text-xl text-justify hover:grow"><strong>• Simone Biles:</strong> Gymnastics
+                superstar
+                returning for another chance at gold.
+            </li>
+            <li class="text-white text-xl text-justify hover:grow"><strong>• Armand Duplantis:</strong> Swedish pole
+                vault
+                sensation rewriting the record books.
+            </li>
+            <li class="text-white text-xl text-justify hover:grow"><strong>• Shelly-Ann Fraser-Pryce:</strong>
+                Jamaica’s
+                sprint queen aiming for more medals.
+            </li>
+            <br>
+            <button type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                <a href="/hof"> Go
+                    to the Hall of Flame → </a></button>
+        </ul>
+    </div>
+</section>
+
+
+<div style="background-color: rgba(118, 118, 118, 0.212) !important" class="m-[15px] p-[30px] rounded-lg">
+    <!-- Closing Ceremony Section -->
+    <section class="flex flex-col sm:flex-row">
+        <div class="">
+            <h2 style="font-weight: 700; font-size: 250% !important; color: #fff;">Closing Ceremony: A Celebration
+                of Unity and Triumph</h2>
+            <br>
+            <br>
+            <p style="font-size: larger !important; color: #fff;">
+                As the curtain falls on the Paris 2024 Olympic Games, the Closing Ceremony will be a breathtaking
+                celebration of global unity, athletic triumph, and the Olympic spirit. Set against the backdrop of
+                Paris’ iconic Stade de France, the world will come together once more to bid farewell to the Games
+                and honor the athletes who have inspired us all.
+            </p>
+        </div>
+        <div>
+            <img class="rounded-lg" src="https://www.harpersbazaararabia.com/cloud/2021/09/09/4lprFuES-234789417_3844434945661653_2756983982712914060_n-1-958x900.jpg"
+                alt="Closing Ceremony Highlights">
         </div>
     </section>
 
+    <!-- Highlights of the Ceremony -->
+    <section class="flex flex-col-reverse sm:flex-row flex-row-reverse">
+        <div class="mb-[30px] mt-[20px] rounded-lg">
+            <img src="https://imageio.forbes.com/specials-images/imageserve/610fdef8abffae85e89a843e/0x0.jpg?format=jpg&crop=1914,1077,x48,y76,safe&height=900&width=1600&fit=bounds"
+                alt="Parade of Nations" class="rounded-lg">
+        </div>
+        <div class="ml-[20px]">
+            <h2 class="" style="font-weight: 700; font-size: 250% !important; color: #fff;">The Highlights of the
+                Ceremony</h2>
+            <p style="font-size: larger !important; color: #fff;">Expect a night of spectacular performances,
+                emotional tributes, and unforgettable moments that will
+                resonate across the globe.
+            </p>
+            <br>
+            <ul style="font-size: 100% !important; color: #fff;">
+                <li><strong>Artistic Performances:</strong> The Closing Ceremony will showcase France's rich
+                    cultural heritage with performances by world-renowned artists, musicians, and dancers.
+                    Experience a fusion of classical and modern French art that celebrates Paris as a cultural hub.
+                </li>
+                <li><strong>The Parade of Nations:</strong> Athletes from over 200 countries will walk hand in hand,
+                    united by the values of friendship, excellence, and respect. This parade symbolizes the end of
+                    the competition and the continuation of the Olympic journey beyond borders.
+                </li>
+                <li><strong>The Transfer of the Olympic Flag:</strong> As tradition dictates, the Olympic flag will
+                    be handed over to the next host city for the 2028 Games, Los Angeles. Witness the symbolic
+                    moment when the Olympic legacy is passed from one iconic city to another, setting the stage for
+                    the next chapter in Olympic history.
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
 
-    <div style="background-color: rgb(28, 71, 117) !important" class="px-[30px]">
-        <!-- Closing Ceremony Section -->
-        <section class="flex flex-col sm:flex-row">
-            <div class="">
-                <h2 style="font-weight: 700; font-size: 250% !important; color: #fff;">Closing Ceremony: A Celebration
-                    of Unity and Triumph</h2>
-                <br>
-                <br>
-                <p style="font-size: larger !important; color: #fff;">
-                    As the curtain falls on the Paris 2024 Olympic Games, the Closing Ceremony will be a breathtaking
-                    celebration of global unity, athletic triumph, and the Olympic spirit. Set against the backdrop of
-                    Paris’ iconic Stade de France, the world will come together once more to bid farewell to the Games
-                    and honor the athletes who have inspired us all.
-                </p>
-            </div>
-            <div>
-                <img src="https://www.harpersbazaararabia.com/cloud/2021/09/09/4lprFuES-234789417_3844434945661653_2756983982712914060_n-1-958x900.jpg"
-                     alt="Closing Ceremony Highlights">
-            </div>
-        </section>
+<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+<script src="{% static 'node_modules/atropos/atropos.min.js' %}"></script>
+<script type="text/javascript">
+    new ScrollyVideo({
+        scrollyVideoContainer: "scrolly-video",
+        src: "{% static 'header.mp4' %}",
+    });
 
-        <!-- Highlights of the Ceremony -->
-        <section class="flex flex-col-reverse sm:flex-row flex-row-reverse">
-            <div class="mb-[30px] mt-[20px] rounded-lg">
-                <img src="https://imageio.forbes.com/specials-images/imageserve/610fdef8abffae85e89a843e/0x0.jpg?format=jpg&crop=1914,1077,x48,y76,safe&height=900&width=1600&fit=bounds"
-                     alt="Parade of Nations">
-            </div>
-            <div class="ml-[20px]">
-                <h2 class="" style="font-weight: 700; font-size: 250% !important; color: #fff;">The Highlights of the
-                    Ceremony</h2>
-                <p style="font-size: larger !important; color: #fff;">Expect a night of spectacular performances,
-                    emotional tributes, and unforgettable moments that will
-                    resonate across the globe.
-                </p>
-                <br>
-                <ul style="font-size: 100% !important; color: #fff;">
-                    <li><strong>Artistic Performances:</strong> The Closing Ceremony will showcase France's rich
-                        cultural heritage with performances by world-renowned artists, musicians, and dancers.
-                        Experience a fusion of classical and modern French art that celebrates Paris as a cultural hub.
-                    </li>
-                    <li><strong>The Parade of Nations:</strong> Athletes from over 200 countries will walk hand in hand,
-                        united by the values of friendship, excellence, and respect. This parade symbolizes the end of
-                        the competition and the continuation of the Olympic journey beyond borders.
-                    </li>
-                    <li><strong>The Transfer of the Olympic Flag:</strong> As tradition dictates, the Olympic flag will
-                        be handed over to the next host city for the 2028 Games, Los Angeles. Witness the symbolic
-                        moment when the Olympic legacy is passed from one iconic city to another, setting the stage for
-                        the next chapter in Olympic history.
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </div>
+    // Initialize
+    const myAtropos = Atropos({
+        el: '.my-atropos',
+        // rest of parameters
+    });
 
-    <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
-    <script src="{% static 'node_modules/atropos/atropos.min.js' %}"></script>
-    <script type="text/javascript">
-        new ScrollyVideo({
-            scrollyVideoContainer: "scrolly-video",
-            src: "{% static 'header.mp4' %}",
-            useWebCodecs: true
-        });
-
-        // Initialize
-        const myAtropos = Atropos({
-            el: '.my-atropos',
-            // rest of parameters
-        });
-
-        const atro = Atropos({
-            el: '.atropos1'
-        });
-    </script>
+    const atro = Atropos({
+        el: '.atropos1'
+    });
+</script>
 
 {% endblock %}
