@@ -14,13 +14,50 @@
             font-weight: 400;
             font-style: normal;
         }
+        .blob {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 350px;
+        height: 350px;
+        border-radius: 100%;
+        background-image: linear-gradient(#1100ff 10%, #ff00f2);
+        filter: blur(250px);
+        transition: all 450ms ease-out;
+        position: fixed;
+        pointer-events: none;
+        left: 0;
+        top: 0;
+        transform: translate(calc(-50% + 15px), -50%);
+        z-index: -1;
+    }
+    iframe img{
+        transition: all 0.5s;
+    }
+    iframe:hover {
+        transform: scale(1.05);
+        transition: all 0.25s;
+    }
+    img:hover{
+        filter: grayscale(0) sepia(0) !important;
+        transition: all 0.5s;
+        transform: scale(1.025);
+    }
     </style>
 {% endblock head %}
 
 {% block title %}History | Olympics{% endblock %}
 
 {% block content %}
-    <div class="grid bg-gray-700 p-4 rounded-lg grid-cols-2 md:grid-cols-5 gap-4 mt-20 mx-5 md:mx-10">
+<div class="blob"></div>
+<script>
+    let cursor = document.querySelector('.blob');
+
+    document.addEventListener('mousemove', function (e) {
+        cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+    });
+</script>
+    <div class="grid p-4 rounded-lg grid-cols-2 md:grid-cols-5 gap-4 mt-20 mx-5 md:mx-10" style="background-color: #37415188;">
         <div class="grid gap-4">
             <div>
                 <img class="h-auto max-w-full rounded-lg"
@@ -29,12 +66,12 @@
             </div>
             <div>
                 <img style="filter: grayscale(100%) sepia(0.6)" class="h-auto max-w-full rounded-lg"
-                     src="https://cdn.britannica.com/61/18361-050-64BC6B3A/Panathenaic-Stadium-athletics-events-Athens-1896-Olympic-1896.jpg"
+                     src="https://upload.wikimedia.org/wikipedia/commons/d/d2/London_2012_Olympic_100m_final_start.jpg"
                      alt="">
             </div>
             <div>
                 <img style="filter: grayscale(100%) sepia(0.8)" class="h-auto max-w-full rounded-lg"
-                     src="https://d.newsweek.com/en/full/1853505/first-international-olympic-committee.png?w=1200&f=d957cee15cfabf60431b346b93cb1ed7"
+                     src="https://s.hdnux.com/photos/01/21/07/04/21262593/3/1200x0.jpg"
                      alt="">
             </div>
         </div>
