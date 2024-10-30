@@ -14,6 +14,12 @@
     integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
 <style>
+    body {
+        background: no-repeat linear-gradient(#ffffff, #ffffff), 0% 0% / contain no-repeat url(https://img.olympics.com/images/image/private/t_16-9_1920/f_auto/v1726055920/primary/jg4oagse3p9xzoz4rg0r), #0d243d !important;
+        background-blend-mode: overlay !important;
+        overflow-x: hidden;
+    }
+
     .gilda {
         font-family: "Gilda Display", serif;
         font-weight: 700;
@@ -105,44 +111,51 @@
         transform: translate(calc(-50% + 15px), -50%);
         z-index: -1;
     }
-    #scrolly-video{
+
+    #scrolly-video {
         clip-path: ellipse(0% 100% at 50% 60%);
         animation-timeline: scroll();
         animation-duration: 1ms;
         animation-name: roundedTop;
         animation-timing-function: cubic-bezier(0, 0, 0.3, 0.85);
-}
+    }
 
-    .z-100{
+    .z-100 {
         animation-timeline: scroll();
         animation-duration: 1ms;
         animation-name: moveUp;
         animation-timing-function: cubic-bezier(0, 0, 0.3, 0.85);
     }
-    @keyframes moveUp{
-        0%{
-            margin-top: -0vh !important;
+
+    @keyframes moveUp {
+        0% {
+            margin-top: -20vh !important;
         }
-        100%{
+
+        100% {
             margin-top: 0vh !important;
         }
     }
-    @keyframes roundedTop{
-        0%{
+
+    @keyframes roundedTop {
+        0% {
             clip-path: ellipse(230% 0% at 50% 50%);
         }
-        }
-    @keyframes movingHero{
-        0%{
+    }
+
+    @keyframes movingHero {
+        0% {
             margin-top: 25vh;
             transform: scale(1.5);
         }
-        100%{
+
+        100% {
             margin-top: 0vh;
             transform: scale(0);
         }
     }
-    #heroSection{
+
+    #heroSection {
         cursor: default;
         margin-top: 25vh;
         transform: translateY(100vh) scale(1.1);
@@ -151,11 +164,10 @@
         animation-name: movingHero;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
-    body{
-        overflow-x: hidden;
-    }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
 <link rel="stylesheet" link="{% static 'node_modules/atropos/atropos.min.css' %}">
 
 {% endblock %}
@@ -179,8 +191,7 @@
                 role="alert">
                 <span class="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">New</span> <span
                     class="text-sm font-medium">Checkout latest highlights!</span>
-                <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg class="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
                         d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                         clip-rule="evenodd"></path>
@@ -192,8 +203,7 @@
             <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here
                 at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value
                 and drive economic growth.</p>
-            <div
-                class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+            <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
                 <a href="#"
                     class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
                     Learn more
@@ -221,17 +231,20 @@
             position: relative;
             opacity: 0.5;
             
-        "><img style="all:initial; max-width: 70%;" src="https://logodownload.org/wp-content/uploads/2020/03/olimpiada-olympic-games-logo.png" alt=""></center>
-            
+        "><img class="olympicsLogo" style="all:initial; max-width: 70%; transition: all 0.1s;"
+                    src="https://logodownload.org/wp-content/uploads/2020/03/olimpiada-olympic-games-logo.png" alt="">
+            </center>
+
         </div>
     </section>
     <div class=" 
-    max-md:hidden mt-[-50px] z-100" style="height: 350vh;">
+    max-md:hidden z-100"
+        style="height: 350vh; backdrop-filter: blur(100px); clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0% 100%);">
         <div id="scrolly-video"></div>
     </div>
     <div class="mt-10"
         style="background-image: url({% static 'Paris 2024.webp' %}); background-attachment: fixed; min-height: 75vh; background-position: center; background-repeat:no-repeat; background-size:cover;">
-        
+
         <center>
             <h1 class="caveat ParisHeading text-[14rem] leading-[17rem] text-white text-center top-1/2 left-1/2">
                 Paris 2024
@@ -245,7 +258,8 @@
         </h1>
     </div>
     <div class="flex flex-col align-center justify-center mt-5">
-        <div style="background-color: rgba(118, 118, 118, 0.212) !important" class="m-[15px] p-[30px] rounded-lg max-sm:hidden flex flex-row">
+        <div style="background-color: rgba(118, 118, 118, 0.212) !important"
+            class="m-[15px] p-[30px] rounded-lg max-sm:hidden flex flex-row">
             <div class="ml-5 w-[150%]">
                 <h1 class="caveat text-white text-6xl">
                     The Olympics: Pushing Humanity to its Limits
@@ -314,7 +328,7 @@
         </div>
     </div>
     <div style="background-color: rgba(118, 118, 118, 0.212) !important" class="m-[15px] p-[30px] rounded-lg""
-        class="flex-col flex align-center justify-center bg-blue p-3 rounded-xl mt-5">
+        class=" flex-col flex align-center justify-center bg-blue p-3 rounded-xl mt-5">
         <h1 class="caveat text-center text-7xl text-white mb-2">The Opening Ceremony</h1>
         <h1 class="caveat text-center text-5xl text-white">A Celebration of Unity, Diversity and
             Inclusivity</h1>
@@ -426,7 +440,8 @@
             </p>
         </div>
         <div>
-            <img class="rounded-lg" src="https://www.harpersbazaararabia.com/cloud/2021/09/09/4lprFuES-234789417_3844434945661653_2756983982712914060_n-1-958x900.jpg"
+            <img class="rounded-lg"
+                src="https://www.harpersbazaararabia.com/cloud/2021/09/09/4lprFuES-234789417_3844434945661653_2756983982712914060_n-1-958x900.jpg"
                 alt="Closing Ceremony Highlights">
         </div>
     </section>
@@ -464,6 +479,13 @@
     </section>
 </div>
 
+<script>
+    $('div').mousemove(function (e) {
+        let valueX = (e.pageX * -1 / 200);
+        let valueY = (e.pageY * -1 / 200);
+        $('.olympicsLogo').css('transform', 'translate3d(' + valueX + 'px,' + valueY + 'px, 0)');
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
 <script src="{% static 'node_modules/atropos/atropos.min.js' %}"></script>
 <script type="text/javascript">
