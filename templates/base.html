@@ -7,7 +7,7 @@
     <!-- Meta tags for character set, viewport settings, and IE compatibility -->
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Link to external stylesheet -->
@@ -24,140 +24,167 @@
     <link type="image/x-icon" rel="icon" href="{ static 'olympicsFavicon.png' }">
     <!-- Additional head content block -->
     {% block head %}{% endblock %}
+
+    <style>
+        .mck-box-open,
+        .mck-sidebox,
+        .mck-box-dialog {
+            background: #ffffff00;
+        }
+
+        .km-assignee-module .mck-assign-to,
+        .km-assignee-module .mck-rated,
+        .km-csat-skeleton .mck-assign-to,
+        .km-csat-skeleton .mck-rated {
+            color: white;
+            background-color: #ffffff00 !important;
+        }
+
+        .mck-sidebox-content {
+            background: #18181880;
+            backdrop-filter: blur(20px);
+        }
+
+        .km-custom-widget-background-color-secondary {
+            background: #333333e3;
+            color: #f2f2f2;
+        }
+    </style>
 </head>
 
-<body style="height: 1000px;">
+<body class="bg-drk" style="height: 1000px;">
 
-<!-- Navigation bar -->
-<nav class="bg-drk fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
-     style="backdrop-filter: blur(10px); background: #00000094;">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <!-- Logo and title -->
-        <a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{% static 'rings.svg' %}" class="h-8" alt="Logo">
-            <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Olympian</span>
-        </a>
-        <!-- Buttons and menu toggle -->
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <a href="{% url 'highlights' %}">
-                <button type="button"
-                        class="text-white bg-drk focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:px-4 px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                    Highlights
-                </button>
+    <!-- Navigation bar -->
+    <nav class="bg-drk fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
+        style="backdrop-filter: blur(10px); background: #00000094;">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <!-- Logo and title -->
+            <a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="{% static 'rings.svg' %}" class="h-8" alt="Logo">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Olympian</span>
             </a>
+            <!-- Buttons and menu toggle -->
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="{% url 'highlights' %}">
+                    <button type="button"
+                        class="text-white bg-drk focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:px-4 px-2 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        Highlights
+                    </button>
+                </a>
 
-            <button data-collapse-toggle="navbar-sticky" type="button"
+                <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-sticky" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M1 1h15M1 7h15M1 13h15"></path>
-                </svg>
-            </button>
-        </div>
-        <!-- Navigation links -->
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
-                <li>
-                    <a href="{% url 'index' %}"
-                       class="block py-2 px-3 text-white bg-drk rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                       aria-current="page">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'hall_of_fame' %}"
-                       class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Hall
-                        of Fame</a>
-                </li>
-                <li>
-                    <a href="{% url 'leaderboard' %}"
-                       class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Leaderboard</a>
-                </li>
-                <li>
-                    <a href="{% url 'history' %}"
-                       class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">History</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Main content area -->
-<main class="mt-20">
-    {% block content %}
-    {% endblock %}
-</main>
-
-<!-- Kommunicate chat widget -->
-<script type="text/javascript">
-    (function (d, m) {
-        var kommunicateSettings =
-            {"appId": "65c2fde767b13047d20554a1f4e37aa8", "popupWidget": true, "automaticChatOpenOnNavigation": true};
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-        var h = document.getElementsByTagName("head")[0];
-        h.appendChild(s);
-        window.kommunicate = m;
-        m._globals = kommunicateSettings;
-    })(document, window.kommunicate || {});
-</script>
-
-<!-- Footer section -->
-<footer class="bg-gray-900 mt-3">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div class="md:flex md:justify-between">
-            <!-- Footer logo and title -->
-            <div class="mb-6 md:mb-0">
-                <a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="{% static 'rings.svg' %}" class="h-8" alt="Logo">
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Olympics</span>
-                </a>
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15"></path>
+                    </svg>
+                </button>
             </div>
-            <!-- Footer links -->
-            <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">About Us</h2>
-                    <ul class="text-gray-400 font-medium">
-                        <li class="mb-4">
-                            <a href="https://github.com/AJain9199/olympian" class="hover:underline">Our GitHub</a>
-                        </li>
-                        <li>
-                            <a href="https://stkabir.co.in/" class="hover:underline">St Kabir</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold uppercase text-white">Technologies Used</h2>
-                    <ul class="text-gray-400 font-medium">
-                        <li class="mb-4">
-                            <a href="https://www.djangoproject.com/" class="Django">Django</a>
-                        </li>
-                        <li>
-                            <a href="https://www.python.org/" class="hover:underline">Python</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">.</h2>
-                    <ul class="text-gray-400 font-medium">
-                        <li class="mb-4">
-                            <a href="https://www.sqlite.org/" class="hover:underline">SQLite</a>
-                        </li>
-                        <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
-                        </li>
-                    </ul>
-                </div>
+            <!-- Navigation links -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+                    <li>
+                        <a href="{% url 'index' %}"
+                            class="block py-2 px-3 text-white bg-drk rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'hall_of_fame' %}"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Hall
+                            of Fame</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'leaderboard' %}"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Leaderboard</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'history' %}"
+                            class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">History</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
-    </div>
-</footer>
+    </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <!-- Main content area -->
+    <main class="mt-20">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Kommunicate chat widget -->
+    <script type="text/javascript">
+        (function (d, m) {
+            var kommunicateSettings =
+                { "appId": "65c2fde767b13047d20554a1f4e37aa8", "popupWidget": true, "automaticChatOpenOnNavigation": true };
+            var s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0];
+            h.appendChild(s);
+            window.kommunicate = m;
+            m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    </script>
+
+    <!-- Footer section -->
+    <footer class="bg-gray-900 mt-3">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex md:justify-between">
+                <!-- Footer logo and title -->
+                <div class="mb-6 md:mb-0">
+                    <a href="{% url 'index' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="{% static 'rings.svg' %}" class="h-8" alt="Logo">
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Olympics</span>
+                    </a>
+                </div>
+                <!-- Footer links -->
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase text-white">About Us</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="https://github.com/AJain9199/olympian" class="hover:underline">Our GitHub</a>
+                            </li>
+                            <li>
+                                <a href="https://stkabir.co.in/" class="hover:underline">St Kabir</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold uppercase text-white">Technologies Used</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="https://www.djangoproject.com/" class="Django">Django</a>
+                            </li>
+                            <li>
+                                <a href="https://www.python.org/" class="hover:underline">Python</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">.</h2>
+                        <ul class="text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="https://www.sqlite.org/" class="hover:underline">SQLite</a>
+                            </li>
+                            <li>
+                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
 
 </html>
