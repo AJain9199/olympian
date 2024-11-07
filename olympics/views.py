@@ -1,4 +1,5 @@
 import csv
+import os
 import pycountry
 from django.core import serializers
 from django.db.models import Q
@@ -57,8 +58,10 @@ def athlete_list(request):
 
 
 def leaderboard(request):
+    here = os.path.dirname(os.path.abspath(__file__))
+    filename = os.path.join(here, 'olympics2024.csv')
     countries = []
-    with open("static/olympics2024.csv", "r") as f:
+    with open(filename, "r") as f:
         reader = csv.reader(f)
         data = list(reader)
 

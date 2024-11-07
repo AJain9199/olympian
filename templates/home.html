@@ -183,6 +183,10 @@
     });
 </script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
+
+
 <div class="flex flex-col">
     <section id="heroSection">
         <div class="py-0 px-4 mx-auto max-w-screen-xl text-center pt-2 lg:px-12">
@@ -242,6 +246,23 @@
         style="height: 350vh; backdrop-filter: blur(100px); clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0% 100%);">
         <div id="scrolly-video"></div>
     </div>
+    <script type="text/javascript">
+        new ScrollyVideo({
+            scrollyVideoContainer: "scrolly-video",
+            src: "{% static 'Header.mp4' %}",
+            transitionSpeed: 4
+        });
+    
+        // Initialize
+        const myAtropos = Atropos({
+            el: '.my-atropos',
+            // rest of parameters
+        });
+    
+        const atro = Atropos({
+            el: '.atropos1'
+        });
+    </script>
     <div class="mt-10"
         style="background-image: url({% static 'Paris 2024.webp' %}); background-attachment: fixed; min-height: 75vh; background-position: center; background-repeat:no-repeat; background-size:cover;">
 
@@ -486,24 +507,4 @@
         $('.olympicsLogo').css('transform', 'translate3d(' + valueX + 'px,' + valueY + 'px, 0)');
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js"></script>
-<script src="{% static 'node_modules/atropos/atropos.min.js' %}"></script>
-<script type="text/javascript">
-    new ScrollyVideo({
-        scrollyVideoContainer: "scrolly-video",
-        src: "{% static 'header.mp4' %}",
-        transitionSpeed: 4
-    });
-
-    // Initialize
-    const myAtropos = Atropos({
-        el: '.my-atropos',
-        // rest of parameters
-    });
-
-    const atro = Atropos({
-        el: '.atropos1'
-    });
-</script>
-
 {% endblock %}
