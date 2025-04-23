@@ -1,5 +1,5 @@
 <h2>SITE LIVE AT:<h2>
-[OLYMPIAN](https://bit.ly/olympiankabir)
+https://bit.ly/olympiankabir
 
 # Olympian
 
